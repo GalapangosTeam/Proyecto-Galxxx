@@ -1,6 +1,28 @@
 body{
 		background-color: rgb(52, 61, 70);
 }
+#header{
+	background-color: #0E8682;
+	color: white;
+	text-align: center;
+}
+#piedepag{
+	background-color: #0E8682;
+	color: white;
+	text-align: center;
+}
+.main{
+	background-color: #f2f2f2;
+}
+aside{
+	background-color: rgb(216, 222, 233);
+	color: black;
+}
+
+.color1{
+	background-color: #45ADA9;
+}
+/*
 #gradiente{
 	width: 100%;
 	height: 200px;
@@ -19,11 +41,11 @@ body{
 	margin: 0 auto;
 	border-radius: 20px;
 	- moz -border-radius: 20px; /*mozilla*/
-	-ms -border-radius: 20px; /*mozilla*/
-	-o -border-radius: 20px; /*mozilla*/
-	-webkit -border-radius: 20px; /*chrome*/
+/*	-ms -border-radius: 20px; /*edge*/
+/*	-o -border-radius: 20px; /*opera*/
+/*	-webkit -border-radius: 20px; /*chrome*/
 	
-	-moz -box-shadow: 10px 10px 5px rgb(240, 240, 240);
+/*	-moz -box-shadow: 10px 10px 5px rgb(240, 240, 240);
 	-ms -box-shadow: 10px 10px 5px rgb(240, 240, 240);
 	-o box-shadow: 10px 10px 5px rgb(240, 240, 240);
 	-webkit -box-shadow: 10px 10px 5px rgb(240, 240, 240);
