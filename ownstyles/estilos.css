@@ -1,6 +1,3 @@
-body{
-		background-color: rgb(52, 61, 70);
-}
 #header{
 	background-color: #0E8682;
 	color: white;
@@ -11,6 +8,9 @@ body{
 	color: white;
 	text-align: center;
 }
+#barranav{
+	margin: 15px;
+}
 .main{
 	background-color: #f2f2f2;
 }
@@ -18,10 +18,16 @@ aside{
 	background-color: rgb(216, 222, 233);
 	color: black;
 }
-
+.nav-link {
+	color: black;
+}
+.nav-link:hover {
+	color: #0E8682;
+}
 .color1{
 	background-color: #45ADA9;
 }
+
 /*
 #gradiente{
 	width: 100%;
