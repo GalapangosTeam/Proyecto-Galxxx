@@ -8,26 +8,34 @@
 	color: white;
 	text-align: center;
 }
-#barranav{
-	margin: 15px;
-}
 .main{
 	background-color: #f2f2f2;
+}
+.nav-link {
+	color: white;
+	font-size: 18px;
+}
+.nav-link:hover {
+	color: #a4e6e3;
+}
+.navp {
+	font-size: 22px;
+	font-family: 
+}
+.color1{
+	background-color: #45ADA9;
+}
+.row{
+	text-align: justify;
 }
 aside{
 	background-color: rgb(216, 222, 233);
 	color: black;
 }
-.nav-link {
-	color: black;
+#cuerpo{
+	/*font-family: 'Nunito', sans-serif;*/
+	font-family: 'Raleway', sans-serif;
 }
-.nav-link:hover {
-	color: #0E8682;
-}
-.color1{
-	background-color: #45ADA9;
-}
-
 /*
 #gradiente{
 	width: 100%;
@@ -85,16 +93,6 @@ aside{
 		float: none;
 }
 
-#tuneada{
-		background-color: rgb(74, 85, 96);
-		
-		font-family: "Arial";
-	    font-size: 30px;
-	    text-align: center;
-	    border: rgb(94, 179, 164) 3px solid;
-		margin: 15px;
-}
-
 #leftmenu{
 		background-color: rgb(74, 85, 96);
 		color: rgb(249, 174, 87);
@@ -142,15 +140,4 @@ aside{
 		float: none;	
 		clear: both;
 }
-
-@keyframes slidein {
-  					from {
-   							 margin-left: 100%;
-   							 width: 300%; 
-  					} to {
-    						margin-left: 0%;
-   							 width: 100%;
- 					 }	
-			}
-
 			/*Checar al ultimo pagina del CEO y W3C*/
