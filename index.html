@@ -3,44 +3,108 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-	<meta name="keyword" content="GalasMusic,GalMus,galmus,GALMUS,Galmus">
-	<meta name="description" content="Aprender a leer notas musicales">
+	<meta name="keywords" content="GalasMusic,GalMus,galmus,GALMUS,Galmus">
+	<meta name="description" content="Sitio web sobre productos en software para aprender las partituras de las notas musicales bajo metodologias antiguas procesadas a un entorno facil de aprendizaje.">
 	<meta name="author" content="Pedro Erick Ríos García,Yizeckker2304,Victor Vicente Martinez^2, VisualYukkie, Alejandro Medina Alcantara, Pug Nigga Black">
 	<meta name="generator" content="Sublime">
-	<meta name="classification" content="Music,Musica,Notas Musicales,Educacion,Didactico">
+	<meta name="classification" content="Music,Musica,Notas Musicales,Educacion,Didactico,Arte">
 	<meta name="language" content="ES">
 	<meta name="robots" content="index"/>
 	<meta http-equiv="cache-control" content="no-cache"/>
-	<meta name="copyright" content="Xuyez Developers">
+	<meta name="copyright" content="Galapangos Team Developers">
 	<link rel="shortcut icon" type="image/x-icon" href="imagenes/GalapangosTeam.ico"/>
 	<link rel="stylesheet" type="text/css" href="ownstyles/estilos.css">
+	<link rel="stylesheet" type="text/css" href="ownstyles/normalize.css">
 	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-	<link href="https://fonts.googleapis.com/css?family=Dosis|Nanum+Gothic|Nunito" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css?family=Raleway&amp;subset=latin-ext" rel="stylesheet">
-	<!--script type="text/javascript" src="js/sp1.js"></script-->
-	<title> ! Landing Page ! </title>
+	<link href="https://fonts.googleapis.com/css?family=Raleway:400,400i,500,600,700,800&amp;subset=latin-ext" rel="stylesheet">
+	<title> Galapangos Team | Oficial </title>
 </head>
 <body id="cuerpo">
-	<header id="header">
+
+	<!-- Encabezado, logo del la organización-->
+	<header class="header">
 		<div class="container">
-			<h1> GalMus </h1>
+			<img id="logo" src="imagenes\logo.png" alt="Logo Galmus">
+			<!--h1 class="header"> GalMus </h1-->
 		</div>
 	</header>
 	
+	<!--Barra de Navegación-->
 	<nav class="navbar sticky-top navbar-light" style="background-color: black;">
 	  <div class="container">
-		  <a class="nav-link navp" href="#"> GalMus </a>
-		  <a class="nav-link" href="#"> Nuestros productos <span class="sr-only">(current)</span></a>
+		  	<a class="nav-link navp" href=".header"> GalMus </a>
+			<li class="nav-item dropdown listanav">
+		        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Nuestros Productos </a>
+		        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+			        <a class="dropdown-item" href="#"> GalMus Software </a>
+			        <a class="dropdown-item" href="#"> Material didáctico </a>
+			          	<div class="dropdown-divider"></div>
+		          			<a class="dropdown-item" href="#"> Licencias del Software por tiempo</a>
+		          			<a class="dropdown-item" href="#"> Licencias del Software permanentes</a>
+		       	</div>
+		      </li>
 		  <a class="nav-link" href="#"> Acerca de la organización </a>
 		  <a class="nav-link" href="#"> Contacto </a>
 		    <form class="form-inline my-2 my-lg-0">
-		      <input class="form-control mr-sm-2" type="text" placeholder="Buscar">
-		      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
+		      <input class="form-control mr-sm-2 formcolo" type="text" placeholder="Buscar">
+		      <button class="btn btn-info my-2 my-sm-0 buscarcolo" type="submit">Buscar</button>
 		    </form>
 	 	</div>
 	</nav>
+	<br>
+	<!--Carrusel de imagenes-->
+	<div class="container-fluid">
+		<div class="col-md-12">
+			<div id="Diapos" class="carousel slide" data-ride="carousel">
+				<!-- indicadores -->
+				<ol class="carousel-indicators">
+					<li data-target="#Diapos" data-slide-to="0" class="active"></li>
+					<li data-target="#Diapos" data-slide-to="1"></li>
+					<li data-target="#Diapos" data-slide-to="2"></li>
+				</ol>
 
-	<div class="container">
+				<!-- Contenedor de los items o sliders -->
+				<div class="carousel-inner">
+					<div class="carousel-item active">
+						<img src="imagenes\1920x1080_1.jpg" class="d-block img-fluid" alt="imagen 1">
+						<div class="carousel-caption d-none d-md-block">
+							<h3>Este es el Nuevo Slide 1</h3>
+							<p> Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+						</div>
+					</div>
+					
+					<div class="carousel-item">
+						<img src="imagenes\1920x1080_2.jpg" class="d-block img-fluid" alt="imagen 2">
+						<div class="carousel-caption d-none d-md-block">
+							<h3>Este es el Nuevo Slide 2</h3>
+							<p> Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+						</div>
+					</div>
+
+					<div class="carousel-item">
+						<img src="imagenes\1920x1080_3.jpg" class="d-block img-fluid" alt="imagen 3">
+						<div class="carousel-caption d-none d-md-block">
+							<h3>Este es el Nuevo Slide 3</h3>
+							<p> Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+						</div>
+					</div>
+				</div>
+					<!-- controles de cambios izq y der-->
+					<a class="carousel-control-prev" href="#Diapos" role="button" data-slide="prev">
+						<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+						<span class="sr-only">Anterior</span>
+					</a>
+					<a class="carousel-control-next" href="#Diapos" role="button" data-slide="next">
+						<span class="carousel-control-next-icon" aria-hidden="true"></span>
+						<span class="sr-only">Siguiente</span>
+					</a>
+			</div>
+		</div>
+	</div>
+	
+	<!--Contenidos de la pagina en secciones,aside, etc..-->
+	<div class="container content">
+		<br>
 		<section class="main row">
 			<article class="col-xs-12 col-sm-8 col-md-9 col-lg-9">
 				<p>
@@ -75,7 +139,7 @@
 					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae temporibus, quaerat fugiat! Unde dolor officia asperiores maxime eius reprehenderit velit voluptates consequuntur aliquam nulla, neque odio facere fuga, necessitatibus libero!
 				</p>
 			</div>
-			<div class=" color-xs-12 col-sm-6 col-md-3">
+			<div class="color-xs-12 col-sm-6 col-md-3">
 				<p>
 					<h3>Columna</h3>
 					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui laudantium, voluptatem delectus nihil! Nihil eveniet pariatur voluptatem doloribus laboriosam ipsum dolores fugiat in magni voluptas! Totam cumque tempore odit aperiam.
@@ -86,27 +150,114 @@
 			</div>
 		</div>
 	</div>
+	<br>
+
+	<!--Parte I del pie de página: Contacto, redes sociales-->
+	<div class="piedepag">
+		<div class="container content">
+			<h2 class="sombras" style="padding-top: 10px; padding-bottom: 2px;"> Contactanos </h2>
+			<hr style="background-color: white">
+		    <div class="row" style="padding-top: 5px; text-align: center;">
+				<div class="col-xs-12 col-sm-3">
+	                <a class="icoFacebook"  href="#"  title="Facebook">
+	                	<img src="imagenes/icofb.png" class="img-fluid icoFacebook"  alt="Facebook">
+	                </a>
+	           	</div>
+	            <div class="col-xs-12 col-sm-3">
+	            	<a class="icoGoogle" href="#"  title="Google +">
+	                	<img src="imagenes/icogoogle.png" class="img-fluid icoGoogle" alt="Google +">
+	                </a>
+	            </div>   
+	            <div class="col-xs-12 col-sm-3">
+	            	<a class="icoLinkedin" href="#" title="LinkedIn">
+	            		<img src="imagenes/icolinked.png" class="img-fluid icoLinkedin" alt="LinkedIn">
+	            	</a>
+				</div>
+				<div class="col-xs-12 col-sm-3">
+					<a class="icoYoutube" href="#" title="Youtube">
+	                	<img src="imagenes/icoyb.png" class="img-fluid icoYoutube" alt="Youtube">
+	                </a>
+				</div>
+			</div>
+	  	</div>
+	</div>
 	
-	<footer id="piedepag">
-		<div class="container">
-			<h3> Todos los derechos reservados</h3>
-		</div>
+	<!--Parte II del pie de página:  Informacion sobre toda la website-->
+	<footer id="piedepag2">
+	  <div class="container">
+	    <div class="row">
+	      <div class="color-xs-12 col-sm-6 col-md-3">
+	        <!--Column1-->
+	        <div class="piedepag2">
+	         <h4 class="text-center sombras" style="padding-top: 20px;">Ubicación</h4>
+	          <address>
+				<ul class="list-unstyled">
+					<hr>
+					<li> Boulevard de las flores #1205<br>
+						Villa de las Flores<br>
+						Coacalco de Berriozabal<br>
+						Estado de México, 55790<br>
+					</li>
+					<li>
+						<hr>
+						Teléfono: (55) 31 47 89 65 07	
+					</li>
+				</ul>
+			 </address>
+	        </div>
+	      </div>
+
+	      <div class="color-xs-12 col-sm-6 col-md-3">
+	        <!--Column2-->
+	        <div class="piedepag2">
+	          <h4 class="text-center sombras" style="padding-top: 20px">Nuestros servicios</h4>
+	          <ul class="list-unstyled">
+	          	<hr>
+	            <li><a class="enlacespie" href="#"></a></li>
+	            <li><a class="enlacespie" href="#">GalMus Software</a></li>
+	            <li><a class="enlacespie" href="#">Ayuda y soporte</a></li>
+	            <li><a class="enlacespie" href="#">Nuevas actualizaciones</a></li>
+	          </ul>
+	        </div>
+	      </div>
+	      <div class="color-xs-12 col-sm-6 col-md-3">
+	        <!--Column3-->
+	        <div class="piedepag2">
+	          <h4 class="text-center sombras" style="padding-top: 20px"> Más información</h4>
+	          <ul class="list-unstyled">
+	          	<hr>
+	            <li><a class="enlacespie" href="#">Tutorial del Website</a></li>
+	            <li><a class="enlacespie" href="#">Accesibilidad</a></li>
+	            <li><a class="enlacespie" href="#">Declaración de Privacidad</a></li>
+	          </ul>
+	        </div>
+	      </div>
+	      <div class="color-xs-12 col-sm-6 col-md-3">
+	        <!--Column4-->
+	        <div class="piedepag2">
+	          <h4 class="text-center sombras" style="padding-top: 20px"> Desarrolladores </h4>
+	          <ul class="list-unstyled">
+	          	<hr>
+	            <li>Pedro Erick Ríos García</li>
+	            <li>Víctor Martínez Martínez</li>
+	            <li>Alejandro Medina Alcántara</li>
+	          </ul>
+	        </div>
+	      </div>
+	    </div>
+	  </div>
 	</footer>
-	<!--<h1>Pagina prueba github</h1>
-	<div id="header"> Super title </div>
-		 <div id="navbar">Barra del navegador</div>
-		 <div id="leftmenu"> Menu iqz </div>
-		 <div id="content"> Enmedio </div>
-		 <div id="rigthMenu"> Menu der </div>			
-		 <div id="footer"> Pie de página </div>	
-	<p>Este texto es unicamente de prueba para que el siguiente usuario lo pueda modificar. </p>
-	<ol>
-		<li>Pedro Erick Rios Garcia</li>
-		<li>Victor Martinez Martinez</li>
-		<li>Alejandro Medina Alcantara</li>
-	</ol>-->
-	<script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+	
+	<!--Parte III del pie de página:  Derechos y Copyright-->
+	<div class="piedepag3">
+		<div class="container-fluid">
+					&copy; Copyright 2018 - Galapangos Team Inc. Todos los derechos reservados.
+		</div>
+	</div>
+
+	<!--Scripts-->
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.bundle.min.js" integrity="sha384-feJI7QwhOS+hwpX2zkaeJQjeiwlhOP+SdQDqhgvvo1DsjtiSQByFdThsxO669S2D" crossorigin="anonymous"></script>
 </body>
 </html>
