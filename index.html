@@ -30,7 +30,7 @@
 	</header>
 	
 	<!--Barra de Navegación-->
-	<nav class="navbar sticky-top navbar-light" style="background-color: black;">
+	<nav class="navbar sticky-top navbar-light">
 	  <div class="container">
 		  	<a class="nav-link navp" href=".header"> GalMus </a>
 			<li class="nav-item dropdown listanav">
@@ -42,16 +42,24 @@
 		          			<a class="dropdown-item" href="#"> Licencias del Software por tiempo</a>
 		          			<a class="dropdown-item" href="#"> Licencias del Software permanentes</a>
 		       	</div>
-		      </li>
-		  <a class="nav-link" href="#"> Acerca de la organización </a>
-		  <a class="nav-link" href="#"> Contacto </a>
+		    </li>
+		  	<a class="nav-link" href="#"> Acerca de la organización </a>
+		  	<a class="nav-link" href="#"> Contacto </a>
 		    <form class="form-inline my-2 my-lg-0">
-		      <input class="form-control mr-sm-2 formcolo" type="text" placeholder="Buscar">
-		      <button class="btn btn-info my-2 my-sm-0 buscarcolo" type="submit">Buscar</button>
+		      	<input class="form-control mr-sm-2 formcolo" type="text" placeholder="Buscar">
+		      	<button class="btn btn-info my-2 my-sm-0 buscarcolo" type="submit">Buscar</button>
 		    </form>
+		  	<div class="btn-group" role="group">
+			    <button id="btnGroupDrop1" type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Entrar/Registro</button>
+			    	<div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+					    <a class="dropdown-item" href="#">Entrar</a>
+					    <a class="dropdown-item" href="#">Registrarse</a>
+			    	</div>
+			</div>
 	 	</div>
 	</nav>
 	<br>
+
 	<!--Carrusel de imagenes-->
 	<div class="container-fluid">
 		<div class="col-md-12">
@@ -151,40 +159,41 @@
 		</div>
 	</div>
 	<br>
-
+	
 	<!--Parte I del pie de página: Contacto, redes sociales-->
 	<div class="piedepag">
-		<div class="container content">
+		<div class="container">
 			<h2 class="sombras" style="padding-top: 10px; padding-bottom: 2px;"> Contactanos </h2>
 			<hr style="background-color: white">
-		    <div class="row" style="padding-top: 5px; text-align: center;">
-				<div class="col-xs-12 col-sm-3">
+		    <div class="row align-items-center justify-content-center" style="padding-top: 5px; text-align: center;">
+				<div class="col-xs-12 col-sm-3 col-md-1">
 	                <a class="icoFacebook"  href="#"  title="Facebook">
-	                	<img src="imagenes/icofb.png" class="img-fluid icoFacebook"  alt="Facebook">
+	                	<img src="imagenes/icofb.svg" class="img-fluid icoFacebook"  alt="Facebook">
 	                </a>
 	           	</div>
-	            <div class="col-xs-12 col-sm-3">
-	            	<a class="icoGoogle" href="#"  title="Google +">
-	                	<img src="imagenes/icogoogle.png" class="img-fluid icoGoogle" alt="Google +">
-	                </a>
-	            </div>   
-	            <div class="col-xs-12 col-sm-3">
+	           	 <div class="col-xs-12 col-sm-3 col-md-1">
 	            	<a class="icoLinkedin" href="#" title="LinkedIn">
-	            		<img src="imagenes/icolinked.png" class="img-fluid icoLinkedin" alt="LinkedIn">
+	            		<img src="imagenes/icolinked.svg" class="img-fluid icoLinkedin" alt="LinkedIn">
 	            	</a>
 				</div>
-				<div class="col-xs-12 col-sm-3">
+				<div class="col-xs-12 col-sm-3 col-md-1">
 					<a class="icoYoutube" href="#" title="Youtube">
-	                	<img src="imagenes/icoyb.png" class="img-fluid icoYoutube" alt="Youtube">
+	                	<img src="imagenes/icoyb.svg" class="img-fluid icoYoutube" alt="Youtube">
 	                </a>
 				</div>
+	            <div class="col-xs-12 col-sm-3 col-md-1">
+	            	<a class="icoGoogle" href="#"  title="Google +">
+	                	<img src="imagenes/icogoogle.svg" class="img-fluid icoGoogle" alt="Google +">
+	                </a>
+	            </div>   
+					<div class="clearfix visible-sm-block"></div>
 			</div>
 	  	</div>
 	</div>
-	
+
 	<!--Parte II del pie de página:  Informacion sobre toda la website-->
 	<footer id="piedepag2">
-	  <div class="container">
+	  <div class="container ">
 	    <div class="row">
 	      <div class="color-xs-12 col-sm-6 col-md-3">
 	        <!--Column1-->
@@ -202,6 +211,10 @@
 						<hr>
 						Teléfono: (55) 31 47 89 65 07	
 					</li>
+					<hr>
+					<div class="row align-items-center justify-content-center">
+						<a class="btn btn-dark" href="https://www.google.com.mx/maps/place/Universidad+Polit%C3%A9cnica+del+Valle+de+M%C3%A9xico/@19.6426716,-99.1280359,17z/data=!3m1!4b1!4m5!3m4!1s0x85d1f43e59c00a9f:0xe3c992b6aa422e2c!8m2!3d19.6426716!4d-99.1258472" target="_blank" role="button">Ver ubicación</a>
+					</div>
 				</ul>
 			 </address>
 	        </div>
@@ -256,6 +269,8 @@
 	</div>
 
 	<!--Scripts-->
+	<script type="text/javascript" src="scripts/maps.js"></script>
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyApFqEtrtSSwe_fAAB7LZHnONUZuzsLyTY&callback=initMap" async defer></script>
 	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
