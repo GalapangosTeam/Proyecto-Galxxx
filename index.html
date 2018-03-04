@@ -17,6 +17,7 @@
 	<link rel="stylesheet" type="text/css" href="ownstyles/normalize.css">
 	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 	<link href="https://fonts.googleapis.com/css?family=Raleway:400,400i,500,600,700,800&amp;subset=latin-ext" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
 	<title> Galapangos Team | Oficial </title>
 </head>
 <body id="cuerpo">
@@ -30,8 +31,8 @@
 	</header>
 	
 	<!--Barra de Navegación-->
-	<nav class="navbar sticky-top navbar-light">
-	  <div class="container">
+	<nav class="navbar sticky-top navbar-light bg-faded">
+	  <div class="container-fluid">
 		  	<a class="nav-link navp" href=".header"> GalMus </a>
 			<li class="nav-item dropdown listanav">
 		        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Nuestros Productos </a>
@@ -50,8 +51,8 @@
 		      	<button class="btn btn-info my-2 my-sm-0 buscarcolo" type="submit">Buscar</button>
 		    </form>
 		  	<div class="btn-group" role="group">
-			    <button id="btnGroupDrop1" type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Entrar/Registro</button>
-			    	<div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+			    <button id="entrarRegis" type="button" class="btn btn-dark dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="glyphicons glyphicons-user" span class="glyphicons glyphicons-user"></span>E|R</button>
+			    	<div class="dropdown-menu" aria-labelledby="entrarRegis">
 					    <a class="dropdown-item" href="#">Entrar</a>
 					    <a class="dropdown-item" href="#">Registrarse</a>
 			    	</div>
@@ -61,7 +62,7 @@
 	<br>
 
 	<!--Carrusel de imagenes-->
-	<div class="container-fluid">
+	<div class="container">
 		<div class="col-md-12">
 			<div id="Diapos" class="carousel slide" data-ride="carousel">
 				<!-- indicadores -->
@@ -109,57 +110,90 @@
 			</div>
 		</div>
 	</div>
-	
+
 	<!--Contenidos de la pagina en secciones,aside, etc..-->
-	<div class="container content">
-		<br>
-		<section class="main row">
+	<br>
+	<div class="container-fluid">
+		<hr><br>
+		<p class="animated infinite pulse" id="temaprinci">La música es un idioma y aquí aprenderás a leerlo.</p>
+	</div>
+	<div class="container">
+		<br><hr>
+		<section class="row align-items-center justify-content-center">	
 			<article class="col-xs-12 col-sm-8 col-md-9 col-lg-9">
-				<p>
-					<h3>Articulo - Sección</h3>
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae ad aspernatur, nulla, fuga ea officia deserunt! Aspernatur rerum, est vel cumque delectus totam enim voluptates quia, sequi eius neque error. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam, suscipit, culpa. Tempore facere natus assumenda a tempora, at reprehenderit perspiciatis nihil vitae error unde molestiae adipisci amet obcaecati, repellat quam.
-				</p>
+			
+					<h2 class="text-center"> Las Partituras de las Notas Musicales </h2>
+					<br>
+						<p class="notaspar">Las figuras musicales son la representación de las notas en un pentagrama, que también les dan su designada duración. Los sostenidos y bemoles suben o bajan medio tono cada nota. Los compases son las divisiones del pentagrama. Cantar una canción de nuestro cantante favorito, silbar, llevar el ritmo con los pies o tocar de oído... Son unas de las cosas que ayudan a mejorar nuestro oído.Lo más importante es estar bien preparado.</p>
 			</article>
 			<aside class="col-xs-12 col-sm-4 col-md-3 col-lg-3">
-				<p>
-					<h3>Aside</h3>
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio quos fugiat amet praesentium sit minus facilis non at id dignissimos, doloribus dicta recusandae. Corporis, architecto, recusandae non eum laborum dolorum! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum blanditiis accusantium necessitatibus voluptatem aliquam. Unde eveniet sit ratione odio, tempore quibusdam? Suscipit commodi ab officia placeat expedita perspiciatis, rem quae.
-				</p>
+				<div class="container-fluid"><img src="imagenes/partituras.svg" class="img-fluid imgnota animated infinite zoomInDown" alt="partituras"></div>
+				<p class="notaspar"><br>La MÚSICA es la medida métrica en subdivisión, aparte el arte de combinar y ordenar sonidos y silencios en el tiempo, de manera ordenada y estética.</p>
 			</aside>
 		</section>
-
-		<div class="row">
-			<div class="color1  color-xs-12 col-sm-6 col-md-3">
-				<p>
-					<h3>Columna</h3>
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse voluptatem labore, asperiores unde assumenda recusandae dicta blanditiis exercitationem necessitatibus libero, vero deleniti tenetur cum quis, tempora, repudiandae vitae quidem non!
-				</p>
-			</div>
-			<div class=" color-xs-12 col-sm-6 col-md-3">
-				<p>
-					<h3>Columna</h3>
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga aut iure ut placeat nemo beatae quia eos mollitia quas voluptates repellendus quasi aperiam tenetur illo officia, sint ducimus autem! Doloremque!
-				</p>
-			</div>
-			<div class="color1  color-xs-12 col-sm-6 col-md-3">
-				<p>
-					<h3>Columna</h3>
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae temporibus, quaerat fugiat! Unde dolor officia asperiores maxime eius reprehenderit velit voluptates consequuntur aliquam nulla, neque odio facere fuga, necessitatibus libero!
-				</p>
-			</div>
-			<div class="color-xs-12 col-sm-6 col-md-3">
-				<p>
-					<h3>Columna</h3>
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui laudantium, voluptatem delectus nihil! Nihil eveniet pariatur voluptatem doloribus laboriosam ipsum dolores fugiat in magni voluptas! Totam cumque tempore odit aperiam.
-				</p>
-			</div>
-			<div class="clearfix visible-sm-block">
-				
-			</div>
-		</div>
 	</div>
+
 	<br>
-	
+	<!--Informacion sobre el Softwarew-->
+	<div class="container-fluid">
+		<hr><br>
+		<p id="temaprinci">Curso práctico para aprender a leer música (Solfeo)</p>
+		<div class="container">
+			<section class="row align-items-center justify-content-center">	
+				<article class="col-xs-12 col-sm-8 col-md-9 col-lg-9"><br>
+						<h2 class="text-center"> ¿Software en Desarrollo? </h2><br>
+						<p class="notaspar">Debido a la gran necesidad por parte de los profesores de música a innovar su método de enseñanza en la parte de notas musicales con el método de George Dandelot el cual se basa en su manual con el nombre ‘Estudio de las claves Sol’ Fa y Do’ se tiene la necesidad de crear un sistema que ayude a la enseñanza de notas musicales.</p>
+						<div class="container-fluid">
+							<a class="logo"  href="#"  title="Galmus Logo">
+								<img src="imagenes/logo.png" class="img-fluid imgnota logo" alt="partituras">
+							</a>
+						</div>
+				</article>
+			</section>
+		</div>
+	</div>	
+
+	<!--Informacion sobre los desarolladores-->
+	<div class="container-fluid">
+		<hr><br>
+		<p id="temaprinci"> Nuestro equipo de desarrolladores</p>
+		<div class="container">
+			<section class="row align-items-center justify-content-center">	
+				<div class="col-xs-12 col-sm-4 col-md-4 col-lg-4"><br>
+
+				<!--Pedro-->
+				<div class="container-fluid">
+							<a class="peter"  href="#"  title="Galmus Logo">
+								<img src="imagenes/persona.png" class="img-fluid imgnota peter" alt="peter rivers">
+							</a>
+				</div><hr>
+				<p class="nombresdeve"> Pedro Erick RG. </p><br>
+				</div>
+
+				<!--Victor-->
+				<div class="col-xs-12 col-sm-4 col-md-4 col-lg-4"><br>
+				<div class="container-fluid">
+							<a class="vic"  href="#"  title="Galmus Logo">
+								<img src="imagenes/persona.png" class="img-fluid imgnota vic" alt="VisualYukkie">
+							</a>
+				</div><hr>
+				<p class="nombresdeve"> Víctor Vicente Mtz. </p><br>
+				</div>
+
+				<!--Pug Alejandro-->
+				<div class="col-xs-12 col-sm-4 col-md-4 col-lg-4"><br>
+				<div class="container-fluid">
+							<a class="ale"  href="#"  title="Galmus Logo">
+								<img src="imagenes/persona.png" class="img-fluid imgnota ale" alt="Pug">
+							</a>
+				</div><hr>
+				<p class="nombresdeve"> Alejandro Medina A. </p><br>
+				</div>
+			</section>
+		</div>
+	</div>	
+
+	<br>	
 	<!--Parte I del pie de página: Contacto, redes sociales-->
 	<div class="piedepag">
 		<div class="container">
