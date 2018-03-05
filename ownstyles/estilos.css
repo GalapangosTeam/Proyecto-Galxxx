@@ -28,6 +28,10 @@ aside{
 	background-color: #45ADA9;
 }
 
+.dropdown-item{
+	color: blue();
+}
+
 /*
 #gradiente{
 	width: 100%;
