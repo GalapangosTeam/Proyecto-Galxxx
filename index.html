@@ -51,16 +51,68 @@
 		      	<button class="btn btn-info my-2 my-sm-0 buscarcolo" type="submit">Buscar</button>
 		    </form>
 		  	<div class="btn-group" role="group">
-			    <button id="entrarRegis" type="button" class="btn btn-dark dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-user"></i> | <i class="fas fa-edit"></i></button>
+			    <button id="entrarRegis" type="button" class="btn btn-dark dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-user fa-lg"></i> <strong>·</strong> <i class="fas fa-edit fa-lg"></i></button>
 			    	<div class="dropdown-menu" aria-labelledby="entrarRegis">
-					    <a class="dropdown-item dropdounColores" href="#">Entrar al Sistema</a>
-					    <a class="dropdown-item dropdounColores" href="#">Registrarse</a>
+					    <a class="dropdown-item dropdounColores" data-toggle="modal" data-target="#entrarsis">Entrar al Sistema</a>
+					    <a class="dropdown-item dropdounColores" data-toggle="modal" data-target="#registrar">Registrarse</a>
 			    	</div>
 			</div>
 	 	</div>
 	</nav>
 	<br>
+	
+	<!--Ventana de Entrar el Sistema-->
+	<div class="container">
+		<div class="modal fade" id="entrarsis" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+			<div class="modal-dialog">	              
+				<div class="modal-content"> 
+					<div class="modal-header">
+						<h4>Hola esta es mi primer ventana modal</h4>
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+					</div>
+					<div class="modal-body">
+						<label for="nombre">Nombre <span><em>(requerido)</em></span></label>
+						<input type="text" name="nombre" class="form-input" required/>    
+						<label for="apellido">Apellido <span><em>(requerido)</em><</label>
+						<input type="text" name="apellido" class="form-input" required/>               
+						<label for="email">Email <span><em>(requerido)</em></span></label>
+						<input type="email" name="email" class="form-input" />    
+					</div>
+					<div class="modal-footer">
+						<center><input class="form-btn" name="submit" type="submit" value="Enviar"/></center>
+						<button type="button" class="btn btn-primary" data-dismiss="modal">Cerrar</button>
+					</div>
+				</div> 
+			</div>
+		</div>
+	</div>
 
+	<!--Ventana de Registrarse-->
+	<div class="container">
+		<div class="modal fade" id="registrar" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+			<div class="modal-dialog">	              
+				<div class="modal-content"> 
+					<div class="modal-header">
+						<h4>Hola esta es mi primer ventana modal</h4>
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+					</div>
+					<div class="modal-body">
+						<label for="nombre">Nombre <span><em>(requerido)</em></span></label>
+						<input type="text" name="nombre" class="form-input" required/>    
+						<label for="apellido">Apellido <span><em>(requerido)</em><</label>
+						<input type="text" name="apellido" class="form-input" required/>               
+						<label for="email">Email <span><em>(requerido)</em></span></label>
+						<input type="email" name="email" class="form-input" />    
+					</div>
+					<div class="modal-footer">
+						<center><input class="form-btn" name="submit" type="submit" value="Enviar"/></center>
+						<button type="button" class="btn btn-primary" data-dismiss="modal">Cerrar</button>
+					</div>
+				</div> 
+			</div>
+		</div>
+	</div>
+	
 	<!--Carrusel de imagenes-->
 	<div class="container">
 		<div class="col-md-12">
