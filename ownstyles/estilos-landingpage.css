@@ -1,0 +1,436 @@
+.enlacespie:link { 
+	color: rgb(246, 162, 80); 
+	text-decoration: none; 
+}
+.enlacespie:visited { 
+	color:rgb(212, 218, 229);
+	text-decoration: none; 
+}
+.enlacespie:hover { 
+	color:#a4e6e3;
+	text-decoration: none; 
+}
+.enlacespie:active { 
+	color: rgb(246, 162, 80); 
+	text-decoration: underline; 
+}
+.listanav{
+	display:inline-block;
+    *display:inline; /* para navegadores antiguos y IE que no cogen inline-block */
+    zoom:1; /* para navegadores antiguos y IE que no cogen inline-block */
+}
+.btn:active{
+    background:#a4e6e3;
+}
+#cuerpo{
+	background-color: white;
+	font-family: 'Raleway', sans-serif;
+	/*background: linear-gradient(-45deg, black, white,gray);
+	background-size: 400% 400%;
+	-webkit-animation: Gradient 15s ease infinite;
+	-moz-animation: Gradient 15s ease infinite;
+	-o-animation: Gradient 15s ease infinite;*/
+}
+#logo{
+	width: 30%;
+    height: 30%;
+}
+.header{
+	background-color: #6ECBC7;
+	color: white;
+	font-size: 100px;
+	height: 160px;
+	text-align: center;
+}
+.piedepag{
+	/*-moz-box-shadow: 0px 1px 13px 4px rgba(0,0,0,0.75);
+	-ms-box-shadow: 0px 1px 13px 4px rgba(0,0,0,0.75);
+	-o-box-shadow: 0px 1px 25px 4px rgba(0,0,0,0.26);
+	-webkit-box-shadow: 0px 1px 13px 4px rgba(0,0,0,0.75);*/
+	-webkit-box-shadow: 0px -9px 15px -1px rgba(0,0,0,0.65);
+	-moz-box-shadow: 0px -9px 15px -1px rgba(0,0,0,0.65);
+	box-shadow: 0px -9px 15px -1px rgba(0,0,0,0.65);
+	background-color: #45ADA9;
+	/*-webkit-box-shadow: 0px 1px 25px 4px rgba(0,0,0,0.26);
+	box-shadow: 0px 1px 13px 4px rgba(0,0,0,0.75);
+	box-shadow: 0px 1px 25px 4px rgba(0,0,0,0.26);*/
+	color: white;
+	height: 190px;
+	text-align: center;
+}
+.iconredes{
+	padding-top: 5px;
+}
+#piedepag2{
+	/*-moz-box-shadow: 0px 1px 13px 4px rgba(0,0,0,0.75);
+	-ms-box-shadow: 0px 1px 13px 4px rgba(0,0,0,0.75);
+	-o-box-shadow: 0px 1px 13px 4px rgba(0,0,0,0.75);
+	-webkit-box-shadow: 0px 1px 13px 4px rgba(0,0,0,0.75);
+	box-shadow: 0px 1px 13px 4px rgba(0,0,0,0.75);*/
+	-webkit-box-shadow: 0px -6px 23px -2px rgba(0,0,0,0.59);
+	-moz-box-shadow: 0px -6px 23px -2px rgba(0,0,0,0.59);
+	box-shadow: 0px -6px 23px -2px rgba(0,0,0,0.59);
+	background-color:#299591;
+	color: white;
+	font-size: 18px;
+	text-align: center;
+}
+.piedepag2{
+	background-color:#299591;
+	color: white;
+	font-size: 18px;
+	text-align: justify;
+}
+.piedepag3{
+	-moz-box-shadow: 0px 1px 25px 4px rgba(0,0,0,0.26);
+	-ms-box-shadow: 0px 1px 25px 4px rgba(0,0,0,0.26);
+	-o-box-shadow: 0px 1px 25px 4px rgba(0,0,0,0.26);
+	-webkit-box-shadow: 0px 1px 25px 4px rgba(0,0,0,0.26);
+	box-shadow: 0px 1px 13px 4px rgba(0,0,0,0.75);
+	box-shadow: 0px 1px 25px 4px rgba(0,0,0,0.26);
+	background-color:#0E8682;
+	color: white;
+	font-size: 19px;
+	line-height:60px;
+	text-align: center;
+}
+.main{
+	background-color: white;
+}
+.nav-link {
+	color: white;
+	font-size: 20px;
+}
+.nav-link:hover {
+	color: #a4e6e3;
+}
+.navp {
+	font-size: 25px;
+}
+.navbar{
+	-moz-box-shadow: 0px 1px 25px 4px rgba(0,0,0,0.26);
+	-ms-box-shadow: 0px 1px 25px 4px rgba(0,0,0,0.26);
+	-o-box-shadow: 0px 1px 25px 4px rgba(0,0,0,0.26);
+	-webkit-box-shadow: 0px 1px 25px 4px rgba(0,0,0,0.26);
+	background-color: black;
+	box-shadow: 0px 1px 13px 4px rgba(0,0,0,0.75);
+	box-shadow: 0px 1px 25px 4px rgba(0,0,0,0.26);
+}
+.row{
+	text-align: justify;
+}
+#temaprinci{
+	font-size: 40px;
+	text-align: center;
+
+}
+.notaspar{
+	text-align: justify;
+ 	font-size: 22px;
+}
+.nombresdeve{
+	text-align: center;
+ 	font-size: 25px;
+}
+}
+.imgnota{
+	width: 50%;
+	height: 50%;
+	display:block;
+	margin:auto;
+}
+.logo:hover{
+	-webkit-transform: scale(0.9);
+	opacity: 3.8;
+	transition: .5s ease;
+    -moz-transform: scale(0.9);
+    -ms-transform: scale(0.9);
+    -o-transform: scale(0.9);
+    transform: scale(0.9);
+}
+hr{
+	background-color: rgb(230, 230, 230);
+}
+/* VENTANA MODAL */
+
+.city {display:none}
+/*
+@import "compass/css3";
+
+$body-bg: #c1bdba;
+$form-bg: #13232f;
+$white: #ffffff;
+
+$main: #1ab188;
+$main-light: lighten($main,5%);
+$main-dark: darken($main,5%);
+
+$gray-light: #a0b3b0;
+$gray: #ddd;
+
+$thin: 300;
+$normal: 400;
+$bold: 600;
+$br: 4px;
+
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+html {
+	overflow-y: scroll; 
+}
+
+furmulario {
+  background:$body-bg;
+  font-family: 'Titillium Web', sans-serif;
+}
+
+a {
+  text-decoration:none;
+  color:$main;
+  transition:.5s ease;
+  &:hover {
+    color:$main-dark;
+  }
+}
+
+.formulario {
+  background:rgba($form-bg,.9);
+  padding: 40px;
+  max-width:600px;
+  margin:40px auto;
+  border-radius:$br;
+  box-shadow:0 4px 10px 4px rgba($form-bg,.3);
+}
+
+.tabla-opcion {
+  list-style:none;
+  padding:0;
+  margin:0 0 40px 0;
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  li a {
+    display:block;
+    text-decoration:none;
+    padding:15px;
+    background:rgba($gray-light,.25);
+    color:$gray-light;
+    font-size:20px;
+    float:left;
+    width:50%;
+    text-align:center;
+    cursor:pointer;
+    transition:.5s ease;
+    &:hover {
+      background:$main-dark;
+      color:$white;
+    }
+  }
+  .activa a {
+    background:$main;
+    color:$white;
+  }
+}
+
+.tabla-contenido > div:last-child {
+  display:none;
+}
+
+
+h1 {
+  text-align:center;
+  color:$white;
+  font-weight:$thin;
+  margin:0 0 40px;
+}
+
+label {
+  position:absolute;
+  transform:translateY(6px);
+  left:13px;
+  color:rgba($white,.5);
+  transition:all 0.25s ease;
+  -webkit-backface-visibility: hidden;
+  pointer-events: none;
+  font-size:22px;
+  .req {
+  	margin:2px;
+  	color:$main;
+  }
+}
+
+label.activo {
+  transform:translateY(50px);
+  left:2px;
+  font-size:14px;
+  .req {
+    opacity:0;
+  }
+}
+
+label.highlight {
+	color:$white;
+}
+
+input, textarea {
+  font-size:22px;
+  display:block;
+  width:100%;
+  height:100%;
+  padding:5px 10px;
+  background:none;
+  background-image:none;
+  border:1px solid $gray-light;
+  color:$white;
+  border-radius:0;
+  transition:border-color .25s ease, box-shadow .25s ease;
+  &:focus {
+		outline:0;
+		border-color:$main;
+  }
+}
+
+textarea {
+  border:2px solid $gray-light;
+  resize: vertical;
+}
+
+.seccion-general {
+  position:relative;
+  margin-bottom:40px;
+}
+
+.seccion-superior {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+
+  > div {
+    float:left;
+    width:48%;
+    margin-right:4%;
+    &:last-child { 
+      margin:0;
+    }
+  }
+}
+
+.button {
+  border:0;
+  outline:none;
+  border-radius:0;
+  padding:15px 0;
+  font-size:2rem;
+  font-weight:$bold;
+  text-transform:uppercase;
+  letter-spacing:.1em;
+  background:$main;
+  color:$white;
+  transition:all.5s ease;
+  -webkit-appearance: none;
+  &:hover, &:focus {
+    background:$main-dark;
+  }
+}
+
+.button-block {
+  display:block;
+  width:100%;
+}
+
+.olvidada {
+  margin-top:-20px;
+  text-align:right;
+}*/
+
+/*
+@-webkit-keyframes Gradient {
+	0% {
+		background-position: 0% 50%
+	}
+	50% {
+		background-position: 100% 50%
+	}
+	100% {
+		background-position: 0% 50%
+}
+}
+@-moz-keyframes Gradient {
+	0% {
+		background-position: 0% 50%
+	}
+	50% {
+		background-position: 100% 50%
+	}
+	100% {
+		background-position: 0% 50%
+}
+}
+@-o-keyframes Gradient {
+	0% {
+		background-position: 0% 50%
+	}
+	50% {
+		background-position: 100% 50%
+	}
+	100% {
+		background-position: 0% 50%
+}
+}
+/*=========================
+  Iconos
+ ================= */
+.icoFacebook:hover{
+	-webkit-transform: scale(2.0);
+	opacity: 3.8;
+	transition: .5s ease;
+    -moz-transform: scale(2.0);
+    -ms-transform: scale(2.0);
+    -o-transform: scale(2.0);
+    transform: scale(2.0);
+}
+.icoGoogle:hover{
+	-webkit-transform: scale(2.0);
+	opacity: 3.8;
+	transition: .5s ease;
+    -moz-transform: scale(2.0);
+    -ms-transform: scale(2.0);
+    -o-transform: scale(2.0);
+    transform: scale(2.0);
+}
+.icoLinkedin:hover{
+	-webkit-transform: scale(2.0);
+	opacity: 3.8;
+	transition: .5s ease;
+    -moz-transform: scale(2.0);
+    -ms-transform: scale(2.0);
+    -o-transform: scale(2.0);
+    transform: scale(2.0);
+}
+.icoYoutube:hover{
+	-webkit-transform: scale(2.0);
+	opacity: 3.8;
+	transition: .5s ease;
+    -moz-transform: scale(2.0);
+    -ms-transform: scale(2.0);
+    -o-transform: scale(2.0);
+    transform: scale(2.0);
+}
+.sombras{
+	text-shadow: 0px -3px 8px #000000;
+}
+#mapa{
+   width: 100%;
+   background-color: grey;
+   height: 400px;
+}
+.dropdounColores:active{
+      background-color:#a4e6e3 !important;
+      color: black !important;
+}
