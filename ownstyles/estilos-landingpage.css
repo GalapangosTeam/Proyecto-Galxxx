@@ -19,6 +19,10 @@
     *display:inline; /* para navegadores antiguos y IE que no cogen inline-block */
     zoom:1; /* para navegadores antiguos y IE que no cogen inline-block */
 }
+.listabajo{
+	width: 100%;
+    float: none;
+}
 .btn:active{
     background:#a4e6e3;
 }
@@ -35,7 +39,7 @@
 	width: 30%;
     height: 30%;
 }
-.header{
+#header{
 	background-color: #6ECBC7;
 	color: white;
 	font-size: 100px;
@@ -115,6 +119,9 @@
 	background-color: black;
 	box-shadow: 0px 1px 13px 4px rgba(0,0,0,0.75);
 	box-shadow: 0px 1px 25px 4px rgba(0,0,0,0.26);
+}
+#id01{
+	display: block;
 }
 .row{
 	text-align: justify;
@@ -235,4 +242,35 @@ hr{
 .dropdounColores:active{
       background-color:#a4e6e3 !important;
       color: black !important;
+}
+/*Reglas para el estilo de las notas al explotar alñ dar click en cualquier parte
+del body*/
+.notasboom{
+    position: absolute;
+    width: 40px;
+    height: 40px;
+}
+.nota_1{
+ 	-webkit-transform: rotate(+15deg);
+ 	-moz-transform: rotate(+15deg);
+ 	-ms-transform: rotate(+15deg);
+ 	-o-transform: rotate(+15deg);
+ 	transform: rotate(+15deg);
+}
+.nota_2{
+ 	-webkit-transform: rotate(-30deg);
+ 	-moz-transform: rotate(-30deg);
+ 	-ms-transform: rotate(-30deg);
+ 	-o-transform: rotate(-30deg);
+ 	transform: rotate(-30deg);
+}
+.nota_3{
+ 	-webkit-transform: rotate(-45deg);
+ 	-moz-transform: rotate(-45deg);
+ 	-ms-transform: rotate(-45deg);
+ 	-o-transform: rotate(-45deg);
+ 	transform: rotate(-45deg);
+}
+.city{
+	display: none;
 }
