@@ -11,18 +11,20 @@ function initMap() {
 }
 
 /*VENTANA MODAL*/
-document.getElementsByClassName("tablink")[0].click();
-function opcModal(evt, nombre) {
-  var i, x, tablinks;
+document.getElementsByClassName("enlaceOpcion")[0].click();
+
+function opcModal(evt, opcion) {
+  var i, x, enlaceOpcion;
   x = document.getElementsByClassName("opcion");
   for (i = 0; i < x.length; i++) {
     x[i].style.display = "none";
   }
-  tablinks = document.getElementsByClassName("tablink");
+
+  enlaceOpcion = document.getElementsByClassName("enlaceOpcion");
   for (i = 0; i < x.length; i++) {
-    tablinks[i].classList.remove("w3-light-grey");
+     enlaceOpcion[i].classList.remove("w3-light-grey");
   }
-  document.getElementById(nombre).style.display = "block";
+  document.getElementById(opcion).style.display = "block";
   evt.currentTarget.classList.add("w3-light-grey");
 }
 /* CALENDARIO PARA REGISTRO*/
@@ -37,5 +39,4 @@ $(function hacerBusqueda() {
   $(".buscarcolo").autocomplete({
   source: availableTags
   });
-
 });
