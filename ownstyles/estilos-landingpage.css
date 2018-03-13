@@ -29,11 +29,6 @@
 #cuerpo{
 	background-color: white;
 	font-family: 'Raleway', sans-serif;
-	/*background: linear-gradient(-45deg, black, white,gray);
-	background-size: 400% 400%;
-	-webkit-animation: Gradient 15s ease infinite;
-	-moz-animation: Gradient 15s ease infinite;
-	-o-animation: Gradient 15s ease infinite;*/
 }
 #logo{
 	width: 30%;
@@ -111,7 +106,7 @@
 .navp {
 	font-size: 25px;
 }
-.navbar{
+nav.navbar{
 	-moz-box-shadow: 0px 1px 25px 4px rgba(0,0,0,0.26);
 	-ms-box-shadow: 0px 1px 25px 4px rgba(0,0,0,0.26);
 	-o-box-shadow: 0px 1px 25px 4px rgba(0,0,0,0.26);
@@ -119,9 +114,9 @@
 	background-color: black;
 	box-shadow: 0px 1px 13px 4px rgba(0,0,0,0.75);
 	box-shadow: 0px 1px 25px 4px rgba(0,0,0,0.26);
-}
-#id01{
-	display: block;
+	position: -webkit-sticky;
+  	position: sticky;
+  	top: 15px;
 }
 .row{
 	text-align: justify;
@@ -157,40 +152,6 @@
 }
 hr{
 	background-color: rgb(230, 230, 230);
-}
-/*
-@-webkit-keyframes Gradient {
-	0% {
-		background-position: 0% 50%
-	}
-	50% {
-		background-position: 100% 50%
-	}
-	100% {
-		background-position: 0% 50%
-}
-}
-@-moz-keyframes Gradient {
-	0% {
-		background-position: 0% 50%
-	}
-	50% {
-		background-position: 100% 50%
-	}
-	100% {
-		background-position: 0% 50%
-}
-}
-@-o-keyframes Gradient {
-	0% {
-		background-position: 0% 50%
-	}
-	50% {
-		background-position: 100% 50%
-	}
-	100% {
-		background-position: 0% 50%
-}
 }
 /*=========================
   Iconos
@@ -272,5 +233,8 @@ del body*/
  	transform: rotate(-45deg);
 }
 .city{
+
+}
+#id01{
 	display: none;
 }
