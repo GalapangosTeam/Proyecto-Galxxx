@@ -52,90 +52,94 @@
 		    <input class="form-control mr-sm-2 formcolo" type="text" placeholder="Buscar">
 		    <button class="btn btn-info my-2 my-sm-0 buscarcolo" type="submit">Buscar</button>
 		</form>
-		<button class="btn btn-dark" type="button" data-toggle="modal" data-target="#id01">
+		<button class="btn btn-dark" type="button" data-toggle="modal" onclick="document.getElementById('id01').style.display='block'">
 			<i class="fas fa-user fa-lg"></i>
-			<strong>·</strong>
-			<i class="fas fa-edit fa-lg"></i>
+			<strong>ENTRAR</strong>
+			
 		</button>
 	</nav>
 	<br>
 	
 	 <!--Ventana modal-->
-  	<div class="container vtn-modal"> 
+  	<div class="containerl"> 
     	<div id="id01" class="w3-modal">
-	     	<div class="w3-modal-content w3-animate-right">
+	     	<div class="w3-modal-content w3-animate-right ">
+	      		
 	      		<header class="w3-container w3-black"> 
-	       			<span onclick="document.getElementById('id01').style.display='none'" class="w3-button w3-blue w3-xlarge w3-display-topright">&times;
+	       			<span onclick="document.getElementById('id01').style.display='none'" class="w3-button w3-black w3-hover-aqua w3-large w3-display-topright">X
 	       			</span>
 	       			<h2>Bienvenido</h2>
 	    		</header>
+		    	
 		    	<div class="w3-bar w3-border-bottom">
-			    	<button class="tablink w3-bar-item w3-button" onclick="opcModal(event,'registrarse')">Registrarse
+			    	<button class="enlaceOpcion w3-bar-item w3-button" onclick="opcModal(event,'registrarse')">Registrarse
 			    	</button>
-			    	<button class="tablink w3-bar-item w3-button" onclick="opcModal(event,'iniciarSesion')">Iniciar Sesión
+			    	<button class="enlaceOpcion w3-bar-item w3-button" onclick="opcModal(event,'iniciarSesion')">Iniciar Sesión
 			    	</button>
 		    	</div>
-		 	
+		 		
 				<!-- SECCION PARA REGISTRARSE --> 
 			    <div id="registrarse" class="w3-container opcion">
 				 	<h1 class="text-center">Formulario de registro.</h1>
+				    <form>
 				    <label class="control-label col-xs-2">
 				    	<strong>Correo Electronico:</strong>
 				    	<span class="req">*</span>
 				    </label>
+				 	<input class="ent-modal" type="email"  required minlenght="1" maxlength="30" class="form-control" id="inputEmail" placeholder="Correo Electronico"><br>
 				 	
-				 	<input type="email" required class="form-control" id="inputEmail" placeholder="Correo Electronico">
 				 	<label class="control-label col-xs-2">
 				 		<strong>Contraseña:</strong>
 				 		<span class="req">*</span>
 				 	</label>
-				 	
-				 	<input type="password" required class="form-control" id="inputPassword" placeholder="Contraseña">
+				 	<input type="password" required minlenght="8" maxlength="16" pattern="[A-Z]{1}[a-z]{1}[0-9]{1}" class="ent-modal" id="inputPassword" placeholder="Contraseña"><br>
+				    
 				    <label class="control-label col-xs-3">
 				    	<strong>Confirmar Contraseña:</strong>
 				    	<span class="req">*</span>
-				    </label>
-				 
-				    <input type="password" required class="form-control" placeholder="Confirmar Contraseña">
+				    </label>   
+				    <input type="password" required minlenght="8" maxlength="16" pattern="[A-Z]{1}[a-z]{1}[0-9]{1}" class="ent-modal" placeholder="Confirmar Contraseña"><br>
+				    
 				    <label class="control-label col-xs-3">
 				    	<strong>Nombre(s):</strong>
 				    	<span class="req">*</span>
 				    </label>
-				 
-				 	<input type="text" required class="form-control" placeholder="Nombre">
+				 	<input type="text" required minlenght="1" maxlength="30" class="ent-modal" maxlength="30" placeholder="Nombre"><br>
+				    
 				    <label class="control-label col-xs-3">
 				    	<strong>Apellido(s):</strong>
 				    	<span class="req">*</span>
 				    </label>
-				    
-				    <input type="text" required class="form-control" placeholder="Apellido">
+				    <input type="text" required minlenght="1" maxlength="30" class="ent-modal" placeholder="Apellido"><br>
+
 				    <label class="control-label col-xs-3">
 				    	<strong>Telefono:</strong>
 				    </label>
-				 	
-				    <input type="tel" required class="form-control" placeholder="Telefono">
+				    <input type="number" required minlenght="8" maxlength="10" class="ent-modal" placeholder="Telefono"><br>
+
 				    <label class="control-label col-xs-3">
 				    	<strong>F. Nacimiento:</strong>
 				    	<span class="req">*</span>
-				    </label>    
-				    <br>
-				    <input id="datepicker" required width="350"/>
+				    </label>     	
+				    <input id="datepicker" required width="350"/><br>
+
+				    </form>
 				    <label class="control-label col-xs-3">
 				    	<strong>Genero:</strong>
 				    	<span class="req">*</span>
-				    </label>
+				    </label><br>
 				 
 				    <label class="radio-inline">
 				    	<input type="radio" required name="genderRadios" value="male">  Maculino  
-					</label>
+					</label><br>
 				    
 				    <label class="radio-inline">
 				    	<input type="radio" required name="genderRadios" value="female">  Femenino  
-					</label>
+					</label><br>
 				    
 				    <label class="radio-inline">
 				    	<input type="radio" required name="genderRadios" value="male">  Otro  
-					</label>
+					</label><br>
 				    
 				    <label class="radio-inline">
 				        <input type="radio" required name="genderRadios" value="female">  Prefiero no decirlo  
@@ -153,17 +157,21 @@
 			<!-- SECCION PARA INICIAR SESION --> 
 			    <div id="iniciarSesion" class="w3-container opcion">
 			       	<h1>Entrar</h1>
+			       	<form>
 			       	<label>Correo Electronico<span class="req">*</span></label> 
-			        <input type="email"required autocomplete="off"/><br>
+			        <input class="ent-modal" type="email"required autocomplete="off"/><br>
 			            <label>Contraseña<span class="req">*</span></label>
-			            <input type="password"required autocomplete="off"/><br>
+			            <input class="ent-modal" type="password"required autocomplete="off"/><br>
 			            <p class="olvidada"><a href="#">Olvidaste tu contraseña?</a></p>
+			        </form>
 			            <input class="btn btn-primary" type="button" value="Entrar">
 			    </div>
+			    	
 			    <div class="w3-container w3-light-grey w3-padding">
 			        <button class="w3-button w3-right w3-white w3-border" onclick="document.getElementById('id01').style.display='none'">Cerrar
 			        </button>
 			    </div>
+			
     		</div>
     	</div>
     </div>

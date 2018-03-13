@@ -153,7 +153,46 @@ hr{
 }
 /* VENTANA MODAL */
 
-.city {display:none}
+.ent-modal{
+  width:500px;
+  height:30px;
+  white-space: pre
+}
+
+input:required:invalid { 
+border: 1px solid red;
+}
+ 
+input:required:valid {
+border: 1px solid green;
+}
+
+input:invalid {
+border: 1px solid red;
+}
+ 
+/* Estilo por defecto */
+ 
+input:valid { 
+border: 1px solid green;
+}
+
+form {
+    width: 400px;
+    font: normal bold 12px Verdana, Arial;
+}
+
+form label {
+    display: inline-block;
+    width: 150px;
+}
+
+form input {
+    display: inline-block;
+    width: 200px;
+    margin-bottom: 10px;
+}
+
 /*
 @import "compass/css3";
 
