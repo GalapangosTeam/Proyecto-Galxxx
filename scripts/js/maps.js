@@ -19,24 +19,15 @@ function opcModal(evt, opcion) {
   for (i = 0; i < x.length; i++) {
     x[i].style.display = "none";
   }
-
   enlaceOpcion = document.getElementsByClassName("enlaceOpcion");
   for (i = 0; i < x.length; i++) {
-     enlaceOpcion[i].classList.remove("w3-light-grey");
+    enlaceOpcion[i].classList.remove("w3-light-grey");
   }
   document.getElementById(opcion).style.display = "block";
   evt.currentTarget.classList.add("w3-light-grey");
 }
 /* CALENDARIO PARA REGISTRO*/
+
 $('#datepicker').datepicker({
             uiLibrary: 'bootstrap4'
-});
-
-/*Busqueda*/
-$(function hacerBusqueda() {
-  // Variable que recoge el resultado de la consulta sobre la tabla Provincias, Jquery trabajará sobre este resultado para dinamizar el funcionamiento.
-  var availableTags = [<?php echo $opciones ?>];
-  $(".buscarcolo").autocomplete({
-  source: availableTags
-  });
 });

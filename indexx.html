@@ -28,16 +28,16 @@
 	<div class="animated zoomIn fuente">	
 
 		<!-- Encabezado, logo del la organización-->
-		<header>
+		<header id="header">
 			<!--Logo y cintura del logo-->
 			<div class="container">
-				<img id="logo" src="imagenes/LandingPage/Logomine.png" alt="Logo Galmus">
-				<!--h1 class="header"> GalMus </h1-->
+				<!--img id="logo" src="imagenes/LandingPage/Logomine.png" alt="Logo Galmus"-->
+				<h1> GalMus </h1>
 			</div>
 		</header>
 
 		<!--Barra de Navegación-->
-		<nav class="navbar sticky-top navbar-light bg-faded">
+		<nav class="navbar navbar-light bg-faded">
 				<a class="nav-link navp" href="#header"> GalMus </a>
 				<li class="nav-item dropdown listanav">
 					<div class="nav-link dropdown-toggle" id="midropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Productos </div>
@@ -48,28 +48,30 @@
 					    </ul>
 				</li>
 				<a class="nav-link" href="acerca.html"> Acerca de la organización </a>
-				<a class="nav-link" href="contacto.html"> Contacto </a>
+				<a class="nav-link" href="acerca.html#contact"> Contacto </a>
 				<a class="nav-link" href="mision.html"> Misión </a>
 				<a class="nav-link" href="vision.html"> Visión </a>
 				<form class="form-inline my-2 my-lg-0">
 				    <input class="form-control mr-sm-2 formcolo" type="text" placeholder="Buscar">
-				    <button class="btn btn-info my-2 my-sm-0 buscarcolo" type="submit">Buscar</button>
+				    <button class="btn btn-outline-warning" my-2 my-sm-0 buscarcolo" type="submit">Buscar</button>
 				</form>
 				<button class="btn btn-dark" type="button" data-toggle="modal" onclick="document.getElementById('id01').style.display='block'">
 					<i class="fas fa-user fa-lg"></i>
 					<strong>Iniciar Sesión</strong>
 				</button>
 		</nav>
+		<br>
 		
 		<!--Ventana modal-->
-	  	<div class="containerl"> 
-	    	<div id="id01" class="w3-modal">
+	  	<div class="container"> 
+	    	<div id="id01" class="w3-modal ">
 		     	<div class="w3-modal-content w3-animate-right">
 		      		<header class="w3-container w3-black"> 
 		       			<span onclick="document.getElementById('id01').style.display='none'" class="w3-button w3-black w3-hover-aqua w3-large w3-display-topright">X
 		       			</span>
 		       			<h2>Bienvenido</h2>
 		    		</header>
+
 			    	<div class="w3-bar w3-border-bottom">
 				    	<button class="enlaceOpcion w3-bar-item w3-button" onclick="opcModal(event,'registrarse')">Registrarse
 				    	</button>
@@ -319,7 +321,7 @@
 			<!--Parte I del pie de página: Contacto, redes sociales-->
 			<div class="piedepag">
 				<div class="container">
-					<h2 class="sombras" style="padding-top: 10px; padding-bottom: 2px;"> Contactanos </h2>
+					<h2 class="sombras" style="padding-top: 10px; padding-bottom: 2px;"> Siguenos </h2>
 					<hr style="background-color: white">
 				    <div class="row align-items-center justify-content-center" style="padding-top: 5px; text-align: center;">
 						<div class="col-xs-12 col-sm-3 col-md-1">
@@ -369,7 +371,7 @@
 							</li>
 							<hr>
 							<div class="row align-items-center justify-content-center">
-								<a class="btn btn-dark" href="https://www.google.com.mx/maps/place/Universidad+Polit%C3%A9cnica+del+Valle+de+M%C3%A9xico/@19.6426716,-99.1280359,17z/data=!3m1!4b1!4m5!3m4!1s0x85d1f43e59c00a9f:0xe3c992b6aa422e2c!8m2!3d19.6426716!4d-99.1258472" target="_blank" role="button">Ver ubicación</a>
+								<a class="btn btn-warning" href="acerca.html#map" target="_blank" role="button"><strong>Ver ubicación</strong></a>
 							</div>
 						</ul>
 					 </address>
