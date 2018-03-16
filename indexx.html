@@ -25,51 +25,52 @@
 	<title> Galapangos Team | Oficial </title>
 </head>
 <body id="cuerpo">
-	<div class="animated zoomIn fuente">	
+	<div class="animated fadeIn fuente">	
 
 		<!-- Encabezado, logo del la organización-->
-		<header>
+		<header class="header">
 			<!--Logo y cintura del logo-->
 			<div class="container">
-				<img id="logo" src="imagenes/LandingPage/Logomine.png" alt="Logo Galmus">
-				<!--h1 class="header"> GalMus </h1-->
+				<img src="imagenes/LandingPage/isotipo-tortuga-ver-3.png" alt="Isotipo de Galmus" class="img-fluid" style="width: 22%; height: 22%; vertical-align: middle;">GalMus
 			</div>
 		</header>
 
 		<!--Barra de Navegación-->
-		<nav class="navbar sticky-top navbar-light bg-faded">
-				<a class="nav-link navp" href="#header"> GalMus </a>
+		<nav class="navbar sticky-top navbar-light">
+				<a class="nav-link navp" href="#"> GalMus </a>
 				<li class="nav-item dropdown listanav">
 					<div class="nav-link dropdown-toggle" id="midropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Productos </div>
 					    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-						    <li><a class="dropdown-item dropdounColores" href="#"> GalMus Software </a></li>
+						    <li><a class="nav-link dropdown-item dropdounColores" href="#"> GalMus Software </a></li>
 						    <div class="dropdown-divider"></div>
-						    <li><a class="dropdown-item dropdounColores" href="#"> Material didáctico </a></li>
+						    <li><a class="nav-link dropdown-item dropdounColores" href="#"> Material didáctico </a></li>
 					    </ul>
 				</li>
-				<a class="nav-link" href="acerca.html"> Acerca de la organización </a>
-				<a class="nav-link" href="contacto.html"> Contacto </a>
+				<a class="nav-link" href="acerca.html"> Acerca de </a>
+				<a class="nav-link" href="acerca.html#contact"> Contacto </a>
 				<a class="nav-link" href="mision.html"> Misión </a>
 				<a class="nav-link" href="vision.html"> Visión </a>
 				<form class="form-inline my-2 my-lg-0">
-				    <input class="form-control mr-sm-2 formcolo" type="text" placeholder="Buscar">
-				    <button class="btn btn-info my-2 my-sm-0 buscarcolo" type="submit">Buscar</button>
+				    <input class="form-control mr-sm-2" type="text" placeholder="Buscar">
+				    <button id="btnbuscar" class="btn btn-outline-warning" type="submit">Buscar</button>
 				</form>
-				<button class="btn btn-dark" type="button" data-toggle="modal" onclick="document.getElementById('id01').style.display='block'">
+				<button id ="btnregis" class="btn" type="button" data-toggle="modal" onclick="document.getElementById('id01').style.display='block'">
 					<i class="fas fa-user fa-lg"></i>
-					<strong>Iniciar Sesión</strong>
+					<strong>Sesión</strong>
 				</button>
 		</nav>
+		<br>
 		
 		<!--Ventana modal-->
-	  	<div class="containerl"> 
-	    	<div id="id01" class="w3-modal">
+	  	<div class="container"> 
+	    	<div id="id01" class="w3-modal ">
 		     	<div class="w3-modal-content w3-animate-right">
 		      		<header class="w3-container w3-black"> 
 		       			<span onclick="document.getElementById('id01').style.display='none'" class="w3-button w3-black w3-hover-aqua w3-large w3-display-topright">X
 		       			</span>
 		       			<h2>Bienvenido</h2>
 		    		</header>
+
 			    	<div class="w3-bar w3-border-bottom">
 				    	<button class="enlaceOpcion w3-bar-item w3-button" onclick="opcModal(event,'registrarse')">Registrarse
 				    	</button>
@@ -87,40 +88,40 @@
 						    	<span class="req">*</span>
 						    </label>
 						 	
-						 	<input class="ent-modal" type="email" required minlenght="1" maxlength="30" class="form-control" id="inputEmail" placeholder="Correo Electronico"><br>
+						 	<input class="ent-modal .estilosinputs" type="email" required minlenght="1" maxlength="30" class="form-control" id="inputEmail" placeholder="Correo Electronico"><br>
 						 	<label class="control-label col-xs-2">
 						 		<strong>Contraseña:</strong>
 						 		<span class="req">*</span>
 						 	</label>
 						 	
-						 	<input type="password" required minlenght="8" maxlength="16" pattern="[A-Z]{1}[a-z]{1}[0-9]{1}" class="ent-modal" id="inputPassword" placeholder="Contraseña"><br>
+						 	<input type="password" required minlenght="8" maxlength="16" pattern="[A-Z]{1}[a-z]{1}[0-9]{1}" class="ent-modal estilosinputs" id="inputPassword" placeholder="Contraseña"><br>
 						    <label class="control-label col-xs-3">
 						    	<strong>Confirmar Contraseña:</strong>
 						    	<span class="req">*</span>
 						    </label>
-            				<input type="password" required minlenght="8" maxlength="16" pattern="[A-Z]{1}[a-z]{1}[0-9]{1}" class="ent-modal" placeholder="Confirmar Contraseña"><br>
+            				<input type="password" required minlenght="8" maxlength="16" pattern="[A-Z]{1}[a-z]{1}[0-9]{1}" class="ent-modal estilosinputs" placeholder="Confirmar Contraseña"><br>
 						    <label class="control-label col-xs-3">
 						    	<strong>Nombre(s):</strong>
 						    	<span class="req">*</span>
 						    </label>
 						 
-						 	<input type="text" required minlenght="1" maxlength="30" class="ent-modal" maxlength="30" placeholder="Nombre"><br>
+						 	<input type="text" required minlenght="1" maxlength="30" class="ent-modal estilosinputs" maxlength="30" placeholder="Nombre"><br>
 						    <label class="control-label col-xs-3">
 						    	<strong>Apellido(s):</strong>
 						    	<span class="req">*</span>
 						    </label>
 						    
-						    <input type="text" required minlenght="1" maxlength="30" class="ent-modal" placeholder="Apellido"><br>
+						    <input type="text" required minlenght="1" maxlength="30" class="ent-modal estilosinputs" placeholder="Apellido"><br>
 						    <label class="control-label col-xs-3">
 						    	<strong>Télefono:</strong>
 						    </label>
 						 	
-						    <input type="number" required minlenght="8" maxlength="10" pattern="\([0-9]{3}\) [0-9]{3}[ -][0-9]{4}" class="ent-modal" placeholder="Telefono"><br>
+						    <input type="number" required minlenght="8" maxlength="10" pattern="\([0-9]{3}\) [0-9]{3}[ -][0-9]{4}" class="ent-modal estilosinputs" placeholder="Telefono"><br>
 						    <label class="control-label col-xs-3">
 						    	<strong>F. Nacimiento:</strong>
 						    	<span class="req">*</span>
 						    </label>
-						    <input id="datepicker" width="350"/><br>
+						    <input class="estilosinputs" id="datepicker" width="350"/><br>
 						</form>
 
 					    <label class="control-label col-xs-3">
@@ -129,19 +130,19 @@
 					    </label><br>
 					 
 					    <label class="radio-inline">
-					    	<input type="radio" name="genderRadios" value="male">  Masculino  
+					    	<input class="estilosinputs" type="radio" name="genderRadios" value="male">  Masculino  
 						</label><br>
 					    
 					    <label class="radio-inline">
-					    	<input type="radio" name="genderRadios" value="female">  Femenino  
+					    	<input class="estilosinputs" type="radio" name="genderRadios" value="female">  Femenino  
 						</label><br>
 					    
 					    <label class="radio-inline">
-					    	<input type="radio" name="genderRadios" value="male">  Otro  
+					    	<input class="estilosinputs" type="radio" name="genderRadios" value="male">  Otro  
 						</label><br>
 					    
 					    <label class="radio-inline">
-					        <input type="radio" name="genderRadios" value="female">  Prefiero no decirlo  
+					        <input class="estilosinputs" type="radio" name="genderRadios" value="female">  Prefiero no decirlo  
 					    </label>
 					    <br><br><br>
 					    
@@ -157,10 +158,10 @@
 				    <div id="iniciarSesion" class="w3-container opcion">
 				       	<h1 class="text-center">Entrar</h1>
 				       	<form>
-					       	<label>Correo Electronico<span class="req">*</span></label> 
-					        <input class="ent-modal" type="email"required autocomplete="off"/><br>
+					       	<label>Correo Electronico<span class="req estilosinputs">*</span></label> 
+					        <input class="ent-modal estilosinputs" type="email"required autocomplete="off"/><br>
 					        <label>Contraseña<span class="req">*</span></label>
-					        <input class="ent-modal" type="password"required autocomplete="off"/><br>
+					        <input class="ent-modal estilosinputs" type="password"required autocomplete="off"/><br>
 					        <p class="olvidada"><a href="#">¿Olvidaste tu contraseña?</a></p>
 				        </form>
 				            <input class="btn btn-primary" type="button" value="Entrar">
@@ -240,7 +241,6 @@
 				<br><hr>
 				<section class="row align-items-center justify-content-center">	
 					<article class="col-xs-12 col-sm-8 col-md-9 col-lg-9">
-					
 							<h2 class="text-center"> Las Partituras de las Notas Musicales </h2>
 							<br>
 								<p class="notaspar">Las figuras musicales son la representación de las notas en un pentagrama, que también les dan su designada duración. Los sostenidos y bemoles suben o bajan medio tono cada nota. Los compases son las divisiones del pentagrama. Cantar una canción de nuestro cantante favorito, silbar, llevar el ritmo con los pies o tocar de oído... Son unas de las cosas que ayudan a mejorar nuestro oído.Lo más importante es estar bien preparado.</p>
@@ -253,7 +253,7 @@
 			</div>
 
 			<br>
-			<!--Informacion sobre el Software-->
+			<!--Información sobre el Software-->
 			<div class="container-fluid">
 				<hr><br>
 				<p id="temaprinci">Curso práctico para aprender a leer música (Solfeo)</p>
@@ -263,8 +263,8 @@
 								<h2 class="text-center"> ¿Software en Desarrollo? </h2><br>
 								<p class="notaspar">Debido a la gran necesidad por parte de los profesores de música a innovar su método de enseñanza en la parte de notas musicales con el método de George Dandelot el cual se basa en su manual con el nombre ‘Estudio de las claves Sol’ Fa y Do’ se tiene la necesidad de crear un sistema que ayude a la enseñanza de notas musicales.</p>
 								<div class="container-fluid">
-									<a class="logo"  href="#"  title="Galmus Logo">
-										<img src="imagenes/LandingPage/logo.png" class="img-fluid imgnota logo" alt="partituras">
+									<a class="isotipogal"  href="#"  title="Galmus Logo">
+										<img src="imagenes/LandingPage/isotipo-tortuga-ver-3.png" class="img-fluid imgnota isotipogal" alt="partituras">
 									</a>
 								</div>
 						</article>
@@ -272,41 +272,40 @@
 				</div>
 			</div>	
 
-			<!--Informacion sobre los desarolladores-->
+			<!--Información sobre los desarolladores-->
 			<div class="container-fluid">
 				<hr><br>
 				<p id="temaprinci"> Nuestro equipo de desarrolladores</p>
 				<div class="container">
 					<section class="row align-items-center justify-content-center">	
 						<div class="col-xs-12 col-sm-4 col-md-4 col-lg-4"><br>
-
-						<!--Pedro-->
-						<div class="container-fluid">
-									<a class="peter"  href="#"  title="Galmus Logo">
-										<img src="imagenes/LandingPage/persona.png" class="img-fluid imgnota peter" alt="peter rivers">
-									</a>
-						</div><hr>
-						<p class="nombresdeve"> Pedro Erick RG. </p><br>
+							<!--Pedro-->
+							<div class="container-fluid">
+								<a class="peter"  href="#"  title="Galmus Isotipo">
+									<img src="imagenes/LandingPage/persona.png" class="img-fluid imgnota peter" alt="peter rivers">
+								</a>
+							</div><hr>
+							<p class="nombresdeve"> Pedro Erick RG. </p><br>
 						</div>
 
 						<!--Victor-->
 						<div class="col-xs-12 col-sm-4 col-md-4 col-lg-4"><br>
-						<div class="container-fluid">
-									<a class="vic"  href="#"  title="Galmus Logo">
-										<img src="imagenes/LandingPage/persona.png" class="img-fluid imgnota vic" alt="VisualYukkie">
-									</a>
-						</div><hr>
-						<p class="nombresdeve"> Víctor Vicente Mtz. </p><br>
+							<div class="container-fluid">
+								<a class="vic"  href="#"  title="Galmus Isotipo">
+									<img src="imagenes/LandingPage/persona.png" class="img-fluid imgnota vic" alt="VisualYukkie">
+								</a>
+							</div><hr>
+							<p class="nombresdeve"> Víctor Vicente Mtz. </p><br>
 						</div>
 
 						<!--Pug Alejandro-->
 						<div class="col-xs-12 col-sm-4 col-md-4 col-lg-4"><br>
-						<div class="container-fluid">
-									<a class="ale"  href="#"  title="Galmus Logo">
-										<img src="imagenes/LandingPage/persona.png" class="img-fluid imgnota ale" alt="Pug">
-									</a>
-						</div><hr>
-						<p class="nombresdeve"> Alejandro Medina A. </p><br>
+							<div class="container-fluid">
+								<a class="ale"  href="#"  title="Galmus Isotipo">
+									<img src="imagenes/LandingPage/persona.png" class="img-fluid imgnota ale" alt="Pug">
+								</a>
+							</div><hr>
+							<p class="nombresdeve"> Alejandro Medina A. </p><br>
 						</div>
 					</section>
 				</div>
@@ -314,62 +313,65 @@
 		</main>
 		<br>	
 
-		<!--Pie de pagina con sus subpies-->
+		<!--Pie de página con sus subpies-->
 		<footer>
 			<!--Parte I del pie de página: Contacto, redes sociales-->
-			<div class="piedepag">
+			<div class="container-fluid piedepag anim-subrayado">
 				<div class="container">
-					<h2 class="sombras" style="padding-top: 10px; padding-bottom: 2px;"> Contactanos </h2>
-					<hr style="background-color: white">
-				    <div class="row align-items-center justify-content-center" style="padding-top: 5px; text-align: center;">
-						<div class="col-xs-12 col-sm-3 col-md-1">
-			                <a class="icoFacebook"  href="#"  title="Facebook">
-			                	<img src="imagenes/LandingPage/icofb.svg" class="img-fluid icoFacebook"  alt="Facebook">
-			                </a>
+					<h2 style="padding-top: 10px;">¡Siguenos!</h2>
+					<hr id="rayapieredes">
+				    <seccion class="row align-items-center justify-content-center" style="padding-top: 10px; text-align: center;">
+						<div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
+							<div class="container-fluid">
+				                <a class="icoFacebook"  href="#"  title="Facebook">
+				                	<img src="imagenes/LandingPage/icofb.svg" class="img-fluid icoFacebook"  alt="Facebook">
+				                </a>
+			                </div>
 			           	</div>
-			           	 <div class="col-xs-12 col-sm-3 col-md-1">
-			            	<a class="icoLinkedin" href="#" title="LinkedIn">
-			            		<img src="imagenes/LandingPage/icolinked.svg" class="img-fluid icoLinkedin" alt="LinkedIn">
-			            	</a>
+			           	<div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
+			           		<div class="container-fluid">
+				            	<a class="icoLinkedin" href="#" title="LinkedIn">
+				            		<img src="imagenes/LandingPage/icolinked.svg" class="img-fluid icoLinkedin" alt="LinkedIn">
+				            	</a>
+			            	</div>
 						</div>
-						<div class="col-xs-12 col-sm-3 col-md-1">
-							<a class="icoYoutube" href="#" title="Youtube">
-			                	<img src="imagenes/LandingPage/icoyb.svg" class="img-fluid icoYoutube" alt="Youtube">
-			                </a>
+						<div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
+							<div class="container-fluid">
+								<a class="icoYoutube" href="#" title="Youtube">
+				                	<img src="imagenes/LandingPage/icoyb.svg" class="img-fluid icoYoutube" alt="Youtube">
+				                </a>
+			                </div>
 						</div>
-			            <div class="col-xs-12 col-sm-3 col-md-1">
-			            	<a class="icoGoogle" href="#"  title="Google +">
-			                	<img src="imagenes/LandingPage/icogoogle.svg" class="img-fluid icoGoogle" alt="Google +">
-			                </a>
+			            <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
+			            	<div class="container-fluid">
+				            	<a class="icoGoogle" href="#"  title="Google +">
+				                	<img src="imagenes/LandingPage/icogoogle.svg" class="img-fluid icoGoogle" alt="Google +">
+				                </a>
+			            	</div>
 			            </div>   
-							<div class="clearfix visible-sm-block"></div>
-					</div>
+					</seccion>
 			  	</div>
 		  	</div>
 
 		  	<!--Parte II del pie de página:  Informacion sobre toda la website-->
 			<div id="piedepag2">
-			  <div class="container ">
+			  <div class="container">
 			    <div class="row">
 			      <div class="color-xs-12 col-sm-6 col-md-3">
 			        <!--Column1-->
-			        <div class="piedepag2">
-			         <h4 class="text-center sombras" style="padding-top: 20px;">Ubicación</h4>
+			        <div class="subpiedepag2">
+			         <h4 class="text-center anim-subrayado_piepa" style="padding-top: 20px;">Ubicación</h4>
 			          <address>
 						<ul class="list-unstyled">
-							<hr>
-							<li> Boulevard de las flores #1205<br>
-								Villa de las Flores<br>
-								Coacalco de Berriozabal<br>
-								Estado de México, 55790<br>
+							<li class="anim-subrayado_piepa" style="text-align: justify;">Boulevard de las flores #1205, Villa de las Flores,<br>
+								Coacalco de Berriozabal,<br>
+								Estado de México, 55790.<br>
 							</li>
-							<li>
-								<hr>
-								Teléfono: (55) 31 47 89 65 07	
-							</li>
-							<hr>
+							<li class="anim-subrayado_piepa" style="text-align: justify: ;">
+								Teléfono: (55) 3147 8965							
+							</li><br>
 							<div class="row align-items-center justify-content-center">
-								<a class="btn btn-dark" href="https://www.google.com.mx/maps/place/Universidad+Polit%C3%A9cnica+del+Valle+de+M%C3%A9xico/@19.6426716,-99.1280359,17z/data=!3m1!4b1!4m5!3m4!1s0x85d1f43e59c00a9f:0xe3c992b6aa422e2c!8m2!3d19.6426716!4d-99.1258472" target="_blank" role="button">Ver ubicación</a>
+								<a class="btn btn-warning" href="acerca.html#map" target="_blank" role="button"><strong>Ver ubicación</strong></a>
 							</div>
 						</ul>
 					 </address>
@@ -379,10 +381,8 @@
 			      <div class="color-xs-12 col-sm-6 col-md-3">
 			        <!--Column2-->
 			        <div class="piedepag2">
-			          <h4 class="text-center sombras" style="padding-top: 20px">Nuestros servicios</h4>
+			          <h4 class="text-center anim-subrayado_piepa" style="padding-top: 20px">Nuestros servicios</h4>
 			          <ul class="list-unstyled">
-			          	<hr>
-			            <li><a class="enlacespie" href="#"></a></li>
 			            <li><a class="enlacespie" href="#">GalMus Software</a></li>
 			            <li><a class="enlacespie" href="#">Ayuda y soporte</a></li>
 			            <li><a class="enlacespie" href="#">Nuevas actualizaciones</a></li>
@@ -392,9 +392,9 @@
 			      <div class="color-xs-12 col-sm-6 col-md-3">
 			        <!--Column3-->
 			        <div class="piedepag2">
-			          <h4 class="text-center sombras" style="padding-top: 20px"> Más información</h4>
+			          <h4 class="text-center anim-subrayado_piepa" style="padding-top: 20px"> Más información</h4>
 			          <ul class="list-unstyled">
-			          	<hr>
+			          	
 			            <li><a class="enlacespie" href="#">Tutorial del Website</a></li>
 			            <li><a class="enlacespie" href="#">Accesibilidad</a></li>
 			            <li><a class="enlacespie" href="#">Declaración de Privacidad</a></li>
@@ -404,9 +404,9 @@
 			      <div class="color-xs-12 col-sm-6 col-md-3">
 			        <!--Column4-->
 			        <div class="piedepag2">
-			          <h4 class="text-center sombras" style="padding-top: 20px"> Desarrolladores </h4>
+			          <h4 class="text-center anim-subrayado_piepa" style="padding-top: 20px"> Desarrolladores </h4>
 			          <ul class="list-unstyled">
-			          	<hr>
+			          	
 			            <li>Pedro Erick Ríos García</li>
 			            <li>Víctor Martínez Martínez</li>
 			            <li>Alejandro Medina Alcántara</li>
@@ -414,12 +414,11 @@
 			        </div>
 			      </div>
 			    </div>
-			  </div>
+			  </div><br>
 			</div>
-			
 			<!--Parte III del pie de página:  Derechos y Copyright-->
-			<div class="piedepag3">
-				<div class="container-fluid">
+			<div class="piedepag3 anim-subrayado_piepa_3">
+				<div class="container-fluid animated infinite pulse">
 							&copy; Todos los derechos reservados. 2018 - Galapangos Team Inc. Todos los derechos reservados.
 				</div>
 			</div>
