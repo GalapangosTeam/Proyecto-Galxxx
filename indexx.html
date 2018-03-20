@@ -36,7 +36,7 @@
 		</header>
 
 		<!--Barra de Navegación-->
-		<nav class="navbar sticky-top navbar-light">
+		<nav class="navbar navbar-light">
 				<a class="nav-link navp" href="#"> GalMus </a>
 				<li class="nav-item dropdown listanav">
 					<div class="nav-link dropdown-toggle" id="midropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Productos </div>
@@ -51,7 +51,7 @@
 				<a class="nav-link" href="mision.html"> Misión </a>
 				<a class="nav-link" href="vision.html"> Visión </a>
 				<form class="form-inline my-2 my-lg-0">
-				    <input class="form-control mr-sm-2" type="text" placeholder="Buscar">
+				    <input id ="cajabuscar" class="form-control mr-sm-2" type="text" placeholder="Buscar">
 				    <button id="btnbuscar" class="btn btn-outline-warning" type="submit">Buscar</button>
 				</form>
 				<button id ="btnregis" class="btn" type="button" data-toggle="modal" onclick="document.getElementById('id01').style.display='block'">
@@ -64,7 +64,7 @@
 		<!--Ventana modal-->
 	  	<div class="container"> 
 	    	<div id="id01" class="w3-modal ">
-		     	<div class="w3-modal-content w3-animate-right">
+		     	<div class="w3-modal-content animated zoomInUp">
 		      		<header class="w3-container w3-black"> 
 		       			<span onclick="document.getElementById('id01').style.display='none'" class="w3-button w3-black w3-hover-aqua w3-large w3-display-topright">X
 		       			</span>
@@ -72,96 +72,215 @@
 		    		</header>
 
 			    	<div class="w3-bar w3-border-bottom">
-				    	<button class="enlaceOpcion w3-bar-item w3-button" onclick="opcModal(event,'registrarse')">Registrarse
+				    	<button class="enlaceOpcion w3-bar-item w3-button" onclick="opcModal(event,'registrarse')" style="font-size: 25px;">Registrarse
 				    	</button>
-				    	<button class="enlaceOpcion w3-bar-item w3-button" onclick="opcModal(event,'iniciarSesion')">Iniciar Sesión
+				    	<button class="enlaceOpcion w3-bar-item w3-button" onclick="opcModal(event,'iniciarSesion')" style="font-size: 25px;">Iniciar Sesión
 				    	</button>
 			    	</div>
 			 	
 					<!-- SECCION PARA REGISTRARSE --> 
-				    <div id="registrarse" class="w3-container opcion">
-					 	<h1 class="text-center">Formulario de registro.</h1>
+				    <div id="registrarse" class="container opcion"><br>
+					 	<h1 class="text-center">Formulario de registro.</h1><hr id="hr_form_regis">
+						<p class="text-center" style="font-size: 25px; font-weight: bold;"> ¿Con que modalidad se desea registrar? </p><br>
 
-					 	<form>
-						    <label class="control-label col-xs-2">
-						    	<strong>Correo Electronico:</strong>
-						    	<span class="req">*</span>
-						    </label>
-						 	
-						 	<input class="ent-modal .estilosinputs" type="email" required minlenght="1" maxlength="30" class="form-control" id="inputEmail" placeholder="Correo Electronico"><br>
-						 	<label class="control-label col-xs-2">
-						 		<strong>Contraseña:</strong>
-						 		<span class="req">*</span>
-						 	</label>
-						 	
-						 	<input type="password" required minlenght="8" maxlength="16" pattern="[A-Z]{1}[a-z]{1}[0-9]{1}" class="ent-modal estilosinputs" id="inputPassword" placeholder="Contraseña"><br>
-						    <label class="control-label col-xs-3">
-						    	<strong>Confirmar Contraseña:</strong>
-						    	<span class="req">*</span>
-						    </label>
-            				<input type="password" required minlenght="8" maxlength="16" pattern="[A-Z]{1}[a-z]{1}[0-9]{1}" class="ent-modal estilosinputs" placeholder="Confirmar Contraseña"><br>
-						    <label class="control-label col-xs-3">
-						    	<strong>Nombre(s):</strong>
-						    	<span class="req">*</span>
-						    </label>
-						 
-						 	<input type="text" required minlenght="1" maxlength="30" class="ent-modal estilosinputs" maxlength="30" placeholder="Nombre"><br>
-						    <label class="control-label col-xs-3">
-						    	<strong>Apellido(s):</strong>
-						    	<span class="req">*</span>
-						    </label>
-						    
-						    <input type="text" required minlenght="1" maxlength="30" class="ent-modal estilosinputs" placeholder="Apellido"><br>
-						    <label class="control-label col-xs-3">
-						    	<strong>Télefono:</strong>
-						    </label>
-						 	
-						    <input type="number" required minlenght="8" maxlength="10" pattern="\([0-9]{3}\) [0-9]{3}[ -][0-9]{4}" class="ent-modal estilosinputs" placeholder="Telefono"><br>
-						    <label class="control-label col-xs-3">
-						    	<strong>F. Nacimiento:</strong>
-						    	<span class="req">*</span>
-						    </label>
-						    <input class="estilosinputs" id="datepicker" width="350"/><br>
-						</form>
+					 	<!--Escoger si se registrará un usuario en general ó un admin-->
+					 	<div class="container">
+					 		<div class="container align-items-center justify-content-center">
+						 		<div class="custom-control custom-radio">
+									<input type="radio" id="customRadio1" name="customRadio" class="custom-control-input escogido" value="admins">
+									<label class="custom-control-label" for="customRadio1" style="font-size: 20px;"> Ser Administrador.</label>
+								</div>
+								<div class="custom-control custom-radio">
+									<input type="radio" id="customRadio2" name="customRadio" class="custom-control-input escogido" value="usernormal">
+									<label class="custom-control-label" for="customRadio2" style="font-size: 20px;"> Ser usuario normal.</label>
+								</div>
+							</div>
+					 	</div><br><br>
 
-					    <label class="control-label col-xs-3">
-					    	<strong>Genero:</strong>
-					    	<span class="req">*</span>
-					    </label><br>
-					 
-					    <label class="radio-inline">
-					    	<input class="estilosinputs" type="radio" name="genderRadios" value="male">  Masculino  
-						</label><br>
-					    
-					    <label class="radio-inline">
-					    	<input class="estilosinputs" type="radio" name="genderRadios" value="female">  Femenino  
-						</label><br>
-					    
-					    <label class="radio-inline">
-					    	<input class="estilosinputs" type="radio" name="genderRadios" value="male">  Otro  
-						</label><br>
-					    
-					    <label class="radio-inline">
-					        <input class="estilosinputs" type="radio" name="genderRadios" value="female">  Prefiero no decirlo  
-					    </label>
-					    <br><br><br>
-					    
-					    <label class="checkbox-inline">
-					        <input type="checkbox" value="agree">  Acepto 
-					        	<a href="#">Términos y condiciones</a>
-					    </label><br>
-					    <input type="submit" class="btn btn-primary" value="Enviar">
-					    <input type="reset" class="btn btn-default" value="Limpiar">
+					 	<!--Formulario para registro de admins-->
+						<div id="formAdmins" style="display:none;" class="container-fluid animated zoomInDown">
+							<hr id="hr_admin">
+							<h2 class="text-center animated infinite pulse"> Administrador </h2><br>
+						 	<form id="fusuagral" method="POST" action="scripts/php/registro-admins.php" class="container-fluid">
+							    <label class="control-label col-xs-2">
+							    	<strong>Correo Electronico:</strong>
+							    	<span class="req">*</span>
+							    </label>
+							 	<input class="ent-modal .estilosinputs form-control" type="email" required minlenght="1" maxlength="30" id="inputEmail" placeholder="Correo Electronico"><br>
+
+							 	<label class="control-label col-xs-2">
+							 		<strong>Contraseña:</strong>
+							 		<span class="req">*</span>
+							 	</label>
+							 	<input type="password" required minlenght="8" maxlength="16" pattern="[A-Z]{1}[a-z]{1}[0-9]{1}" class="ent-modal estilosinputs" id="inputPassword" placeholder="Contraseña"><br>
+
+							    <label class="control-label col-xs-3">
+							    	<strong>Confirmar Contraseña:</strong>
+							    	<span class="req">*</span>
+							    </label>
+	            				<input type="password" required minlenght="8" maxlength="16" pattern="[A-Z]{1}[a-z]{1}[0-9]{1}" class="ent-modal estilosinputs" placeholder="Confirmar Contraseña"><br>
+
+							    <label class="control-label col-xs-3">
+							    	<strong>Nombre(s):</strong>
+							    	<span class="req">*</span>
+							    </label>
+							 	<input type="text" required minlenght="1" class="ent-modal estilosinputs" maxlength="30" placeholder="Nombre"><br>
+
+							    <label class="control-label col-xs-3">
+							    	<strong>Apellido(s):</strong>
+							    	<span class="req">*</span>
+							    </label>
+							    <input type="text" required minlenght="1" maxlength="30" class="ent-modal estilosinputs" placeholder="Apellido"><br>
+
+							    <label class="control-label col-xs-3">
+							    	<strong>Télefono:</strong>
+							    </label>
+							    <input type="number" required minlenght="8" maxlength="10" pattern="\([0-9]{3}\) [0-9]{3}[ -][0-9]{4}" class="ent-modal estilosinputs" placeholder="Telefono"><br>
+
+							    <label class="control-label col-xs-3">
+							    	<strong>F. Nacimiento:</strong>
+							    	<span class="req">*</span>
+							    </label>
+							    <input class="estilosinputs" id="datepicker" width="350"/><br>
+							    <label class="control-label col-xs-3">
+							    	<strong>Genero:</strong>
+							    	<span class="req">*</span>
+							    </label><br>
+							 
+							    <label class="radio-inline">
+							    	<input class="estilosinputs" type="radio" name="genderRadios" value="male">  Masculino  
+								</label><br>
+							    
+							    <label class="radio-inline">
+							    	<input class="estilosinputs" type="radio" name="genderRadios" value="female">  Femenino  
+								</label><br>
+							    
+							    <label class="radio-inline">
+							    	<input class="estilosinputs" type="radio" name="genderRadios" value="male">  Otro  
+								</label><br>
+							    
+							    <label class="radio-inline">
+							        <input class="estilosinputs" type="radio" name="genderRadios" value="female">  Prefiero no decirlo  
+							    </label>
+							    <br><br><br>
+							    
+							    <label class="checkbox-inline">
+							        <input type="checkbox" value="agree">  Acepto 
+							        	<a href="#">Términos y condiciones</a>
+							    </label><br>
+							    <input type="submit" class="btn btn-primary" value="Enviar">
+							    <input type="reset" class="btn btn-default" value="Limpiar">
+						    </form>
+					    </div>
+						
+					 	<!--Formulario para registro de usuarios normales-->
+					    <div id="formNormales" style="display:none;" class="container-fluid animated zoomInUp">
+					    	<hr id="hr_usernormal">
+					    	<h2 class="text-center animated infinite pulse"> Usuario normal </h2><br>
+						 	<form id="fusuagral" method="POST" action="scripts/php/registro_usergeneral.php" class="container-fluid">
+						 		<div class="row align-items-center justify-content-center">
+
+								    <label class="control-label col-xs-12">
+								    	<strong>Nombre(s):</strong>
+								    	<span class="req">*</span>
+								    </label>
+								 	<input type="text" required minlenght="1" class="ent-modal estilosinputs" maxlength="30" placeholder="Nombre" name="nombres"><br>
+
+								    <label class="control-label col-xs-12">
+								    	<strong>Apellido Paterno:</strong>
+								    	<span class="req">*</span>
+								    </label>
+								    <input type="text" required minlenght="5" maxlength="50" class="ent-modal estilosinputs" placeholder=" paterno " name="apellidopat"><br>
+
+								    <label class="control-label col-xs-12">
+								    	<strong>Apellido Materno:</strong>
+								    	<span class="req">*</span>
+								    </label>
+								    <input type="text" required minlenght="5" maxlength="50" class="ent-modal estilosinputs" placeholder=" materno" name="apellidomat"><br>
+
+								    <label class="control-label col-xs-12">
+								    	<strong>Correo Electronico:</strong>
+								    	<span class="req">*</span>
+								    </label>
+								 	<input class="ent-modal .estilosinputs form-control" type="email" required minlenght="1" maxlength="30" id="inputEmail" placeholder=" Correo Electronico" name="correo"><br>
+
+								 	<label class="control-label col-xs-12">
+								 		<strong>Contraseña:</strong>
+								 		<span class="req">*</span>
+								 	</label>
+								 	<input type="password" required minlenght="8" maxlength="16" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{3,}" class="ent-modal estilosinputs" id="inputPassword" placeholder=" Contraseña"><br>
+
+								    <label class="control-label col-xs-12">
+								    	<strong>Confirmar Contraseña:</strong>
+								    	<span class="req">*</span>
+								    </label>
+		            				<input type="password" required minlenght="8" maxlength="16" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{3,}" class="ent-modal estilosinputs" placeholder=" Confirmar Contraseña" name="contrasena"><br>
+
+								    <label class="control-label col-xs-12">
+								    	<strong>F. Nacimiento:</strong>
+								    	<span class="req">*</span>
+								    </label>
+								    <input class="estilosinputs" id="datepicker" width="350" name="fecha"/><br>
+
+								    <label class="control-label col-xs-12">
+								    	<strong>Télefono:</strong>
+								    </label>
+								    <input type="number" required minlenght="8" maxlength="10" pattern="\([0-9]{3}\) [0-9]{3}[ -][0-9]{4}" class="ent-modal estilosinputs" placeholder="Telefono" name="tel"><br>
+									
+								    <label class="control-label col-xs-12">
+								    	<strong>Genero:</strong>
+								    	<span class="req">*</span>
+								    </label><br>
+								 	<div class="container">
+									    <label class="radio-inline">
+									    	<input class="estilosinputs" type="radio" name="sex" value="mas">  Masculino  
+										</label><br>
+									    
+									    <label class="radio-inline">
+									    	<input class="estilosinputs" type="radio" name="sex" value="fem">  Femenino  
+										</label><br>
+									    
+									    <label class="radio-inline">
+									    	<input class="estilosinputs" type="radio" name="sex" value="otro">  Otro  
+										</label><br>
+									    
+									    <label class="radio-inline">
+									        <input class="estilosinputs" type="radio" name="sex" value="desco">  Prefiero no decirlo  
+									    </label>
+									    <br><br><br>
+								    </div>
+
+								    <label class="control-label col-xs-12">
+								    	<strong>Ocupación: </strong>
+								    	<span class="req">*</span>
+								    </label>
+								    <input type="text" required minlenght="1" maxlength="30" class="ent-modal estilosinputs" placeholder="   ocupación " name="ocupacion"><br>
+
+								   <label class="control-label col-xs-12">
+								    	<strong>Edad:</strong>
+								    </label>
+								    <input type="number" required minlenght="2" maxlength="3" pattern="\([0-9]{3}\) [0-9]{3}[ -][0-9]{4}" class="ent-modal estilosinputs" placeholder="  edad" name="edad"><br>
+
+								    <label class="checkbox-inline">
+								        <input type="checkbox" value="agree">  Acepto 
+								        	<a href="#">Términos y condiciones</a>
+								    </label><br>
+
+								    <input id ="enviar" type="submit" class="btn btn-primary" value="Enviar">
+								    <input type="reset" class="btn btn-default" value="Limpiar">
+							    </div>
+						    </form>
+					    </div>
 					</div>
 
-				<!-- SECCION PARA INICIAR SESION --> 
+					<!-- SECCION PARA INICIAR SESION --> 
 				    <div id="iniciarSesion" class="w3-container opcion">
 				       	<h1 class="text-center">Entrar</h1>
 				       	<form>
 					       	<label>Correo Electronico<span class="req estilosinputs">*</span></label> 
-					        <input class="ent-modal estilosinputs" type="email"required autocomplete="off"/><br>
+					        <input class="ent-modal estilosinputs" type="email" required autocomplete="off"/><br>
 					        <label>Contraseña<span class="req">*</span></label>
-					        <input class="ent-modal estilosinputs" type="password"required autocomplete="off"/><br>
+					        <input class="ent-modal estilosinputs" type="password" required autocomplete="off"/><br>
 					        <p class="olvidada"><a href="#">¿Olvidaste tu contraseña?</a></p>
 				        </form>
 				            <input class="btn btn-primary" type="button" value="Entrar">
@@ -179,7 +298,9 @@
 		<!--Contenidos de la pagina en secciones,aside, etc..-->
 		<br>
 		<main>
-			<a href="scripts/php/conexion.php" class="text-center"> Ver bd </a>
+			<a href="scripts/php/abrir_conexion.php" class="text-center"> Ver bd </a>
+			<a href="scripts/php/registro_usergeneral.php" class="text-center"><br> Registro de prueba </a>
+
 			<!--Carrusel de imagenes-->
 			<br><br>
 			<div class="container">
@@ -432,6 +553,7 @@
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 	<script type="text/javascript" src="scripts/js/animanotasclick.js"></script>
 	<script type="text/javascript" src="scripts/js/maps.js"></script>
+	<script type="text/javascript" src="scripts/js/otrasfunciones.js"></script>
 	<script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
 </body>
 </html>
