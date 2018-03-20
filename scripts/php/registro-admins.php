@@ -10,27 +10,29 @@ $fecha =!empty($_REQUEST['fecha'])?$_REQUEST['fecha']:'';
 $tel =!empty($_REQUEST['tel'])?$_REQUEST['tel']:'';
 $sex =!empty($_REQUEST['sex'])?$_REQUEST['sex']:'';
 
-//primero validar que no exista el mismo usuario, con el correo y contraseña
-funcion validarExiste($existe){
-	//verificamos si el user exite con un condicional
-	if(mysql_num_rows($existe) == 0){
-		// mysql_num_rows <- esta funcion me imprime el numero de registro que encontro 
-		// si el numero es igual a 0 es porque el registro no exite, en otras palabras ese user no esta en la tabla admins por lo tanto se puede registrar.
-		echo "el user es valido";
-		insertarAdmins();
-	}
-	else{
-		//caso contario (else) es porque ese user ya esta registrado
-		echo 'este usuario ya esta registrado';
-	}
+validarExiste();
+function validarExiste($correo){
+		include('abrir_conexion.php');
+		$buscarCorreo = "SELECT * FROM $tbl1 WHERE correo='$correo'";
+		$resultado = $conexion->query($buscarCorreo);
+		 //Usaremos la funcion mysqli_num_rows en la consulta $resultado,
+         //esta funcion nos regresa el numero de filas en el resultado
+         $contador = mysqli_num_rows($resultado);
+
+         //SI SI EXISTE una fila, quiere decir QUE SI ESTA EL CORREO EN LA BASE DE DATOS
+         if($contador == 1) {
+            echo 'Este administrador ya existe';
+         } else {
+         	echo 'El correo no existe'; // se puede registrar el usuario.
+         	insertarAdmins();
+         	include('cerrar_conexion.php');
+         }
 }
 
-$existe_mismo = "SELECT * FROM admingal WHERE correo='$correo'";
-
-validarExiste($existe_mismo);
-
-funcion insertarAdmins(){
-	$insertar_admins = "INSERT INTO admingal(id_user,nombres,appat,apmat,correo,contra,fecha_nac,tel,genero_sex,estado,validacion) VALUES (0,'$nombres','$apellidopat','$apellidomat','$correo','$contra','$fecha','$tel','$sex','offline',0)";
+function insertarAdmins(){
+	include('abrir_conexion.php');
+	$insertar_admins = "INSERT INTO $tbl1 (id_user,nombres,appat,apmat,correo,contra,fecha_nac,tel,genero_sex,estado,validacion) VALUES (0,'$nombres','$apellidopat','$apellidomat','$correo','$contra','$fecha','$tel','$sex','offline',0)";
 	$conexion->query($insertar_admins);
-}''
+}
+
 ?>
