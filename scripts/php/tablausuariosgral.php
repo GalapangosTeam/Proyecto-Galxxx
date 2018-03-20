@@ -11,7 +11,7 @@ class tablaUsuarios{
 	var	$fecha_nac;	
 	var	$tel;
 
-	function_construct($id_user,$nombres,$appat,$apmat,$correo,$contra,$fecha_nac,$tel){
+	function construct($id_user,$nombres,$appat,$apmat,$correo,$contra,$fecha_nac,$tel){
 		$this->id_user = $id_user;
 		$this->nombres = $nombres;
 		$this->appat = $appat;
@@ -30,7 +30,7 @@ class tablaUsuarios{
 		$contra = $this->contra;
 		$fecha_nac = $this->fecha_nac;
 		$tel = $this->tel;
-		mysql_query("INSERT INTO usuariosgeneral(id_user,nombres,appat,apmat,correo,contra,fecha_nac,tel) VALUES ('0,$nombres,$appat,$apmat,$correo,$contra,$fecha_nac,$tel')");
+		mysql_query("INSERT INTO usuariosgeneral(id_user,nombres,appat,apmat,correo,contra,fecha_nac,tel) VALUES (0,'$nombres','$appat','$apmat','$correo','$contra','$fecha_nac',$tel)");
 	}
 }
 ?>

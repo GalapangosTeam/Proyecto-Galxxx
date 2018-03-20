@@ -149,9 +149,16 @@
 	}
 
 /* C */
+	#cajabuscar{
+		font-size: 1.3vw;	
+	}
 	#cuerpo{
 		background-color: white;
 		font-family: 'Raleway', sans-serif;
+	}
+	
+	#txtbuscar{
+		font-size: 1.3vw;
 	}
 
 /* D */
@@ -200,16 +207,16 @@
 
 /* F */
 	/*Ventana Modal*/
-	form {
-	    width: 400px;
+	#fusuagral {
 	    font-family: 'Raleway', sans-serif;
+	    width: 400px;
 	}
-	form label {
+	#fusuagral label {
 	    display: inline-block;
 	    font-family: 'Raleway', sans-serif;
 	    width: 150px;
 	}
-	form input {
+	#fusuagral input {
 	    display: inline-block;
 	    font-family: 'Raleway', sans-serif;
 	    margin-bottom: 10px;
@@ -229,6 +236,21 @@
 	}
 	hr{
 		background-color: rgb(230, 230, 230);
+	}
+	#hr_form_regis{
+		background-color:  #FFB347;
+		border-radius: 5px;
+		height: 5px;
+	}
+	#hr_admin{
+		background-color:  rgb(170, 119, 47);
+		border-radius: 3px;
+		height: 5px;
+	}
+	#hr_usernormal{
+		background-color: rgb(255, 204, 132);
+		border-radius: 3px;
+		height: 5px;
 	}
 
 /* I */
@@ -473,4 +495,4 @@
 /* Y */
 
 /* Z */
- 
+/*BY: YIZECKKER2304 / Pedro Erick Ríos García, México*/
