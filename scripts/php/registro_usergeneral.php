@@ -13,9 +13,9 @@ $ocupacion =!empty($_REQUEST['ocupacion'])?$_REQUEST['ocupacion']:'';
 $edad =!empty($_REQUEST['edad'])?$_REQUEST['edad']:'';
 
 
-validarExiste($correo);
+validarExiste($nombres,$apellidopat,$apellidomat,$correo,$contra,$fecha,$tel,$sex,$ocupacion,$edad);
 
-function validarExiste($correo){
+function validarExiste($nombres,$apellidopat,$apellidomat,$correo,$contra,$fecha,$tel,$sex,$ocupacion,$edad){
 	include('abrir_conexion.php');
 	$buscarCorreo = "SELECT * FROM $tbl2 WHERE correo='$correo'";
 	$resultado = $conexion->query($buscarCorreo);
@@ -28,16 +28,16 @@ function validarExiste($correo){
          if($contador == 1) {
             echo 'Este usuario ya existe';
          } else {
-         	echo 'El correo no existe'; // se puede registrar el usuario.
-         	insertarUsuarios();
-         	include('cerrar_conexion.php');
+         	echo 'Usuario registrado correctamente'; // se puede registrar el usuario.
+         	insertarUsuarios($nombres,$apellidopat,$apellidomat,$correo,$contra,$fecha,$tel,$sex,$ocupacion,$edad);
          }
 }
 
-function insertarUsuarios(){
+function insertarUsuarios($nombres,$apellidopat,$apellidomat,$correo,$contra,$fecha,$tel,$sex,$ocupacion,$edad){
 	include('abrir_conexion.php');
 	$insertar_Usuarios = "INSERT INTO $tbl2 (id_user,nombres,appat,apmat,correo,contra,fecha_nac,tel,genero_sex,ocupacion,edad,estado) VALUES (0,'$nombres','$apellidopat','$apellidomat','$correo','$contra','$fecha','$tel','$sex','$ocupacion',$edad,'offline')";
 	$conexion->query($insertar_Usuarios);
+	include('cerrar_conexion.php');
 }
 
 ?>

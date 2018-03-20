@@ -10,8 +10,9 @@ $fecha =!empty($_REQUEST['fecha'])?$_REQUEST['fecha']:'';
 $tel =!empty($_REQUEST['tel'])?$_REQUEST['tel']:'';
 $sex =!empty($_REQUEST['sex'])?$_REQUEST['sex']:'';
 
-validarExiste();
-function validarExiste($correo){
+validarExiste($nombres,$apellidopat,$apellidomat,$correo,$contra,$fecha,$tel,$sex,$ocupacion,$edad);
+
+function validarExiste($nombres,$apellidopat,$apellidomat,$correo,$contra,$fecha,$tel,$sex,$ocupacion,$edad){
 		include('abrir_conexion.php');
 		$buscarCorreo = "SELECT * FROM $tbl1 WHERE correo='$correo'";
 		$resultado = $conexion->query($buscarCorreo);
@@ -23,16 +24,16 @@ function validarExiste($correo){
          if($contador == 1) {
             echo 'Este administrador ya existe';
          } else {
-         	echo 'El correo no existe'; // se puede registrar el usuario.
-         	insertarAdmins();
-         	include('cerrar_conexion.php');
+         	echo 'El administrador se registro existosamente'; // se puede registrar el usuario.
+         	insertarAdmins($nombres,$apellidopat,$apellidomat,$correo,$contra,$fecha,$tel,$sex,$ocupacion,$edad);
          }
 }
 
-function insertarAdmins(){
+function insertarAdmins($nombres,$apellidopat,$apellidomat,$correo,$contra,$fecha,$tel,$sex,$ocupacion,$edad){
 	include('abrir_conexion.php');
 	$insertar_admins = "INSERT INTO $tbl1 (id_user,nombres,appat,apmat,correo,contra,fecha_nac,tel,genero_sex,estado,validacion) VALUES (0,'$nombres','$apellidopat','$apellidomat','$correo','$contra','$fecha','$tel','$sex','offline',0)";
 	$conexion->query($insertar_admins);
+	include('cerrar_conexion.php');
 }
 
 ?>
