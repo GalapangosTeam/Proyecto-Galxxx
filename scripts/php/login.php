@@ -24,17 +24,20 @@ function validarExisteUsuario($correo,$contra){
         $tabladmin = mysqli_num_rows($resultado_1);
         $tablausuarios = mysqli_num_rows($resultado_2);
 
-        //primero validamos que el correo exista en tabla de administradores.
+        //primero validamos que el correo y contraseña existan en tabla de administradores.
         if($tabladmin == 1) {//si existe
             echo 'Este administrador existe';
             //entonces que inicie sesion
             iniciarSesionAdmin($resultado_1,$contra);
+
+        //ó validamos que el correo y contraseña existan en tabla de usuarios.
         }else if($tablausuarios == 1) {
         	echo 'Este usuario existe';
             //entonces que inicie sesion
             iniciarSesionUsuario($resultado_2,$contra);
+
         }else{
-        	echo 'El usuario y/o correo no existen.'; // se puede registrar el usuario.
+        	echo 'El usuario y/o correo no existen.'; // no existe en ninguno de los 2.
         	header('Localtion ');
          	include('cerrar_conexion.php');
         }
@@ -50,20 +53,35 @@ function inciarSesionAdmin($result,$password){
     $_SESSION['nombres'] = $nombres;
     $_SESSION['apellidopat'] = $appat;
     $_SESSION['apellidomat'] = $apmat;
-    $_SESSION['start'] = time();
-    $_SESSION['expire'] = $_SESSION['start'] + (5 * 60); // tiempo para expirar por inactividad
-    echo "¡Bienvenido!"." $_SESSION['nombres']".", $_SESSION['apellidopat']"."$_SESSION['apellidomat']";
-    echo "<br><br><a href=panel-control.php>Panel de Control</a>"; 
+    $_SESSION['start'] = time();				
+    $_SESSION['expire'] = $_SESSION['start'] + (5 * 60); // tiempo para expirar por inactividad, 5 = minutos * 60 = segundos.
+
+    //abra el indexx + los divs con sus caracteristicas de usuario.
+    echo "Usuario: ". $_SESSION['nombres'] .",".$_SESSION['apellidopat'].$_SESSION['apellidomat'];
+    echo "<br><br><a href=indexx.html> Panel de Control</a>"; 
 
  } else { 
 	echo "Username o Password estan incorrectos.";
-	echo "<br><a href='login.html'>Volver a Intentarlo</a>";
+	echo "<br><a href='indexx.html#id01'>Volver a Intentarlo</a>";
  }
-
+ 	include('cerrar_conexion.php');
 }
 
 function iniciarSesionUsuario(){
 
 }
+
+// Funciones para encriptar y desencriptar las contraseñas.
+function encriptar($cadena){
+    $key='';  // Una clave de codificacion, debe usarse la misma para encriptar y desencriptar
+    $encrypted = base64_encode(mcrypt_encrypt(MCRYPT_RIJNDAEL_256, md5($key), $cadena, MCRYPT_MODE_CBC, md5(md5($key))));
+    return $encrypted; //Devuelve el string encriptado
+}
+function desencriptar($cadena){
+     $key='';  // Una clave de codificacion, debe usarse la misma para encriptar y desencriptar
+     $decrypted = rtrim(mcrypt_decrypt(MCRYPT_RIJNDAEL_256, md5($key), base64_decode($cadena), MCRYPT_MODE_CBC, md5(md5($key))), "\0");
+    return $decrypted;  //Devuelve el string desencriptado
+}
+
 
 ?>
