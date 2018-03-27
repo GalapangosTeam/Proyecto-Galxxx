@@ -46,4 +46,3 @@ $("#botonentrar").click(function levantarCortinas(event){
 $("#cuerpo").click(function entrarIndex(event){
 	$('<meta http-equiv="refresh" content="0;url=indexx.html"/>').appendTo($('head'));;
 });
-

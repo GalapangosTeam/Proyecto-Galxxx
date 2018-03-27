@@ -1,3 +1,8 @@
+/* * */
+	*{
+		margin: 0;
+		padding: 0;
+	}
 /* A */
 	/*para enlaces de pie pagina 1*/
 	.anim-subrayado{
@@ -138,6 +143,48 @@
 	}
 
 /* B */
+    #barraPromo{
+		display:inline-block;
+		font-size: 15px;
+		position:relative; 
+		text-align: center;
+	}
+	#bpartePromo_1{
+		background-color: rgb(55, 55, 55);
+		border-left: 20px solid #FFB347;
+		float:left; 
+		padding-left: 10px;	
+		padding-right: 10px; 
+		position:relative;
+		text-align: center;
+		width: 30%;
+	}
+	#bpartePromo_2{
+		background-color: rgb(55, 55, 55);
+		float:left;
+		position:relative;
+		text-align: center;	
+		width: 25%; 
+	}
+	#bparteUserDatos_1{
+		background-color: black;
+		float:right; 
+		position:relative;
+		text-align: center;
+		width: 20%;
+	}
+	#bparteUserDatos_2{
+		background-color: black;
+		border-left: 20px solid rgb(170, 119, 47);
+		float:right;
+		position:relative;
+		text-align: center;
+		width: 25%;
+	}
+	.conteNidos{
+		float: left;
+		height: 80px;
+	}
 	.btn:active{
 	    background:#FFB347;
 	}
@@ -166,12 +213,16 @@
       background-color:#FFB347 !important;
       color: black !important;
 	}
+	.datapicker{
+		height: 10px;
+		width: 50%;
+	}
 
 /* E */
 	/*Ventana Modal*/
 	.ent-modal{
 		height:30px;
-		white-space: pre
+		white-space: pre;
 		width:500px;
 	}
 	.enlacespie{ 
@@ -187,24 +238,30 @@
 		color:rgb(246, 162, 80);
 	}
 		/*Ventana Modal*/
-	.estilosinputs:required:invalid { 
+	.estilosinputs:required:invalid, .datapicker{ 
 		border: 1px solid red;
 		font-family: 'Raleway', sans-serif;
+		border-radius: 4px;
 	}
-	.estilosinputs:required:valid {
+	.estilosinputs:required:valid, .datapicker {
 		border: 1px solid green;
 		font-family: 'Raleway', sans-serif;
+		border-radius: 4px;
 	}
-	.estilosinputs:invalid {
+	.estilosinputs:invalid, .datapicker {
 		border: 1px solid red;
 		font-family: 'Raleway', sans-serif;
+		border-radius: 4px;
 	}
 	/* Estilo por defecto */
 	.estilosinputs:valid { 
 		border: 1px solid green;
 		font-family: 'Raleway', sans-serif;
-	}
-
+		width: 100%;
+    	padding: 12px;
+	    border-radius: 4px;
+	    resize: vertical;
+    }
 /* F */
 	/*Ventana Modal*/
 	#fusuagral {
@@ -222,6 +279,12 @@
 	    margin-bottom: 10px;
 	    width: 200px;
 	}
+	
+	.estilosinputs input[type="text"],input[type="email"],input[type="password"],input[type="number"] {
+        width: 100%;
+        margin-top: 0;
+        border-radius: 4px;
+    }
 
 /* G */
 
@@ -474,6 +537,16 @@
 	}
 	.row{
 		text-align: justify;
+	}
+	.radio-texto {
+	    float: left;
+	    margin-right: 3%;
+	}
+	.radio-opciones {
+		display: inline-block;
+	    margin: auto;
+
+	    text-align: center;
 	}
 
 /* S */
