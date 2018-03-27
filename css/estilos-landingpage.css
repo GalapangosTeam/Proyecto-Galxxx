@@ -261,6 +261,23 @@
     	padding: 12px;
 	    border-radius: 4px;
 	    resize: vertical;
+    }
+/* F */
+	/*Ventana Modal*/
+	#fusuagral {
+	    font-family: 'Raleway', sans-serif;
+	    width: 400px;
+	}
+	#fusuagral label {
+	    display: inline-block;
+	    font-family: 'Raleway', sans-serif;
+	    width: 150px;
+	}
+	#fusuagral input {
+	    display: inline-block;
+	    font-family: 'Raleway', sans-serif;
+	    margin-bottom: 10px;
+	    width: 200px;
 	}
 	
 	.estilosinputs input[type="text"],input[type="email"],input[type="password"],input[type="number"] {
@@ -268,9 +285,6 @@
         margin-top: 0;
         border-radius: 4px;
     }
-
-
-/* F */
 
 /* G */
 
@@ -528,9 +542,6 @@
 	    float: left;
 	    margin-right: 3%;
 	}
-	
-	
-
 	.radio-opciones {
 		display: inline-block;
 	    margin: auto;

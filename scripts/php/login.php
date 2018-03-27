@@ -11,7 +11,6 @@ validarExisteUsuario($correo,$contra);
 function validarExisteUsuario($correo,$contra){
 
 	include('abrir_conexion.php');
-
 	//para tabla usuarios generales
 	$buscarCorreo_2 = "SELECT * FROM $tbl2 WHERE correo='$correo' AND contra='$contra'";
 	$resultado_2 = $conexion->query($buscarCorreo_2);
@@ -45,7 +44,7 @@ function inciarSesionAdmin($result,$password){
     $_SESSION['start'] = time();				
     $_SESSION['expire'] = $_SESSION['start'] + (5 * 60); // tiempo para expirar por inactividad, 5 = minutos * 60 = segundos.
 
-    //abra el indexx + los divs con sus caracteristicas de usuario.
+    //abra el indexx + los divs con sus caracteristicas de usuario
     header("Localtion:");
     echo "Usuario: ". $_SESSION['nombres'] .",".$_SESSION['apellidopat'].$_SESSION['apellidomat'];
     echo "<br><br><a href=indexx.html> Panel de Control</a>"; 
