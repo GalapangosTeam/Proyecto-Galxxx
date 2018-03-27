@@ -140,16 +140,26 @@
 /* B */
 	.btn:active{
 	    background:#FFB347;
+
 	}
+
 	#btnregis{
 		font-size: 1.3vw;
+		
+
 	}
 	#btnbuscar{
 		font-size: 1.3vw;
 	}
 
+	body{
+	font-family: 'Raleway', sans-serif;
+
+
+}
+
 /* C */
-	#cajabuscar{
+		#cajabuscar{
 		font-size: 1.3vw;	
 	}
 	#cuerpo{
@@ -161,19 +171,57 @@
 		font-size: 1.3vw;
 	}
 
+	
+	#contact {
+	padding: 2px; margin-left: 2px; margin: 350px;
+	border-radius: 20px;
+	background: black; border: 1px solid black;
+	-moz-box-shadow: 0px 0px 8px black;
+	-webkit-box-shadow: 0px 0px 8px black;
+	font: black;
+
+  	}
+	#contact{
+		background:white ;
+		color: black;
+		
+	}
+	/*Estilos Equipos pantallitas*/
+.close {
+	background: #606061;
+	color: #FFFFFF;
+	line-height: 25px;
+	position: absolute;
+	right: -12px;
+	text-align: center;
+	top: -10px;
+	width: 24px;
+	text-decoration: none;
+	font-weight: bold;
+	-webkit-border-radius: 12px;
+	-moz-border-radius: 12px;
+	border-radius: 12px;
+	-moz-box-shadow: 1px 1px 3px #000;
+	-webkit-box-shadow: 1px 1px 3px #000;
+	box-shadow: 1px 1px 3px #000;
+}
+
+.carousel{
+	padding: 5px; margin-left: 5px; margin: 150px;
+	border-radius: 20px;
+	 border: 1px solid black;
+	-moz-box-shadow: 0px 0px 8px black;
+	-webkit-box-shadow: 0px 0px 8px black;
+	font: black;
+}
+.close:hover { background: #00d9ff; }
 /* D */
 	.dropdounColores:active{
       background-color:#FFB347 !important;
       color: black !important;
 	}
-
 /* E */
-	/*Ventana Modal*/
-	.ent-modal{
-		height:30px;
-		white-space: pre
-		width:500px;
-	}
+	
 	.enlacespie{ 
 		color:rgb(255, 165, 0); 
 	}
@@ -186,42 +234,35 @@
 	.enlacespie:hover{ 
 		color:rgb(246, 162, 80);
 	}
-		/*Ventana Modal*/
-	.estilosinputs:required:invalid { 
-		border: 1px solid red;
-		font-family: 'Raleway', sans-serif;
-	}
-	.estilosinputs:required:valid {
-		border: 1px solid green;
-		font-family: 'Raleway', sans-serif;
-	}
-	.estilosinputs:invalid {
-		border: 1px solid red;
-		font-family: 'Raleway', sans-serif;
-	}
-	/* Estilo por defecto */
-	.estilosinputs:valid { 
-		border: 1px solid green;
-		font-family: 'Raleway', sans-serif;
-	}
+		
+	#enviar{
+	font-size: auto;
+	height: auto;
+	height: 50px;
+	align-content: center;
+	width: 250 ;
+	
+}
 
 /* F */
 	/*Ventana Modal*/
-	#fusuagral {
-	    font-family: 'Raleway', sans-serif;
-	    width: 400px;
-	}
-	#fusuagral label {
-	    display: inline-block;
-	    font-family: 'Raleway', sans-serif;
-	    width: 150px;
-	}
-	#fusuagral input {
-	    display: inline-block;
-	    font-family: 'Raleway', sans-serif;
-	    margin-bottom: 10px;
-	    width: 200px;
-	}
+	
+	fieldset{
+	background: white;
+}
+.formulario{
+	color: black;
+	background: blue;
+	text-align: center;
+	font-size: 5px;
+}
+.forma-i{
+	height: 30px;
+	width: 300px ;
+	min-width: 200px;
+	resize: auto;
+}
+
 
 /* G */
 
@@ -237,22 +278,14 @@
 	hr{
 		background-color: rgb(230, 230, 230);
 	}
-	#hr_form_regis{
-		background-color:  #FFB347;
-		border-radius: 5px;
-		height: 5px;
-	}
-	#hr_admin{
-		background-color:  rgb(170, 119, 47);
-		border-radius: 3px;
-		height: 5px;
-	}
-	#hr_usernormal{
-		background-color: rgb(255, 204, 132);
-		border-radius: 3px;
-		height: 5px;
-	}
+	
 
+      /* Optional: Makes the sample page fill the window. */
+
+
+h1{
+	text-align: center;
+}
 /* I */
 	/*=========================
   			Iconos
@@ -308,6 +341,14 @@
 	    -o-transform: scale(0.9);
 	    transform: scale(0.9);
 	}	
+	
+
+
+.t{
+	font-size: 15px;
+}
+
+
 
 /* J */
 
@@ -324,82 +365,50 @@
 	    float: none;
 	}
 
-/* PROMOCIONES */
-div.foo{
-  width: 90%;
-  margin: 0 auto;
-  text-align: center;
-}
-.letter{
-  display: inline-block;
-  font-weight: 900;
-  font-size: 5em;
-  margin: 0em;
-  position: relative;
-  color: #00B4F1;
-  transform-style: preserve-3d;
-  perspective: 400;
-  z-index: 1;
-}
-.letter:before, .letter:after{
-  position:absolute;
-  content: attr(data-letter);
-  transform-origin: top left;
-  top:0;
-  left:0;
-}
-.letter, .letter:before, .letter:after{
-  transition: all 0.3s ease-in-out;
-}
-.letter:before{
-  color: black;
-  text-shadow: 
-    -1px 0px 1px orange,
-    1px 0px 1px orange;
-  z-index: 3;
-  transform:
-    rotateX(0deg)
-    rotateY(-15deg)
-    rotateZ(0deg);
-}
-.letter:after{
-  color: orange;
-  z-index:2;orange
-  transform:
-    scale(1.08,1)
-    rotateX(0deg)
-    rotateY(0deg)
-    rotateZ(0deg)
-    skew(0deg,1deg);
-}
-.letter:hover:before{
-  color: orange;
-  transform:
-    rotateX(0deg)
-    rotateY(-40deg)
-    rotateZ(0deg);
-}
-.letter:hover:after{
-  transform:
-    scale(1.08,1)
-    rotateX(0deg)
-    rotateY(40deg)
-    rotateZ(0deg)
-    skew(0deg,22deg);
-}
-
-/*PROMOCIONES */
-
 /* M */
-	.main{
-		background-color: white;
-	}
+    
+     
+	
 	#mapa{
 	   background-color: grey;
 	   height: 400px;
 	   width: 100%;
 	}
-
+	
+	/*Estilos modales de equipo*/
+	.modalDialog {
+		position: fixed;
+		font-family: Arial, Helvetica, sans-serif;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		background: rgba(0,0,0,0.8);
+		z-index: 99999;
+		opacity:0;
+		-webkit-transition: opacity 400ms ease-in;
+		-moz-transition: opacity 400ms ease-in;
+		transition: opacity 400ms ease-in;
+		pointer-events: none;
+	}
+	.modalDialog:target {
+		opacity:1;
+		pointer-events: auto;
+	}
+	.modalDialog > div {
+		width: 400px;
+		position: relative;
+		margin: 10% auto;
+		padding: 5px 20px 13px 20px;
+		border-radius: 10px;
+		background: #fff;
+		background: -moz-linear-gradient(#fff, #999);
+		background: -webkit-linear-gradient(#fff, #999);
+		background: -o-linear-gradient(#fff, #999);
+	  -webkit-transition: opacity 400ms ease-in;
+	-moz-transition: opacity 400ms ease-in;
+	transition: opacity 400ms ease-in;
+	}
 /* N */
 	.nav-link {
 		color: white;
@@ -486,8 +495,10 @@ div.foo{
 	 	-webkit-transform: rotate(-45deg);
 	 	transform: rotate(-45deg);
 	}
-
 /* O */
+#org{
+font-size: 4em;
+}
 
 /* P */
 	.piedepag{
@@ -529,26 +540,11 @@ div.foo{
 		line-height:60px;
 		text-align: center;
 	}
-	.promociones{
-		 width: 100%;
- 		 border-radius: 15px ;
- 		 
- 		 border: black 1px solid;
- 		 margin: 10px; margin-right: 10px;
- 		 margin-left: 10px;
- 		 padding: 10px;
-
-	}
-	.promo{
-		margin-left:70px;
-		width: 50%;
-	}
-	
 
 /* Q */
 
 /* R */
-	#rayapieredes{
+#rayapieredes{
 		background-color: rgb(255, 178, 85);
 		border-radius: 10px;
 		height: 4px;
@@ -556,16 +552,26 @@ div.foo{
 	.row{
 		text-align: justify;
 	}
-
 /* S */
 
 /* T */
-	#temaprinci{
+textarea{
+	width: 300px ;
+	height: 80px ;
+	font-size: 20px;
+	text-align: center;
+}
+#temaprinci{
 		font-size: 40px;
 		text-align: center;
 	}
+	
+	
 
 /* U */
+.ubicacion{
+	text-align: center;
+}
 
 /* V */
 
@@ -576,5 +582,13 @@ div.foo{
 /* Y */
 
 /* Z */
-/*BY: YIZECKKER2304 / Pedro Erick Ríos García, México*/
+
+
+
+
+
+
+
+
+
 
