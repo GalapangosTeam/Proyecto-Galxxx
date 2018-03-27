@@ -31,7 +31,7 @@
 		<header class="header">
 			<!--Logo y cintura del logo-->
 			<div class="container">
-				<img src="imagenes/LandingPage/isotipo_galmus.png" alt="Isotipo de Galmus" class="img-fluid" style="width: 15%; height: 15%; vertical-align: middle;">GalMus
+				<img src="imagenes/LandingPage/isotipo_galmus.png" alt="Isotipo de Galmus" class="img-fluid" style="width: 20%; height: 20%; vertical-align: middle;">GalMus
 			</div>
 		</header>
 
@@ -98,6 +98,7 @@
 					<!-- SECCION PARA REGISTRARSE --> 
 				    <div id="registrarse" class="container opcion"><br>
 					 	<h1 class="text-center">Formulario de registro.</h1><hr id="hr_form_regis">
+
 					    <div id="formNormales" class="container-fluid animated zoomInUp">
 						 	<form id="fusua" method="POST" action="scripts/php/registro.php" class="container-fluid">
 						 		<div class="row align-items-center justify-content-center">
@@ -106,34 +107,30 @@
 								    	<strong>Nombre(s):</strong>
 								    	<span class="req">*</span>
 								    </label>
-
 								 	<input title="Se necesita su Nombre" type="text" required minlenght="1" class="ent-modal estilosinputs form-control" maxlength="30" placeholder=" Nombre"><br>
+
 								    <label class="control-label col-xs-12">
 								    	<strong>Apellido Paterno:</strong>
 								    	<span class="req">*</span>
 								    </label>
-
 								    <input title="Se necesita su Apellido Parteno" type="text" required minlenght="5" maxlength="50" class="ent-modal estilosinputs form-control" placeholder=" Paterno"><br>
 
 								    <label class="control-label col-xs-12">
 								    	<strong>Apellido Materno:</strong>
 								    	<span class="req">*</span>
 								    </label>
-
-                  <input title="Se necesita su Apellido Materno" type="text" required minlenght="5" maxlength="50" class="ent-modal estilosinputs form-control" placeholder=" Materno"><br>
+								    <input title="Se necesita su Apellido Materno" type="text" required minlenght="5" maxlength="50" class="ent-modal estilosinputs form-control" placeholder=" Materno"><br>
 
 								    <label class="control-label col-xs-12">
 								    	<strong>Correo Electronico:</strong>
 								    	<span class="req">*</span>
 								    </label>
-
 								 	<input title="Se necesita su Correo Electronico" required class="ent-modal estilosinputs form-control" type="email" minlenght="1" maxlength="30" id="inputEmail" placeholder=" Correo Electronico"><br>
 
 								 	<label class="control-label col-xs-12">
 								 		<strong>Contraseña:</strong>
 								 		<span class="req">*</span>
 								 	</label>
-
 								 	<input title="Se necesita su Contrasena" required type="password" minlenght="8" maxlength="16" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{3,}" class="ent-modal estilosinputs" id="inputPassword" placeholder=" Contraseña"><br>
 
 								    <label class="control-label col-xs-12">
@@ -151,14 +148,12 @@
 								    <label class="control-label col-xs-12">
 								    	<strong>Télefono:</strong>
 								    </label>
-
 								    <input type="number" required minlenght="8" maxlength="10" pattern="\([0-9]{3}\) [0-9]{3}[ -][0-9]{4}" class="ent-modal estilosinputs" placeholder=" Telefono" name="tel"><br>
 									
 								    <label class="control-label col-xs-12">
 								    	<strong>Genero:</strong>
 								    	<span class="req">*</span>
 								    </label><br>
-
 								 	<div class="radio-opciones">
 									    <label class="radio-texto">
 									    	<input class="radio-entrada" type="radio" name="sex" onclick="genOcupacion(1)">  Masculino  
@@ -173,14 +168,12 @@
 								    	<strong>Ocupación: </strong>
 								    	<span class="req">*</span>
 								    </label>
-
 									<select type="text" required class="ent-modal estilosinputs form-control" placeholder=" Ocupación " style="height: 45px;" id="listaOpcion">
 									</select><br>
-                
+
 								   <label class="control-label col-xs-12">
 								    	<strong>Edad:</strong>
 								    </label>
-
 								    <input type="number" required minlenght="2" maxlength="3" pattern="\([0-9]{3}\) [0-9]{3}[ -][0-9]{4}" class="ent-modal estilosinputs" placeholder=" Edad" name="edad"><br><br>
 
 								    <label class="checkbox-inline radio-opciones">
@@ -222,14 +215,17 @@
 					</footer>
 				    </div>
 
+				    
+					
+					
 	    		</div>
 	    	</div>
 	    </div>
 
 		<!--Contenidos de la pagina en secciones,aside, etc..-->
-		
+		<br>
 		<main>
-		  <!--a href="scripts/php/prueba.php" class="text-center"> Ver bd </a-->
+		    <!--a href="scripts/php/prueba.php" class="text-center"> Ver bd </a-->
 			<!--Carrusel de imagenes-->
 			<div class="container" style="width: 55%; height: 55%;">
 				<div class="col-md-12">
