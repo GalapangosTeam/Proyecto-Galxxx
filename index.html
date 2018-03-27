@@ -12,7 +12,7 @@
 	<meta name="robots" content="index"/>
 	<meta http-equiv="cache-control" content="no-cache"/>
 	<meta name="copyright" content="Galapangos Team Developers">
-	<link rel="shortcut icon" type="image/x-icon" href="imagenes/GalapangosTeam.ico"/>
+	<link rel="shortcut icon" type="image/x-icon" href="../imagenes/LandingPage/favicon.ico"/>
 	<link rel="stylesheet" type="text/css" href="css/estilos-landingpage.css">
 	<link rel="stylesheet" type="text/css" href="css/apertura.css">
 	<link rel="stylesheet" type="text/css" href="css/normalize.css">
@@ -28,31 +28,38 @@
 	<!--Parte 1 animated fadeOutUp-->
 	<header class="container-fluid parte_1">
 		<div class="row align-items-center justify-content-center">
-			<div class="col-xs-12 col-sm-8 col-md-9 col-lg-9 parte_11">
-				<p class="text-center animated fadeIn nomb"> Galmus </p>
+			<div id="galmuss" class="col-xs-12 col-sm-8 col-md-9 col-lg-9">
+				<p class="text-center"> Galmus </p>
 			</div>
-			<div class="col-xs-12 col-sm-8 col-md-9 col-lg-9 parte_11">
-				<hr>
-				<p class="text-center animated infinite pulse">¡ Bienvenido a nuestro Portal !</p>
+			<div id="bienve" class="col-xs-12 col-sm-8 col-md-9 col-lg-9">
+				<hr class="hr_admin animated bounceInRight">
 			</div>
 		</div>
 	</header>
 		
 	<!--Boton para abrir landig page-->	
-	<menu class="container-fluid btnAbrirLanding">
-		<button id="botonentrar" type="button" class="btn btn-dark">
+	<menu class="container-fluid parte_2">
+		<!--button id="botonentrar" type="button" class="btn btn-dark">
 			<i class="fas fa-sort fa-7x"></i>
-		</button>
+		</button-->
+		<div class="row align-items-center justify-content-center">
+			<div class="col-xs-12 col-sm-8 col-md-9 col-lg-9 ">
+				<p id="holi" style="margin: 9px; text-align: center; display: none; font-size: 30px;">Hola, ¿cómo estás?</p>
+				<p id="infoUno" style="text-align: justify; display: none;">
+					Galmus, es una organización que trabaja día con día, mejorando y proponiendo nuevos retos y desafíos para contribuir al desarrollo del aprendizaje de los estudiantes de música, con el fin de que obtengan rápida y fácilmente los conocimientos necesarios reconocer, memorizar y diferenciar las notas musicales en partituras. 
+				</p>
+			</div>
+			<div id="intentar" class="col-xs-12 col-sm-8 col-md-9 col-lg-9" style="display: none;">
+					<p style="text-align: center;"><b>¡  INTENTALO  !</b></p>
+					<p><b>Da click en cualquier parte de la pantalla para ver a nuestro sitio web completo, que esperamos te agrade.
+					</b></p>
+			</div>
+		</div>
 	</menu>
 
 	<!--Parte 2 animated fadeOutDown-->
-	<footer class="container-fluid parte_2">
-		<div class="row align-items-center justify-content-center">
-			<div class="col-xs-12 col-sm-8 col-md-9 col-lg-9 pDarClick">
-				<p class="text-center"><strong> Da click arriba para ver el sitio web.</strong></p>
-			</div>
-		</div>
-	</footer>
+	<!--footer class="container-fluid ">
+	</footer-->
 
 	<!--Scripts-->
 	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>

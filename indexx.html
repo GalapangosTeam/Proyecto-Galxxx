@@ -13,7 +13,7 @@
 	<meta http-equiv="cache-control" content="no-cache"/>
 	<meta name="copyright" content="Galapangos Team Developers">
 	<meta name="distribution" content="global"/>
-	<link rel="shortcut icon" type="image/x-icon" href="imagenes/GalapangosTeam.ico"/>
+	<link rel="shortcut icon" type="image/x-icon" href="imagenes/LandingPage/favicon.ico"/>
 	<link rel="stylesheet" type="text/css" href="css/estilos-landingpage.css">
 	<link rel="stylesheet" type="text/css" href="css/normalize.css">
 	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -25,154 +25,199 @@
 	<title> Galapangos Team | Oficial </title>
 </head>
 <body id="cuerpo">
-	<div class="animated zoomIn fuente">	
+	<div class="animated fadeIn fuente">	
 
 		<!-- Encabezado, logo del la organización-->
-		<header id="header">
+		<header class="header">
 			<!--Logo y cintura del logo-->
 			<div class="container">
-				<!--img id="logo" src="imagenes/LandingPage/Logomine.png" alt="Logo Galmus"-->
-				<h1> GalMus </h1>
+				<img src="imagenes/LandingPage/isotipo_galmus.png" alt="Isotipo de Galmus" class="img-fluid" style="width: 15%; height: 15%; vertical-align: middle;">GalMus
 			</div>
 		</header>
 
 		<!--Barra de Navegación-->
-		<nav class="navbar navbar-light bg-faded">
-				<a class="nav-link navp" href="#header"> GalMus </a>
+		<nav class="navbar navbar-light">
+				<a class="nav-link navp" href="#"> GalMus </a>
 				<li class="nav-item dropdown listanav">
 					<div class="nav-link dropdown-toggle" id="midropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Productos </div>
 					    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-						    <li><a class="dropdown-item dropdounColores" href="#"> GalMus Software </a></li>
+						    <li><a class="nav-link dropdown-item dropdounColores" href="#"> GalMus Software </a></li>
 						    <div class="dropdown-divider"></div>
-						    <li><a class="dropdown-item dropdounColores" href="#"> Material didáctico </a></li>
+						    <li><a class="nav-link dropdown-item dropdounColores" href="#"> Material didáctico </a></li>
 					    </ul>
 				</li>
-				<a class="nav-link" href="acerca.html"> Acerca de la organización </a>
+				<a class="nav-link" href="acerca.html"> Acerca de </a>
 				<a class="nav-link" href="acerca.html#contact"> Contacto </a>
 				<a class="nav-link" href="mision.html"> Misión </a>
 				<a class="nav-link" href="vision.html"> Visión </a>
 				<form class="form-inline my-2 my-lg-0">
-				    <input class="form-control mr-sm-2 formcolo" type="text" placeholder="Buscar">
-				    <button class="btn btn-outline-warning" my-2 my-sm-0 buscarcolo" type="submit">Buscar</button>
+				    <input id ="cajabuscar" class="form-control mr-sm-2" type="text" placeholder="Buscar">
+				    <button id="btnbuscar" class="btn btn-outline-warning" type="submit">Buscar</button>
 				</form>
-				<button class="btn btn-dark" type="button" data-toggle="modal" onclick="document.getElementById('id01').style.display='block'">
+				<button id ="btnregis" class="btn" type="button" data-toggle="modal" onclick="document.getElementById('id01').style.display='block'">
 					<i class="fas fa-user fa-lg"></i>
-					<strong>Iniciar Sesión</strong>
+					<strong>Sesión</strong>
 				</button>
 		</nav>
+		
+		<!--Barra para usuarios logueados.-->
+		<aside id="barraPromo" style="display: block;">
+			<span id="bpartePromo_1">
+				<a class="nav-link" href="acerca.html"><i class="fas fa-certificate"></i> Mis promociones </a>
+			</span>
+			<span id="bpartePromo_2">
+				<a class="nav-link" href="acerca.html#contact"><i class="fas fa-tags" data-fa-transform="rotate-260"></i> Descuentos</a>
+			</span>
+			<span id="bparteUserDatos_1">
+				<a class="nav-link" href="mision.html"><i class="fas fa-power-off"></i> Cerrar sesión </a>
+			</span>
+			<span id="bparteUserDatos_2">
+				<a class="nav-link" href="mision.html"> Pedro R.</a>
+			</span>
+		</aside>
+		<div style="clear:both;"></div>
 		<br>
 		
 		<!--Ventana modal-->
 	  	<div class="container"> 
-	    	<div id="id01" class="w3-modal ">
-		     	<div class="w3-modal-content w3-animate-right">
+	    	<div id="id01" class="w3-modal">
+		     	<div class="w3-modal-content modal-lg w3-animate-zoom">
 		      		<header class="w3-container w3-black"> 
-		       			<span onclick="document.getElementById('id01').style.display='none'" class="w3-button w3-black w3-hover-aqua w3-large w3-display-topright">X
+		       			<span onclick="document.getElementById('id01').style.display='none'" class="w3-button w3-black w3-hover-aqua w3-large w3-display-topright">&times;
 		       			</span>
 		       			<h2>Bienvenido</h2>
 		    		</header>
 
 			    	<div class="w3-bar w3-border-bottom">
-				    	<button class="enlaceOpcion w3-bar-item w3-button" onclick="opcModal(event,'registrarse')">Registrarse
+				    	<button class="enlaceOpcion w3-bar-item w3-button" onclick="opcModal(event,'registrarse')" style="font-size: 25px;">Registrarse
 				    	</button>
-				    	<button class="enlaceOpcion w3-bar-item w3-button" onclick="opcModal(event,'iniciarSesion')">Iniciar Sesión
+				    	<button class="enlaceOpcion w3-bar-item w3-button" onclick="opcModal(event,'iniciarSesion')" style="font-size: 25px;">Iniciar Sesión
 				    	</button>
 			    	</div>
 			 	
 					<!-- SECCION PARA REGISTRARSE --> 
-				    <div id="registrarse" class="w3-container opcion">
-					 	<h1 class="text-center">Formulario de registro.</h1>
+				    <div id="registrarse" class="container opcion"><br>
+					 	<h1 class="text-center">Formulario de registro.</h1><hr id="hr_form_regis">
 
-					 	<form>
-						    <label class="control-label col-xs-2">
-						    	<strong>Correo Electronico:</strong>
-						    	<span class="req">*</span>
-						    </label>
-						 	
-						 	<input class="ent-modal form-control" type="email" required minlenght="1" maxlength="30" id="inputEmail" placeholder="Correo Electronico"><br>
-						 	<label class="control-label col-xs-2">
-						 		<strong>Contraseña:</strong>
-						 		<span class="req">*</span>
-						 	</label>
-						 	
-						 	<input type="password" required minlenght="8" maxlength="16" pattern="[A-Z]{1}[a-z]{1}[0-9]{1}" class="ent-modal" id="inputPassword" placeholder="Contraseña"><br>
-						    <label class="control-label col-xs-3">
-						    	<strong>Confirmar Contraseña:</strong>
-						    	<span class="req">*</span>
-						    </label>
-            				<input type="password" required minlenght="8" maxlength="16" pattern="[A-Z]{1}[a-z]{1}[0-9]{1}" class="ent-modal" placeholder="Confirmar Contraseña"><br>
-						    <label class="control-label col-xs-3">
-						    	<strong>Nombre(s):</strong>
-						    	<span class="req">*</span>
-						    </label>
-						 
-						 	<input type="text" required minlenght="1" maxlength="30" class="ent-modal" placeholder="Nombre"><br>
-						    <label class="control-label col-xs-3">
-						    	<strong>Apellido(s):</strong>
-						    	<span class="req">*</span>
-						    </label>
-						    
-						    <input type="text" required minlenght="1" maxlength="30" class="ent-modal" placeholder="Apellido"><br>
-						    <label class="control-label col-xs-3">
-						    	<strong>Télefono:</strong>
-						    </label>
-						 	
-						    <input type="number" required minlenght="8" maxlength="10" pattern="\([0-9]{3}\) [0-9]{3}[ -][0-9]{4}" class="ent-modal" placeholder="Telefono"><br>
-						    <label class="control-label col-xs-3">
-						    	<strong>F. Nacimiento:</strong>
-						    	<span class="req">*</span>
-						    </label>
-						    <input id="datepicker" width="350"/><br>
-						</form>
+					    <div id="formNormales" class="container-fluid animated zoomInUp">
+						 	<form id="fusua" method="POST" action="scripts/php/registro.php" class="container-fluid">
+						 		<div class="row align-items-center justify-content-center">
 
-					    <label class="control-label col-xs-3">
-					    	<strong>Genero:</strong>
-					    	<span class="req">*</span>
-					    </label><br>
-					 
-					    <label class="radio-inline">
-					    	<input type="radio" name="genderRadios" value="male">  Masculino  
-						</label><br>
-					    
-					    <label class="radio-inline">
-					    	<input type="radio" name="genderRadios" value="female">  Femenino  
-						</label><br>
-					    
-					    <label class="radio-inline">
-					    	<input type="radio" name="genderRadios" value="male">  Otro  
-						</label><br>
-					    
-					    <label class="radio-inline">
-					        <input type="radio" name="genderRadios" value="female">  Prefiero no decirlo  
-					    </label>
-					    <br><br><br>
-					    
-					    <label class="checkbox-inline">
-					        <input type="checkbox" value="agree">  Acepto 
-					        	<a href="#">Términos y condiciones</a>
-					    </label><br>
-					    <input type="submit" class="btn btn-primary" value="Enviar">
-					    <input type="reset" class="btn btn-default" value="Limpiar">
+								    <label class="control-label col-xs-12">
+								    	<strong>Nombre(s):</strong>
+								    	<span class="req">*</span>
+								    </label>
+								 	<input title="Se necesita su Nombre" type="text" required minlenght="1" class="ent-modal estilosinputs form-control" maxlength="30" placeholder=" Nombre"><br>
+
+								    <label class="control-label col-xs-12">
+								    	<strong>Apellido Paterno:</strong>
+								    	<span class="req">*</span>
+								    </label>
+								    <input title="Se necesita su Apellido Parteno" type="text" required minlenght="5" maxlength="50" class="ent-modal estilosinputs form-control" placeholder=" Paterno"><br>
+
+								    <label class="control-label col-xs-12">
+								    	<strong>Apellido Materno:</strong>
+								    	<span class="req">*</span>
+								    </label>
+								    <input title="Se necesita su Apellido Materno" type="text" required minlenght="5" maxlength="50" class="ent-modal estilosinputs form-control" placeholder=" Materno"><br>
+
+								    <label class="control-label col-xs-12">
+								    	<strong>Correo Electronico:</strong>
+								    	<span class="req">*</span>
+								    </label>
+								 	<input title="Se necesita su Correo Electronico" required class="ent-modal estilosinputs form-control" type="email" minlenght="1" maxlength="30" id="inputEmail" placeholder=" Correo Electronico"><br>
+
+								 	<label class="control-label col-xs-12">
+								 		<strong>Contraseña:</strong>
+								 		<span class="req">*</span>
+								 	</label>
+								 	<input title="Se necesita su Contrasena" required type="password" minlenght="8" maxlength="16" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{3,}" class="ent-modal estilosinputs" id="inputPassword" placeholder=" Contraseña"><br>
+
+								    <label class="control-label col-xs-12">
+								    	<strong>Confirmar Contraseña:</strong>
+								    	<span class="req">*</span>
+								    </label>
+		            				<input type="password" required minlenght="8" maxlength="16" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{3,}" class="ent-modal estilosinputs" placeholder=" Confirmar Contraseña" name="contrasena"><br>
+
+								    <label class="control-label col-xs-12">
+								    	<strong>F. Nacimiento:</strong>
+								    	<span class="req">*</span>
+								    </label>
+								    <input style="border-radius: 4px; width: 100%;" id="datepicker" name="fecha"><br>
+
+								    <label class="control-label col-xs-12">
+								    	<strong>Télefono:</strong>
+								    </label>
+								    <input type="number" required minlenght="8" maxlength="10" pattern="\([0-9]{3}\) [0-9]{3}[ -][0-9]{4}" class="ent-modal estilosinputs" placeholder=" Telefono" name="tel"><br>
+									
+								    <label class="control-label col-xs-12">
+								    	<strong>Genero:</strong>
+								    	<span class="req">*</span>
+								    </label><br>
+								 	<div class="radio-opciones">
+									    <label class="radio-texto">
+									    	<input class="radio-entrada" type="radio" name="sex" onclick="genOcupacion(1)">  Masculino  
+										</label>
+									    
+									    <label class="radio-texto">
+									    	<input class="radio-Entrada" type="radio" name="sex" onclick="genOcupacion(2)">  Femenino  
+										</label><br>
+								    </div>
+
+								    <label class="control-label col-xs-12">
+								    	<strong>Ocupación: </strong>
+								    	<span class="req">*</span>
+								    </label>
+									<select type="text" required class="ent-modal estilosinputs form-control" placeholder=" Ocupación " style="height: 45px;" id="listaOpcion">
+									</select><br>
+
+								   <label class="control-label col-xs-12">
+								    	<strong>Edad:</strong>
+								    </label>
+								    <input type="number" required minlenght="2" maxlength="3" pattern="\([0-9]{3}\) [0-9]{3}[ -][0-9]{4}" class="ent-modal estilosinputs" placeholder=" Edad" name="edad"><br><br>
+
+								    <label class="checkbox-inline radio-opciones">
+								        <input type="checkbox" value="agree">  Acepto 
+								        	<a href="#">Términos y condiciones</a>
+								    </label><br>
+							    </div>
+							    
+						    </form>
+					    </div>
+					    <footer class="w3-container">
+						<div class="w3-container w3-light-grey w3-padding">
+							<input id ="enviar" type="submit" class="btn btn-primary" value="Enviar">
+							<input type="reset" class="btn btn-default" value="Limpiar">
+					        <button class="w3-button w3-right w3-white w3-border" onclick="document.getElementById('id01').style.display='none'">Cerrar
+					        </button>
+					    </div>
+					</footer>
 					</div>
 
-				<!-- SECCION PARA INICIAR SESION --> 
+					<!-- SECCION PARA INICIAR SESION --> 
 				    <div id="iniciarSesion" class="w3-container opcion">
 				       	<h1 class="text-center">Entrar</h1>
-				       	<form>
-					       	<label>Correo Electronico<span class="req">*</span></label> 
-					        <input class="ent-modal" type="email"required autocomplete="off"/><br>
+				       	<form id="iniciarSesion" class="container-fluid animated zoomInUp" method="POST" action="scripts/php/login.php">
+					       	<label>Correo Electronico<span class="req estilosinputs">*</span></label> 
+					        <input class="ent-modal estilosinputs" type="email" required autocomplete="off"/><br>
 					        <label>Contraseña<span class="req">*</span></label>
-					        <input class="ent-modal" type="password"required autocomplete="off"/><br>
+					        <input class="ent-modal estilosinputs" type="password" required autocomplete="off"/><br>
 					        <p class="olvidada"><a href="#">¿Olvidaste tu contraseña?</a></p>
 				        </form>
-				            <input class="btn btn-primary" type="button" value="Entrar">
+				            
+				        <footer class="w3-container">
+							<div class="w3-container w3-light-grey w3-padding">
+								<input class="btn btn-primary" type="button" value="Entrar">
+								<input type="reset" class="btn btn-default" value="Limpiar">
+						        <button class="w3-button w3-right w3-white w3-border" onclick="document.getElementById('id01').style.display='none'">Cerrar
+						        </button>
+						    </div>
+					</footer>
 				    </div>
 
-				    <div class="w3-container w3-light-grey w3-padding">
-				        <button class="w3-button w3-right w3-white w3-border" onclick="document.getElementById('id01').style.display='none'">Cerrar
-				        </button>
-				    </div>
-
+				    
+					
+					
 	    		</div>
 	    	</div>
 	    </div>
@@ -180,10 +225,9 @@
 		<!--Contenidos de la pagina en secciones,aside, etc..-->
 		<br>
 		<main>
-			<a href="scripts/php/conexion.php" class="text-center"> Ver bd </a>
+		    <!--a href="scripts/php/prueba.php" class="text-center"> Ver bd </a-->
 			<!--Carrusel de imagenes-->
-			<br><br>
-			<div class="container">
+			<div class="container" style="width: 55%; height: 55%;">
 				<div class="col-md-12">
 					<div id="Diapos" class="carousel slide" data-ride="carousel">
 						<!-- indicadores -->
@@ -242,7 +286,6 @@
 				<br><hr>
 				<section class="row align-items-center justify-content-center">	
 					<article class="col-xs-12 col-sm-8 col-md-9 col-lg-9">
-					
 							<h2 class="text-center"> Las Partituras de las Notas Musicales </h2>
 							<br>
 								<p class="notaspar">Las figuras musicales son la representación de las notas en un pentagrama, que también les dan su designada duración. Los sostenidos y bemoles suben o bajan medio tono cada nota. Los compases son las divisiones del pentagrama. Cantar una canción de nuestro cantante favorito, silbar, llevar el ritmo con los pies o tocar de oído... Son unas de las cosas que ayudan a mejorar nuestro oído.Lo más importante es estar bien preparado.</p>
@@ -255,7 +298,7 @@
 			</div>
 
 			<br>
-			<!--Informacion sobre el Software-->
+			<!--Información sobre el Software-->
 			<div class="container-fluid">
 				<hr><br>
 				<p id="temaprinci">Curso práctico para aprender a leer música (Solfeo)</p>
@@ -265,8 +308,8 @@
 								<h2 class="text-center"> ¿Software en Desarrollo? </h2><br>
 								<p class="notaspar">Debido a la gran necesidad por parte de los profesores de música a innovar su método de enseñanza en la parte de notas musicales con el método de George Dandelot el cual se basa en su manual con el nombre ‘Estudio de las claves Sol’ Fa y Do’ se tiene la necesidad de crear un sistema que ayude a la enseñanza de notas musicales.</p>
 								<div class="container-fluid">
-									<a class="logo"  href="#"  title="Galmus Logo">
-										<img src="imagenes/LandingPage/logo.png" class="img-fluid imgnota logo" alt="partituras">
+									<a class="isotipogal"  href="#"  title="Galmus Logo">
+										<img src="imagenes/LandingPage/isotipo_galmus.png" class="img-fluid imgnota isotipogal" alt="partituras">
 									</a>
 								</div>
 						</article>
@@ -274,41 +317,40 @@
 				</div>
 			</div>	
 
-			<!--Informacion sobre los desarolladores-->
+			<!--Información sobre los desarolladores-->
 			<div class="container-fluid">
 				<hr><br>
 				<p id="temaprinci"> Nuestro equipo de desarrolladores</p>
 				<div class="container">
 					<section class="row align-items-center justify-content-center">	
 						<div class="col-xs-12 col-sm-4 col-md-4 col-lg-4"><br>
-
-						<!--Pedro-->
-						<div class="container-fluid">
-									<a class="peter"  href="#"  title="Galmus Logo">
-										<img src="imagenes/LandingPage/persona.png" class="img-fluid imgnota peter" alt="peter rivers">
-									</a>
-						</div><hr>
-						<p class="nombresdeve"> Pedro Erick RG. </p><br>
+							<!--Pedro-->
+							<div class="container-fluid">
+								<a class="peter"  href="#"  title="Galmus Isotipo">
+									<img src="imagenes/LandingPage/persona.png" class="img-fluid imgnota peter" alt="peter rivers">
+								</a>
+							</div><hr>
+							<p class="nombresdeve"> Pedro Erick RG. </p><br>
 						</div>
 
 						<!--Victor-->
 						<div class="col-xs-12 col-sm-4 col-md-4 col-lg-4"><br>
-						<div class="container-fluid">
-									<a class="vic"  href="#"  title="Galmus Logo">
-										<img src="imagenes/LandingPage/persona.png" class="img-fluid imgnota vic" alt="VisualYukkie">
-									</a>
-						</div><hr>
-						<p class="nombresdeve"> Víctor Vicente Mtz. </p><br>
+							<div class="container-fluid">
+								<a class="vic"  href="#"  title="Galmus Isotipo">
+									<img src="imagenes/LandingPage/persona.png" class="img-fluid imgnota vic" alt="VisualYukkie">
+								</a>
+							</div><hr>
+							<p class="nombresdeve"> Víctor Vicente Mtz. </p><br>
 						</div>
 
 						<!--Pug Alejandro-->
 						<div class="col-xs-12 col-sm-4 col-md-4 col-lg-4"><br>
-						<div class="container-fluid">
-									<a class="ale"  href="#"  title="Galmus Logo">
-										<img src="imagenes/LandingPage/persona.png" class="img-fluid imgnota ale" alt="Pug">
-									</a>
-						</div><hr>
-						<p class="nombresdeve"> Alejandro Medina A. </p><br>
+							<div class="container-fluid">
+								<a class="ale"  href="#"  title="Galmus Isotipo">
+									<img src="imagenes/LandingPage/persona.png" class="img-fluid imgnota ale" alt="Pug">
+								</a>
+							</div><hr>
+							<p class="nombresdeve"> Alejandro Medina A. </p><br>
 						</div>
 					</section>
 				</div>
@@ -316,60 +358,63 @@
 		</main>
 		<br>	
 
-		<!--Pie de pagina con sus subpies-->
+		<!--Pie de página con sus subpies-->
 		<footer>
 			<!--Parte I del pie de página: Contacto, redes sociales-->
-			<div class="piedepag">
+			<div class="container-fluid piedepag anim-subrayado">
 				<div class="container">
-					<h2 class="sombras" style="padding-top: 10px; padding-bottom: 2px;"> Siguenos </h2>
-					<hr style="background-color: white">
-				    <div class="row align-items-center justify-content-center" style="padding-top: 5px; text-align: center;">
-						<div class="col-xs-12 col-sm-3 col-md-1">
-			                <a class="icoFacebook"  href="#"  title="Facebook">
-			                	<img src="imagenes/LandingPage/icofb.svg" class="img-fluid icoFacebook"  alt="Facebook">
-			                </a>
+					<h2 style="padding-top: 10px;">¡Siguenos!</h2>
+					<hr id="rayapieredes">
+				    <seccion class="row align-items-center justify-content-center" style="padding-top: 10px; text-align: center;">
+						<div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
+							<div class="container-fluid">
+				                <a class="icoFacebook"  href="#"  title="Facebook">
+				                	<img src="imagenes/LandingPage/icofb.svg" class="img-fluid icoFacebook"  alt="Facebook">
+				                </a>
+			                </div>
 			           	</div>
-			           	 <div class="col-xs-12 col-sm-3 col-md-1">
-			            	<a class="icoLinkedin" href="#" title="LinkedIn">
-			            		<img src="imagenes/LandingPage/icolinked.svg" class="img-fluid icoLinkedin" alt="LinkedIn">
-			            	</a>
+			           	<div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
+			           		<div class="container-fluid">
+				            	<a class="icoLinkedin" href="#" title="LinkedIn">
+				            		<img src="imagenes/LandingPage/icolinked.svg" class="img-fluid icoLinkedin" alt="LinkedIn">
+				            	</a>
+			            	</div>
 						</div>
-						<div class="col-xs-12 col-sm-3 col-md-1">
-							<a class="icoYoutube" href="#" title="Youtube">
-			                	<img src="imagenes/LandingPage/icoyb.svg" class="img-fluid icoYoutube" alt="Youtube">
-			                </a>
+						<div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
+							<div class="container-fluid">
+								<a class="icoYoutube" href="#" title="Youtube">
+				                	<img src="imagenes/LandingPage/icoyb.svg" class="img-fluid icoYoutube" alt="Youtube">
+				                </a>
+			                </div>
 						</div>
-			            <div class="col-xs-12 col-sm-3 col-md-1">
-			            	<a class="icoGoogle" href="#"  title="Google +">
-			                	<img src="imagenes/LandingPage/icogoogle.svg" class="img-fluid icoGoogle" alt="Google +">
-			                </a>
+			            <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
+			            	<div class="container-fluid">
+				            	<a class="icoGoogle" href="#"  title="Google +">
+				                	<img src="imagenes/LandingPage/icogoogle.svg" class="img-fluid icoGoogle" alt="Google +">
+				                </a>
+			            	</div>
 			            </div>   
-							<div class="clearfix visible-sm-block"></div>
-					</div>
+					</seccion>
 			  	</div>
 		  	</div>
 
 		  	<!--Parte II del pie de página:  Informacion sobre toda la website-->
 			<div id="piedepag2">
-			  <div class="container ">
+			  <div class="container">
 			    <div class="row">
 			      <div class="color-xs-12 col-sm-6 col-md-3">
 			        <!--Column1-->
-			        <div class="piedepag2">
-			         <h4 class="text-center sombras" style="padding-top: 20px;">Ubicación</h4>
+			        <div class="subpiedepag2">
+			         <h4 class="text-center anim-subrayado_piepa" style="padding-top: 20px;">Ubicación</h4>
 			          <address>
 						<ul class="list-unstyled">
-							<hr>
-							<li> Boulevard de las flores #1205<br>
-								Villa de las Flores<br>
-								Coacalco de Berriozabal<br>
-								Estado de México, 55790<br>
+							<li class="anim-subrayado_piepa" style="text-align: justify;">Boulevard de las flores #1205, Villa de las Flores,<br>
+								Coacalco de Berriozabal,<br>
+								Estado de México, 55790.<br>
 							</li>
-							<li>
-								<hr>
-								Teléfono: (55) 31 47 89 65 07	
-							</li>
-							<hr>
+							<li class="anim-subrayado_piepa" style="text-align: justify: ;">
+								Teléfono: (55) 3147 8965							
+							</li><br>
 							<div class="row align-items-center justify-content-center">
 								<a class="btn btn-warning" href="acerca.html#map" target="_blank" role="button"><strong>Ver ubicación</strong></a>
 							</div>
@@ -381,10 +426,8 @@
 			      <div class="color-xs-12 col-sm-6 col-md-3">
 			        <!--Column2-->
 			        <div class="piedepag2">
-			          <h4 class="text-center sombras" style="padding-top: 20px">Nuestros servicios</h4>
+			          <h4 class="text-center anim-subrayado_piepa" style="padding-top: 20px">Nuestros servicios</h4>
 			          <ul class="list-unstyled">
-			          	<hr>
-			            <li><a class="enlacespie" href="#"></a></li>
 			            <li><a class="enlacespie" href="#">GalMus Software</a></li>
 			            <li><a class="enlacespie" href="#">Ayuda y soporte</a></li>
 			            <li><a class="enlacespie" href="#">Nuevas actualizaciones</a></li>
@@ -394,9 +437,9 @@
 			      <div class="color-xs-12 col-sm-6 col-md-3">
 			        <!--Column3-->
 			        <div class="piedepag2">
-			          <h4 class="text-center sombras" style="padding-top: 20px"> Más información</h4>
+			          <h4 class="text-center anim-subrayado_piepa" style="padding-top: 20px"> Más información</h4>
 			          <ul class="list-unstyled">
-			          	<hr>
+			          	
 			            <li><a class="enlacespie" href="#">Tutorial del Website</a></li>
 			            <li><a class="enlacespie" href="#">Accesibilidad</a></li>
 			            <li><a class="enlacespie" href="#">Declaración de Privacidad</a></li>
@@ -406,9 +449,9 @@
 			      <div class="color-xs-12 col-sm-6 col-md-3">
 			        <!--Column4-->
 			        <div class="piedepag2">
-			          <h4 class="text-center sombras" style="padding-top: 20px"> Desarrolladores </h4>
+			          <h4 class="text-center anim-subrayado_piepa" style="padding-top: 20px"> Desarrolladores </h4>
 			          <ul class="list-unstyled">
-			          	<hr>
+			          	
 			            <li>Pedro Erick Ríos García</li>
 			            <li>Víctor Martínez Martínez</li>
 			            <li>Alejandro Medina Alcántara</li>
@@ -416,12 +459,11 @@
 			        </div>
 			      </div>
 			    </div>
-			  </div>
+			  </div><br>
 			</div>
-			
 			<!--Parte III del pie de página:  Derechos y Copyright-->
-			<div class="piedepag3">
-				<div class="container-fluid">
+			<div class="piedepag3 anim-subrayado_piepa_3">
+				<div class="container-fluid animated infinite pulse">
 							&copy; Todos los derechos reservados. 2018 - Galapangos Team Inc. Todos los derechos reservados.
 				</div>
 			</div>
@@ -433,8 +475,9 @@
 	<script src="https://cdn.jsdelivr.net/npm/gijgo@1.8.1/combined/js/gijgo.min.js" type="text/javascript"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-	<script type="text/javascript" src="scripts/js/animanotasclick.js"></script>
+	<!--script type="text/javascript" src="scripts/js/animanotasclick.js"></script-->
 	<script type="text/javascript" src="scripts/js/maps.js"></script>
+	<script type="text/javascript" src="scripts/js/otrasfunciones.js"></script>
 	<script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
 </body>
 </html>
