@@ -3,10 +3,8 @@
 	//se guardara esta variable y abrire el div de mal contraseña,
 	//despues de hacer unas comparaciones con Jquery para mostrarla.
 		if(isset($_GET['most'])){
-		    unset ($_GET['mostrar']);
 		}else{
-            $mst=null;
-            unset ($_GET['mostrar']);
+		    '';
 		}
 ?>
 <!DOCTYPE html>
@@ -36,6 +34,14 @@
 </head>
 <body id="cuerpo">
 	<div class="animated zoomInDown">	
+    
+		<!--Por si el usuario y/o contraseña estan mal, se lanza esta ventana-->
+		<div id="alertaMala" class="container-fluid" style="display: none;">
+  			<div class="container">
+  				EL usuario y/o contraseña son incorrectos. <br>
+  				Intentelo nuevamente.
+  			</div>
+		</div>
 
 		<!-- Encabezado, logo del la organización-->
 		<header class="header">
@@ -70,10 +76,6 @@
 						    <br><br>
 						    <label class="labeltam">Contraseña</label>
 						    <input class="ent-modal estilosinputs" type="password" required autocomplete="off" name="contrasena" placeholder=" Aqui va su contraseña"/><br>
-					    	<div id="alertaMala" class="alert alert-danger animated infinite " role="alert" style="display: none;">
-  								<p style="font-size: 20px;">EL usuario y/o contraseña son incorrectos.</p><hr>
-  								<p style="font-size: 20px;">Intentelo nuevamente por favor.</p>
-							</div>
 					    	<div class="container"><hr>
 						 		<a class="text-center anim-subrayado olvidaste animated infinite pulse" href="#">¿Olvidaste tu contraseña?</a>
 							</div>
@@ -100,33 +102,28 @@
 	<script src="https://cdn.jsdelivr.net/npm/gijgo@1.8.1/combined/js/gijgo.min.js" type="text/javascript"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+	<script type="text/javascript" src="../scripts/js/loginadminss.js"></script>
 	<script type="text/javascript">
-	       var mst = getVariableGET('most');
-	       colaEfectos(mst);
-	       //obtener variable get de la url, enviada desde php.
-            function getVariableGET(name) {
-                name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
-                var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
-                results = regex.exec(location.search);
-                return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));  
-            }
+	        var mst = "<?php echo $_GET['most']; ?>";
+	        colaEfectos(mst);
             function colaEfectos(mst){
               //si la variable tiene el string, se mostrara la alerta de contraseña incorrecta
               if (mst == 'mostrar'){
+                  //se muestra la ventana de contraseña incorrecta una vez que la variable get sea igual
                 setTimeout(function() {
                       $("#alertaMala").css("display","block");
                       $("#alertaMala").addClass("animated bounceInDown");
-                  }, 1050); 
+                  }, 950);
+                  
                 setTimeout(function() {
                       $("#alertaMala").removeClass("animated bounceInDown");
                       $("#alertaMala").addClass("animated bounceOutUp");
-                  }, 2500);
+                  }, 3900);
+                  
                 setTimeout(function() {
                       $("#alertaMala").removeClass("animated bounceOutUp");
                       $("#alertaMala").css("display","none");
-                  }, 3100);
-              }else{
-                    //no hara nada.
+                  }, 4400);
               }
             }
     </script>

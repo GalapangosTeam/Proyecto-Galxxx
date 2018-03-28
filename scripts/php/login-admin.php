@@ -21,6 +21,7 @@ function validarExisteAdmin($correo,$contra){
         //primero validamos que el correo y contraseña existan en tabla de administradores.
         if($tabladmin == 1) {
             //si existe
+            //echo 'Este administrador existe';
             //entonces que inicie sesion
             iniciarSesionAdmin($resultado,$contra);
         }else{ 
@@ -42,11 +43,13 @@ function iniciarSesionAdmin($resultado,$contra){
         $_SESSION['appat'] = $valores['appat'];
         $_SESSION['apmat'] = $valores['apmat'];
         $_SESSION['start'] = time();			
-        $_SESSION['expire'] = $_SESSION['start'] + (5 * 60); // tiempo para expirar por inactividad, 5 = minutos * 60 = segundos.
+        $_SESSION['expire'] = $_SESSION['start'] + (2 * 60); // tiempo para expirar por inactividad, 5 = minutos * 60 = segundos.
         //abra el indexx + los divs con sus caracteristicas de usuario.
+        //echo "<br>Bienvenido Administrador: $nombres<br>";
+        //echo "<br><a href='../../admins/sistema-admin.php'>Ir al Panel de Control</a>";
         header("Location: ../../admins/sistema-admin.php");
         return;
-    } else { 
+    } else {
         mysqli_close($conexion);
         header("Location: ../../admins/login-admins.php?most=mostrar");
  }

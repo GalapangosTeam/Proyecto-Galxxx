@@ -18,32 +18,41 @@ $(document).ready(function() {
     });
 });
 
-//Funcion que muestra ocupaciones de acuerdo al genero seleccionado.
-function genOcupacion(opc) { 
-	var x = document.getElementById("listaOpcion");
-	var opcion1 = document.createElement("option");
-	var opcion2 = document.createElement("option");
-	var opcion3 = document.createElement("option");
-	var opciones=["Maestro", "Estudiante de Musica", "Otro", "Maestra", "Estudiante de Musica", "Otra"]
-	//Metodo para limpiar la lista de opciones
-	while (x.length > 0) {
-    	x.remove(x.length-1);
-	}
-	  if(opc==1) { //Al seleccionar Masculino en el input de tipo Radio inserta las opciones a la lista.
-	    	   	opcion1.text = opciones[0];
-    			x.add(opcion1);
-    			opcion2.text = opciones[1];
-    			x.add(opcion2);
-    			opcion3.text = opciones[2];
-    			x.add(opcion3);
-	  }else if(opc==2){ //Al seleccionar Femenino en el input de tipo Radio inserta las opciones a la lista.
-	    		opcion1.text = opciones[3];
-    			x.add(opcion1);
-    			opcion2.text = opciones[4];
-    			x.add(opcion2);
-    			opcion3.text = opciones[5];
-    			x.add(opcion3);	   
-	  }else{
-	  	console.log("ERROR AL SELECCIONAR UN GENERO")
-	  }
+function escogerSexo(){
+  $("#btnenviar").click(function () {  
+        var valor = $(this).val();
+
+        if(valor == 'mas'){
+           
+        }else if(valor == 'fem'){
+            
+        }else if(valor == 'otro'){
+
+        }else{//es por que selecciono desconocido.
+
+        }
+    });
 }
+
+/*VENTANA MODAL*/
+document.getElementsByClassName("enlaceOpcion")[0].click();
+
+function opcModal(evt, opcion) {
+  var i, x, enlaceOpcion;
+  x = document.getElementsByClassName("opcion");
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";
+  }
+  enlaceOpcion = document.getElementsByClassName("enlaceOpcion");
+  for (i = 0; i < x.length; i++) {
+    enlaceOpcion[i].classList.remove("w3-light-grey");
+  }
+  document.getElementById(opcion).style.display = "block";
+  evt.currentTarget.classList.add("w3-light-grey");
+}
+/* CALENDARIO PARA REGISTRO*/
+
+$('#datepicker').datepicker({
+            uiLibrary: 'bootstrap4'
+});
+

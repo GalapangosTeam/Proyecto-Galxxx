@@ -72,12 +72,10 @@ exit;
 			<!--Panel de control izq para el administrador-->
 			<aside id="left">
 				<seccion class="container datosnombre">
-					<img id="fotoPerfil" src="../imagenes/sistemaGalmus/drake.jpg" alt="Foto de Perfil" class="img-fluid">
+					<img id="fotoPerfil" src="" alt="Foto de Perfil" class="img-fluid">
 					<div class="container" style="margin-top: 15px;">
 			      		<strong><i class="fas fa-user"></i>
-			      		<?php  
-			      			echo $nombres." ".$appat."."; 
-			      		?>
+			      			<?php echo $nombres." ".$appat.".";  ?>
 			      		</strong>
 			      	</div>
 		    	</seccion><hr class="hr_admin">
@@ -170,5 +168,28 @@ exit;
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 	<script type="text/javascript" src="../scripts/js/otrasfunciones.js"></script>
 	<script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+	<!--Script para escoger imagen de perfil.-->
+	<script type="text/javascript">
+		// Primero cachamos la variable del nombre de inicio de sesion y la pasamos a una de js
+		var nombre = "<?php echo $nombres ?>";
+		escogerImagenPerfil(nombre);
+	 	
+	 	function escogerImagenPerfil(admiNombre) {
+	 		
+	 		if (admiNombre == 'Pedro Erick') {
+	 			
+	 			$("#fotoPerfil").attr("src","../imagenes/sistemaGalmus/drake.jpg");
+
+	 		}else if (admiNombre == 'Víctor V'){
+
+	 			$("#fotoPerfil").attr("src","../imagenes/sistemaGalmus/victorverga.png");
+
+	 		}else{
+
+	 			$("#fotoPerfil").attr("src","../imagenes/sistemaGalmus/ale.webp");
+
+	 		} 	
+	 	 }
+	</script>
 </body>
 </html>

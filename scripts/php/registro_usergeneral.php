@@ -26,10 +26,15 @@ function validarExiste($nombres,$apellidopat,$apellidomat,$correo,$contra,$fecha
 
          //SI SI EXISTE una fila, quiere decir QUE SI ESTA EL CORREO EN LA BASE DE DATOS
          if($contador == 1) {
-            echo 'Este usuario ya existe';
+         	mysqli_free_result($resultado);//liberamos memoria y recursos de la bd.
+            mysqli_close($conexion);
+            header("Location: ../../indexx.php?most=malo");
          } else {
-         	echo 'Usuario registrado correctamente'; // se puede registrar el usuario.
-         	insertarUsuarios($nombres,$apellidopat,$apellidomat,$correo,$contra,$fecha,$tel,$sex,$ocupacion,$edad);
+        	// se puede registrar el usuario.
+         	//insertarUsuarios($nombres,$apellidopat,$apellidomat,$correo,$contra,$fecha,$tel,$sex,$ocupacion,$edad);
+         	mysqli_free_result($resultado);//liberamos memoria y recursos de la bd.
+         	mysqli_close($conexion);
+        	header("Location: ../../indexx.php?most=bien");
          }
 }
 
@@ -39,5 +44,4 @@ function insertarUsuarios($nombres,$apellidopat,$apellidomat,$correo,$contra,$fe
 	$conexion->query($insertar_Usuarios);
 	include('cerrar_conexion.php');
 }
-
 ?>

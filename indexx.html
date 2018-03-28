@@ -1,3 +1,14 @@
+<?php 
+
+	//si hubo un error en el logeueo, de mal contraseña o correo
+	//se guardara esta variable y abrire el div de mal contraseña,
+	//despues de hacer unas comparaciones con Jquery para mostrarla.
+		if(isset($_GET['most'])){
+		
+		}else{
+		    '';
+		}
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -24,8 +35,24 @@
     <link href="https://cdn.jsdelivr.net/npm/gijgo@1.8.1/combined/css/gijgo.min.css" rel="stylesheet" type="text/css" />
 	<title> Galapangos Team | Oficial </title>
 </head>
-<body id="cuerpo">
+<body id="cuerpo" onload="ocultar()">
 	<div class="animated fadeIn fuente">	
+
+		<!--Por si el usuario y/o contraseña estan mal, se lanza esta ventana-->
+		<div id="alertaMala" class="container-fluid" style="display: none;">
+  			<div class="container"><img src="imagenes/LandingPage/icoerror.svg" alt="usuario ya existente." style="width: 100px; height: 100px;">
+  				Este usuario ya esta registrado anteriormente.<br>
+  				Intentelo nuevamente.
+  			</div>
+		</div>
+
+		<!--Por si el usuario y/o contraseña estan mal, se lanza esta ventana-->
+		<div id="alertaBuena" class="container-fluid" style="display: none;">
+  			<div class="container"><img src="imagenes/LandingPage/icobueno.svg" alt="usuario ya existente." style="width: 100px; height: 100px;">
+  				Su registro ha sido éxitoso y correcto.<br>
+  				Ahora puedes iniciar sesión.
+  			</div>
+		</div>
 
 		<!-- Encabezado, logo del la organización-->
 		<header class="header">
@@ -46,7 +73,7 @@
 						    <li><a class="nav-link dropdown-item dropdounColores" href="#"> Material didáctico </a></li>
 					    </ul>
 				</li>
-				<a class="nav-link" href="acerca.html"> Acerca de </a>
+				<a class="nav-link" href="acercade2.html"> Acerca de </a>
 				<a class="nav-link" href="acerca.html#contact"> Contacto </a>
 				<a class="nav-link" href="mision.html"> Misión </a>
 				<a class="nav-link" href="vision.html"> Visión </a>
@@ -61,12 +88,12 @@
 		</nav>
 		
 		<!--Barra para usuarios logueados.-->
-		<aside id="barraPromo" style="display: block;">
+		<aside id="barraPromo" style="display: none;">
 			<span id="bpartePromo_1">
-				<a class="nav-link" href="acerca.html"><i class="fas fa-certificate"></i> Mis promociones </a>
+				<a class="nav-link" href="#div-promociones" onclick="mostrar()" ><i class="fas fa-certificate" onclick="mostrar()" href="#div-promociones" ></i> Mis promociones </a>
 			</span>
 			<span id="bpartePromo_2">
-				<a class="nav-link" href="acerca.html#contact"><i class="fas fa-tags" data-fa-transform="rotate-260"></i> Descuentos</a>
+				<a class="nav-link" href="acercade2.html#contact"><i class="fas fa-tags" data-fa-transform="rotate-260"></i> Descuentos</a>
 			</span>
 			<span id="bparteUserDatos_1">
 				<a class="nav-link" href="mision.html"><i class="fas fa-power-off"></i> Cerrar sesión </a>
@@ -99,35 +126,33 @@
 				    <div id="registrarse" class="container opcion"><br>
 					 	<h1 class="text-center">Formulario de registro.</h1><hr id="hr_form_regis">
 					    <div id="formNormales" class="container-fluid animated zoomInUp">
-						 	<form id="fusua" method="POST" action="scripts/php/registro.php" class="container-fluid">
+						 	<form id="fusua" method="POST" action="scripts/php/registro_usergeneral.php" class="container-fluid">
 						 		<div class="row align-items-center justify-content-center">
-
 								    <label class="control-label col-xs-12">
 								    	<strong>Nombre(s):</strong>
 								    	<span class="req">*</span>
 								    </label>
 
+								 	<input title="Se necesita su Nombre" type="text" required minlenght="1" class="ent-modal estilosinputs form-control" maxlength="30" placeholder=" Nombre" name="nombres"><br>
 								 	<input title="Se necesita su Nombre" type="text" required minlenght="1" class="ent-modal estilosinputs form-control" maxlength="30" placeholder=" Nombre"><br>
 								    <label class="control-label col-xs-12">
 								    	<strong>Apellido Paterno:</strong>
 								    	<span class="req">*</span>
 								    </label>
 
-								    <input title="Se necesita su Apellido Parteno" type="text" required minlenght="5" maxlength="50" class="ent-modal estilosinputs form-control" placeholder=" Paterno"><br>
-
+								    <input title="Se necesita su Apellido Parteno" type="text" required minlenght="5" maxlength="50" class="ent-modal estilosinputs form-control" placeholder=" Paterno" name="apellidopat"><br>
 								    <label class="control-label col-xs-12">
 								    	<strong>Apellido Materno:</strong>
 								    	<span class="req">*</span>
 								    </label>
 
-                  <input title="Se necesita su Apellido Materno" type="text" required minlenght="5" maxlength="50" class="ent-modal estilosinputs form-control" placeholder=" Materno"><br>
-
+								    <input title="Se necesita su Apellido Materno" type="text" required minlenght="5" maxlength="50" class="ent-modal estilosinputs form-control" placeholder=" Materno" name="apellidomat"><br>
 								    <label class="control-label col-xs-12">
 								    	<strong>Correo Electronico:</strong>
 								    	<span class="req">*</span>
 								    </label>
 
-								 	<input title="Se necesita su Correo Electronico" required class="ent-modal estilosinputs form-control" type="email" minlenght="1" maxlength="30" id="inputEmail" placeholder=" Correo Electronico"><br>
+								 	<input title="Se necesita su Correo Electronico" required class="ent-modal estilosinputs form-control" type="email" minlenght="1" maxlength="30" id="inputEmail" placeholder=" Correo Electronico" name="correo"><br>
 
 								 	<label class="control-label col-xs-12">
 								 		<strong>Contraseña:</strong>
@@ -173,6 +198,9 @@
 								    	<strong>Ocupación: </strong>
 								    	<span class="req">*</span>
 								    </label>
+									<select type="text" required class="ent-modal estilosinputs form-control" placeholder=" Ocupación " style="height: 45px;" id="listaOpcion">
+									</select><br>
+
 
 									<select type="text" required class="ent-modal estilosinputs form-control" placeholder=" Ocupación " style="height: 45px;" id="listaOpcion">
 									</select><br>
@@ -186,9 +214,15 @@
 								    <label class="checkbox-inline radio-opciones">
 								        <input type="checkbox" value="agree">  Acepto 
 								        	<a href="#">Términos y condiciones</a>
-								    </label><br>
+								    </label><hr><br>
+									<footer class="container">
+										<div class="w3-container w3-light-grey w3-padding">
+											<input id ="enviar" type="submit" class="btn btn-primary" value="Enviar">
+											<input type="reset" class="btn btn-default" value="Limpiar">
+					        				<button class="w3-button w3-right w3-white w3-border" onclick="document.getElementById('id01').style.display='none'">Cerrar</button>
+					    				</div>
+									</footer>
 							    </div>
-							    
 						    </form>
 					    </div>
 					    <footer class="w3-container">
@@ -221,13 +255,12 @@
 						    </div>
 					</footer>
 				    </div>
-
 	    		</div>
 	    	</div>
 	    </div>
 
 		<!--Contenidos de la pagina en secciones,aside, etc..-->
-		
+		<br>
 		<main>
 		  <!--a href="scripts/php/prueba.php" class="text-center"> Ver bd </a-->
 			<!--Carrusel de imagenes-->
@@ -285,7 +318,7 @@
 				<hr><br>
 				<p class="animated infinite pulse" id="temaprinci">La música es un idioma y aquí aprenderás a leerlo.</p>
 			</article>
-
+        
 			<div class="container">
 				<br><hr>
 				<section class="row align-items-center justify-content-center">	
@@ -358,9 +391,117 @@
 						</div>
 					</section>
 				</div>
-			</div>	
-		</main>
-		<br>	
+			</div>
+			
+			<!--Promociones-->
+        	<div class="container-fluid " id="div-promociones" >
+				
+				<!--efecto promociones-->
+				<div class="foo">
+ 						 <span class="letter" data-letter="P" onclick="ocultar()">P</span>
+ 						 <span class="letter" data-letter="R" onclick="ocultar()">R</span>
+ 						 <span class="letter" data-letter="O" onclick="ocultar()">O</span>
+ 						 <span class="letter" data-letter="M" onclick="ocultar()">M</span>
+ 						 <span class="letter" data-letter="O" onclick="ocultar()">O</span>
+ 						 <span class="letter" data-letter="C" onclick="ocultar()">C</span>
+ 						 <span class="letter" data-letter="I" onclick="ocultar()">I</span>
+ 						 <span class="letter" data-letter="O" onclick="ocultar()">O</span>
+ 						 <span class="letter" data-letter="N" onclick="ocultar()">N</span>
+						 <span class="letter" data-letter="E" onclick="ocultar()">E</span>
+ 						 <span class="letter" data-letter="S" onclick="ocultar()">S</span>
+ 						<hr>
+				</div>
+				<!--efecto promociones-->
+				<div class="container">
+					<section class="row align-items-center justify-content-center">	
+						<div class="color-xs-12 col-sm-6 col-md-3 promociones">
+							<!--notapp-->
+							<div class="container-fluid">
+								
+							</div>
+							<p class="nombresdeve anim-subrayado_piepa sombraPromo ">NotApp "Notas Musicales"</p>
+							<img src="imagenes/acercaDeOrg/nt.svg" alt="NotApp" height="185px;" width="245px; " class="icoFacebook">
+							
+								<li>La mejor app para el aprendisaje musical</li>
+								<li>Divierte mientras aprendes</li>
+								<li>No te quedes en los metodos de enseñanza antiguos</li>
+								<li>NotApp te regala los cursos de promocion</li>
+								<li>Costo:$3000 </li>
+								<li>Desarrolladores: P.E.R.G Y V.V.M.M</li><br><hr>
+								<button  class="btn btn-outline-warning promo " type="submit">Comprar</button>
+							
+						</div>
+
+						<!--java-->
+						<div class="color-xs-12 col-sm-6 col-md-3 promociones ">
+							<div class="container-fluid">
+								
+							</div>
+							<p class="nombresdeve anim-subrayado_piepa sombraPromo ">Curso Java </p>
+							<img src="imagenes/acercaDeOrg/java.svg" alt="NotApp" height="230px;" width="245px;" class="icoFacebook">
+								<li>Conoce un nuevo mundo tecnologico</li>
+								<li>Crea lo que sea con solo tu imaginacion</li>
+								<li>Innova nuevas tecnologias</li>
+								<li>Desarrolla un sistema de informacion</li>
+								<li>Costo: $500</li>
+								<li>Curso impartido por: P.E.R.G</li><hr>
+								<button  class="btn btn-outline-warning promo" type="submit">Comprar</button>
+						</div>
+
+						<!--mysql y java-->
+						<div class="color-xs-12 col-sm-6 col-md-3 promociones">
+							<div class="container-fluid">
+								
+							</div>
+							<p class="nombresdeve anim-subrayado_piepa sombraPromo ">Curso MySQl y Java </p>
+							<img src="imagenes/acercaDeOrg/prog.jpg" alt="NotApp" height="185px;" width="245px;" class="icoFacebook">
+								<li>Conoce un nuevo mundo tecnologico</li>
+								<li>Crea lo que sea con solo tu imaginacion</li>
+								<li>Innova nuevas tecnologias</li>
+								<li>Desarrolla un sistema de informacion</li>
+								<li>Curso impartido por: P.E.R.G</li>
+								<li>Costo:$750</li><hr>
+								<button  class="btn btn-outline-warning promo" type="submit">Comprar</button>
+						</div>
+
+						<!--html-->
+						<div class="color-xs-12 col-sm-6 col-md-3 promociones">
+							<div class="container-fluid">
+								
+							</div>
+							<p class="nombresdeve anim-subrayado_piepa sombraPromo ">Curso HTML5, CSS3 y JS</p>
+							<img src="imagenes/acercaDeOrg/programacion.jpg" alt="NotApp" height="185px;" width="245px;" class="icoFacebook">
+								<li>Conoce un nuevo mundo tecnologico</li>
+								<li>Crea lo que sea con solo tu imaginacion</li>
+								<li>Innova nuevas tecnologias</li>
+								<li>Desarrolla un sistema de informacion</li>
+								<li>Curso impartido por: P.E.R.G</li>
+								<li>Costo:$750</li><hr>
+								<button  class="btn btn-outline-warning promo" type="submit">Comprar</button>
+						</div>
+
+						<!--oracle-->
+						<div class="color-xs-12 col-sm-6 col-md-3 promociones">
+							<div class="container-fluid">
+								
+							</div>
+							<p class="nombresdeve anim-subrayado_piepa sombraPromo ">Curso Oracle y Java </p>
+							<img src="imagenes/acercaDeOrg/prog.jpg" alt="NotApp" height="185px;" width="245px;" class="icoFacebook">
+								<li>Conoce un nuevo mundo tecnologico</li>
+								<li>Crea lo que sea con solo tu imaginacion</li>
+								<li>Innova nuevas tecnologias</li>
+								<li>Desarrolla un sistema de informacion</li>
+								<li>Curso impartido por: P.E.R.G</li>
+								<li>Costo:$750</li><hr>
+								<button  class="btn btn-outline-warning promo" type="submit">Comprar</button>
+						</div>
+					</section>
+				</div>
+        	</div>	
+
+			<!-- descuentos -->
+			</main>
+			<br>
 
 		<!--Pie de página con sus subpies-->
 		<footer>
@@ -483,5 +624,54 @@
 	<script type="text/javascript" src="scripts/js/maps.js"></script>
 	<script type="text/javascript" src="scripts/js/otrasfunciones.js"></script>
 	<script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
-</body>
+	<script>
+		function ocultar(){
+    	document.getElementById("div-promociones").style.display="none";
+		}
+ 		function mostrar(){
+    	document.getElementById("div-promociones").style.display="block";
+		}
+	</script>
+	<!--Este script tiene metodos para mostrar ventana de errores en formularios de registro y login.-->
+	<script type="text/javascript">
+	        var mst = "<?php echo $_GET['most']; ?>";
+	        colaEfectos(mst);
+            function colaEfectos(mst){
+              //si la variable tiene el string, se mostrara la alerta de contraseña incorrecta o correcta
+              if (mst == 'bien'){
+                  //se muestra la ventana de contraseña de registro éxitoso una vez que la variable get sea igual a bien
+                setTimeout(function() {
+                      $("#alertaBuena").css("display","block");
+                      $("#alertaBuena").addClass("animated bounceInDown");
+                  }, 950);
+                  
+                setTimeout(function() {
+                      $("#alertaBuena").removeClass("animated bounceInDown");
+                      $("#alertaBuena").addClass("animated bounceOutUp");
+                  }, 3900);
+                  
+                setTimeout(function() {
+                      $("#alertaBuena").removeClass("animated bounceOutUp");
+                      $("#alertaBuena").css("display","none");
+                  }, 4400);
+              }else{//de lo contrario mostrar la ventana de que ya existe un registro con ese correo.
+
+              	setTimeout(function() {
+                      $("#alertaMala").css("display","block");
+                      $("#alertaMala").addClass("animated bounceInDown");
+                  }, 950);
+                  
+                setTimeout(function() {
+                      $("#alertaMala").removeClass("animated bounceInDown");
+                      $("#alertaMala").addClass("animated bounceOutUp");
+                  }, 3900);
+                  
+                setTimeout(function() {
+                      $("#alertaMala").removeClass("animated bounceOutUp");
+                      $("#alertaMala").css("display","none");
+                  }, 4400);
+              }
+            }
+    </script>
+</body >
 </html>

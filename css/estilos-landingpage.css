@@ -4,6 +4,20 @@
 		padding: 0;
 	}
 /* A */
+	#alertaMala{
+		background-color: black;
+		border-left: 150px solid rgb(231, 76, 60);
+		color: rgb(255, 228, 225);
+		font-size: 40px;
+		text-align: center;
+	}
+	#alertaBuena{
+		background-color: black;
+		border-left: 150px solid rgb(46, 204, 113);
+		color:rgb(161, 232, 191);
+		font-size: 40px;
+		text-align: center;
+	}
 	/*para enlaces de pie pagina 1*/
 	.anim-subrayado{
 		position: relative;
@@ -143,7 +157,7 @@
 	}
 
 /* B */
-    #barraPromo{
+	#barraPromo{
 		display:inline-block;
 		font-size: 15px;
 		position:relative; 
@@ -254,37 +268,20 @@
 		border-radius: 4px;
 	}
 	/* Estilo por defecto */
-	.estilosinputs:valid { 
+	.estilosinputs:valid{ 
 		border: 1px solid green;
 		font-family: 'Raleway', sans-serif;
 		width: 100%;
-    	padding: 12px;
 	    border-radius: 4px;
 	    resize: vertical;
-    }
-/* F */
-	/*Ventana Modal*/
-	#fusuagral {
-	    font-family: 'Raleway', sans-serif;
-	    width: 400px;
+    	padding: 12px;
 	}
-	#fusuagral label {
-	    display: inline-block;
-	    font-family: 'Raleway', sans-serif;
-	    width: 150px;
-	}
-	#fusuagral input {
-	    display: inline-block;
-	    font-family: 'Raleway', sans-serif;
-	    margin-bottom: 10px;
-	    width: 200px;
-	}
-	
 	.estilosinputs input[type="text"],input[type="email"],input[type="password"],input[type="number"] {
         width: 100%;
         margin-top: 0;
-        border-radius: 4px;
     }
+
+/* F */
 
 /* G */
 
@@ -293,9 +290,9 @@
 		background-color: #FFB347;
 		color: white;
 		font-size: 7vw;
-		text-align: center;
 		outline-color: black;
 		outline-offset: 5px;
+		text-align: center;
 	}
 	hr{
 		background-color: rgb(230, 230, 230);
@@ -406,14 +403,14 @@
 		color: #FFB347;
 	}
 	.nav-link:before{
-		 -webkit-transform: scaleX(0);
-		 -webkit-transition: all 0.4s;
-		 -o-transform: scaleX(0);
-		 -o-transition: all 0.4s;
-		 -ms-transform: scaleX(0);
-		 -ms-transition: all 0.4s;
 		 -moz-transform: scaleX(0);
 		 -moz-transition: all 0.4s;
+		 -ms-transform: scaleX(0);
+		 -ms-transition: all 0.4s;
+		 -o-transform: scaleX(0);
+		 -o-transition: all 0.4s;
+		 -webkit-transform: scaleX(0);
+		 -webkit-transition: all 0.4s;
 		 animation: width 0.5s;
 		 background-color: rgb(255, 178, 85);
 		 border-radius: 4px;
@@ -428,10 +425,10 @@
 		 width: 100%;
 	}
 	.nav-link:hover:before {
-		-webkit-transform: scaleX(1);
-		-o-transform: scaleX(1);
-		-ms-transform: scaleX(1);
 		-moz-transform: scaleX(1);
+		-ms-transform: scaleX(1);
+		-o-transform: scaleX(1);
+		-webkit-transform: scaleX(1);
 		transform: scaleX(1);
 	}
 	.navp {
@@ -489,16 +486,16 @@
 /* P */
 	.piedepag{
 		-moz-box-shadow: 0px -9px 15px -1px rgba(0,0,0,0.65);
-		-webkit-box-shadow: 0px -9px 15px -1px rgba(0,0,0,0.65);
-		-o-box-shadow: 0px -9px 15px -1px rgba(0,0,0,0.65);
 		-ms-box-shadow: 0px -9px 15px -1px rgba(0,0,0,0.65);
+		-o-box-shadow: 0px -9px 15px -1px rgba(0,0,0,0.65);
+		-webkit-box-shadow: 0px -9px 15px -1px rgba(0,0,0,0.65);
 		background-color:black;
-		opacity: 0.9;
+		border-top-color: rgb(255, 140, 0);
 		box-shadow: 0px -9px 15px -1px rgba(0,0,0,0.65);
 		color: white;
+		opacity: 0.9;
 		padding-bottom: 30px;
 		text-align: center;
-		border-top-color: rgb(255, 140, 0);
 	}
 	#piedepag2{
 		background-color:black;
