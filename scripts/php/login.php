@@ -17,8 +17,8 @@ function validarExisteUsuario($correo,$contra){
 
 		//Usaremos la funcion mysqli_num_rows en la consulta $resultado,
         //esta funcion nos regresa el numero de filas en el resultado
-        $tablausuarios = mysqli_num_rows($resultado);
 
+        $tablausuarios = mysqli_num_rows($resultado);
         //primero validamos que el correo y contraseña existan en tabla de administradores.
         if($tablausuarios == 1) {//si existe
             echo 'Este administrador existe';
@@ -50,7 +50,6 @@ function iniciarSesionUsuario($resultado,$contra){
     } else {
         mysqli_close($conexion);
         header("Location: ../login-admins.php?most=fake");
- }
 }
 
 // Funciones para encriptar y desencriptar las contraseñas.

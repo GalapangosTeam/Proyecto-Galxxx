@@ -255,14 +255,17 @@
 	.estilosinputs:required:invalid, .datapicker{ 
 		border: 1px solid red;
 		font-family: 'Raleway', sans-serif;
+		border-radius: 4px;
 	}
 	.estilosinputs:required:valid, .datapicker {
 		border: 1px solid green;
 		font-family: 'Raleway', sans-serif;
+		border-radius: 4px;
 	}
 	.estilosinputs:invalid, .datapicker {
 		border: 1px solid red;
 		font-family: 'Raleway', sans-serif;
+		border-radius: 4px;
 	}
 	/* Estilo por defecto */
 	.estilosinputs:valid{ 
@@ -273,7 +276,6 @@
 	    resize: vertical;
     	padding: 12px;
 	}
-	
 	.estilosinputs input[type="text"],input[type="email"],input[type="password"],input[type="number"] {
         width: 100%;
         margin-top: 0;
@@ -532,6 +534,16 @@
 	}
 	.row{
 		text-align: justify;
+	}
+	.radio-texto {
+	    float: left;
+	    margin-right: 3%;
+	}
+	.radio-opciones {
+		display: inline-block;
+	    margin: auto;
+
+	    text-align: center;
 	}
 
 /* S */

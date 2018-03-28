@@ -55,3 +55,4 @@ function opcModal(evt, opcion) {
 $('#datepicker').datepicker({
             uiLibrary: 'bootstrap4'
 });
+

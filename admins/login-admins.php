@@ -3,7 +3,6 @@
 	//se guardara esta variable y abrire el div de mal contraseña,
 	//despues de hacer unas comparaciones con Jquery para mostrarla.
 		if(isset($_GET['most'])){
-		
 		}else{
 		    '';
 		}
@@ -35,7 +34,7 @@
 </head>
 <body id="cuerpo">
 	<div class="animated zoomInDown">	
-		
+    
 		<!--Por si el usuario y/o contraseña estan mal, se lanza esta ventana-->
 		<div id="alertaMala" class="container-fluid" style="display: none;">
   			<div class="container">
