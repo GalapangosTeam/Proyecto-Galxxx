@@ -21,13 +21,12 @@ function validarExisteUsuario($correo,$contra){
 
         //primero validamos que el correo y contraseña existan en tabla de administradores.
         if($tablausuarios == 1) {//si existe
-            echo 'Este administrador existe';
             //entonces que inicie sesion
             iniciarSesionUsuario($resultado,$contra);
         }else{
         	mysqli_free_result($resultado);//liberamos memoria y recursos de la bd.
             mysqli_close($conexion);
-            header("Location: ../indexx.php#?most=dupla");
+            header("Location: ../../indexx.php?most=dupla");
             // no existe en ninguno de los 2, se redirecciona a mostrar div con mensaje de error, en la pag de login,
             //envio la variable de mostrar y la cacho en la pag de login.
         }
@@ -45,11 +44,11 @@ function iniciarSesionUsuario($resultado,$contra){
         $_SESSION['start'] = time();            
         $_SESSION['expire'] = $_SESSION['start'] + (10 * 60); // tiempo para expirar por inactividad, 5 = minutos * 60 = segundos.
         //abra el indexx + los divs con sus caracteristicas de usuario.
-        header("Location: ../sistema-admin.php");
+        header("Location: ../../indexx.php?most=y");
         return;
     } else {
         mysqli_close($conexion);
-        header("Location: ../login-admins.php?most=fake");
+        header("Location: ../../indexx.php?most=dupla");
  }
 }
 

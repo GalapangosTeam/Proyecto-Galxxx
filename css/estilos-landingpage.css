@@ -11,6 +11,13 @@
 		font-size: 40px;
 		text-align: center;
 	}
+	#alertaMala_2{
+		background-color: black;
+		border-left: 150px solid rgb(231, 76, 60);
+		color: rgb(255, 228, 225);
+		font-size: 40px;
+		text-align: center;
+	}
 	#alertaBuena{
 		background-color: black;
 		border-left: 150px solid rgb(46, 204, 113);

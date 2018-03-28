@@ -1,8 +1,40 @@
 <?php 
+//cachamos las variables de sesion, los nombres y apellidos del usuario logueado
+//con el fin de mostrarlos en el panel, durante su sesión.
 
-	//si hubo un error en el logeueo, de mal contraseña o correo
-	//se guardara esta variable y abrire el div de mal contraseña,
-	//despues de hacer unas comparaciones con Jquery para mostrarla.
+if (session_status() !== PHP_SESSION_ACTIVE) {
+	
+	session_start();//entonces que inicie sesion.
+	
+	if(isset($_SESSION['nombres'] , $_SESSION['appat'] , $_SESSION['apmat'])){
+		$nombres=$_SESSION['nombres'];
+		$appat=$_SESSION['appat'];
+		$apmat=$_SESSION['apmat'];
+	}else{
+		    '';
+		    $_SESSION['nombres']=null;
+			$_SESSION['appat']=null;
+			$_SESSION['apmat']=null;
+	}
+	if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true){
+		//inicio de sesion éxitoso.
+	} else {
+		
+	}
+	$now = time();
+	if($now > $_SESSION['expire']){
+		session_destroy();
+		echo "Su sesion a terminado,
+		<br><a href='indexx.php'>Necesita logueargse nuevamente</a>";
+		exit;
+	}
+}else{
+	//NO HACER NADA.
+}
+
+//si hubo un error en el logeueo, de mal contraseña o correo
+//se guardara esta variable y abrire el div de mal contraseña,
+//despues de hacer unas comparaciones con Jquery para mostrarla.
 		if(isset($_GET['most'])){
 		
 		}else{
@@ -38,10 +70,18 @@
 <body id="cuerpo" onload="ocultar()">
 	<div class="animated fadeIn fuente">	
 
-		<!--Por si el usuario y/o contraseña estan mal, se lanza esta ventana-->
+		<!--Por si el usuario se registra con un correo duplicado  se lanza esta ventana-->
 		<div id="alertaMala" class="container-fluid" style="display: none;">
   			<div class="container"><img src="imagenes/LandingPage/icoerror.svg" alt="usuario ya existente." style="width: 100px; height: 100px;">
   				Este usuario ya esta registrado anteriormente.<br>
+  				Intentelo nuevamente.
+  			</div>
+		</div>
+
+		<!--Por si el usuario y/o contraseña estan mal, se lanza esta ventana-->
+		<div id="alertaMala_2" class="container-fluid" style="display: none;">
+  			<div class="container"><img src="imagenes/LandingPage/icoerror.svg" alt="usuario ya existente." style="width: 100px; height: 100px;">
+  				 Correo y/o contraseña incorrectos.<br>
   				Intentelo nuevamente.
   			</div>
 		</div>
@@ -64,7 +104,7 @@
 
 		<!--Barra de Navegación-->
 		<nav class="navbar navbar-light">
-				<a class="nav-link navp" href="#"> GalMus </a>
+				<!--a class="nav-link navp" href="#"> GalMus </a-->
 				<li class="nav-item dropdown listanav">
 					<div class="nav-link dropdown-toggle" id="midropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Productos </div>
 					    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
@@ -82,9 +122,18 @@
 				    <button id="btnbuscar" class="btn btn-outline-warning" type="submit">Buscar</button>
 				</form>
 				<button id ="btnregis" class="btn" type="button" data-toggle="modal" onclick="document.getElementById('id01').style.display='block'">
-					<i class="fas fa-user fa-lg"></i>
-					<strong>Sesión</strong>
+					<i id="iconoBtnUser" class="fas fa-user fa-lg"></i>
+					<strong id="textoBtnUser">Sesión</strong>
 				</button>
+				<!--boton oculto para cuando el usuario se loguee jajajaj-->
+				<li id="btnCuenta" class="nav-item dropdown listanav" style="display: none;">
+					<div class="nav-link dropdown-toggle" id="midropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i id="iconoBtnUser" class="fas fa-cog fa-spin"></i>Mi cuenta</div>
+					    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+						    <li><a class="nav-link dropdown-item dropdounColores" href="#"> Mis datos </a></li>
+						    <div class="dropdown-divider"></div>
+						    <li><a class="nav-link dropdown-item dropdounColores" href="#"> Cambiar contraseña. </a></li>
+					    </ul>
+				</li>
 		</nav>
 		
 		<!--Barra para usuarios logueados.-->
@@ -96,10 +145,10 @@
 				<a class="nav-link" href="acercade2.html#contact"><i class="fas fa-tags" data-fa-transform="rotate-260"></i> Descuentos</a>
 			</span>
 			<span id="bparteUserDatos_1">
-				<a class="nav-link" href="mision.html"><i class="fas fa-power-off"></i> Cerrar sesión </a>
+				<a id="regresarTodo" class="nav-link" href="usuarios/cerrar_sesion_users.php"><i class="fas fa-power-off"></i> Cerrar sesión </a>
 			</span>
 			<span id="bparteUserDatos_2">
-				<a class="nav-link" href="mision.html"> Pedro R.</a>
+				<a class="nav-link" href="#"><?php echo $nombres." ".$appat."." ?></a>
 			</span>
 		</aside>
 		<div style="clear:both;"></div>
@@ -222,20 +271,19 @@
 				       	<h1 class="text-center">Entrar</h1>
 				       	<form id="iniciarSesion" class="container-fluid animated zoomInUp" method="POST" action="scripts/php/login.php">
 					       	<label>Correo Electronico<span class="req estilosinputs">*</span></label> 
-					        <input class="ent-modal estilosinputs" type="email" required autocomplete="off"/><br>
+					        <input class="ent-modal estilosinputs" type="email" required autocomplete="off" name="correo"/><br>
 					        <label>Contraseña<span class="req">*</span></label>
-					        <input class="ent-modal estilosinputs" type="password" required autocomplete="off"/><br>
+					        <input class="ent-modal estilosinputs" type="password" required autocomplete="off" name="contrasena"/><br>
 					        <p class="olvidada"><a href="#">¿Olvidaste tu contraseña?</a></p>
+				        	<footer class="w3-container">
+								<div class="w3-container w3-light-grey w3-padding">
+									<input id ="entrarLog" type="submit" class="btn btn-primary" value="Entrar">
+									<input type="reset" class="btn btn-default" value="Limpiar">
+						        	<button class="w3-button w3-right w3-white w3-border" onclick="document.getElementById('id01').style.display='none'">Cerrar
+						        	</button>
+						    	</div>
+							</footer>
 				        </form>
-				            
-				        <footer class="w3-container">
-							<div class="w3-container w3-light-grey w3-padding">
-								<input class="btn btn-primary" type="button" value="Entrar">
-								<input type="reset" class="btn btn-default" value="Limpiar">
-						        <button class="w3-button w3-right w3-white w3-border" onclick="document.getElementById('id01').style.display='none'">Cerrar
-						        </button>
-						    </div>
-					</footer>
 				    </div>
 	    		</div>
 	    	</div>
@@ -616,10 +664,16 @@
 	</script>
 	<!--Este script tiene metodos para mostrar ventana de errores en formularios de registro y login.-->
 	<script type="text/javascript">
+	        
 	        var mst = "<?php echo $_GET['most']; ?>";
+	        
 	        colaEfectos(mst);
+	        devolverTodo();
+            
             function colaEfectos(mst){
+            
               //si la variable tiene el string, se mostrara la alerta de contraseña incorrecta o correcta
+            
               if (mst == 'bien'){
                   //se muestra la ventana de contraseña de registro éxitoso una vez que la variable get sea igual a bien
                 setTimeout(function() {
@@ -636,7 +690,8 @@
                       $("#alertaBuena").removeClass("animated bounceOutUp");
                       $("#alertaBuena").css("display","none");
                   }, 4400);
-              }else{//de lo contrario mostrar la ventana de que ya existe un registro con ese correo.
+
+              }else if(mst == 'malo'){//de lo contrario mostrar la ventana de que ya existe un registro con ese correo.
 
               	setTimeout(function() {
                       $("#alertaMala").css("display","block");
@@ -652,7 +707,45 @@
                       $("#alertaMala").removeClass("animated bounceOutUp");
                       $("#alertaMala").css("display","none");
                   }, 4400);
+
+              }else if(mst == 'dupla'){//entonces en el logueo estuvo mal.
+
+              	setTimeout(function() {
+                      $("#alertaMala_2").css("display","block");
+                      $("#alertaMala_2").addClass("animated bounceInDown");
+                  }, 950);
+                  
+                setTimeout(function() {
+                      $("#alertaMala_2").removeClass("animated bounceInDown");
+                      $("#alertaMala_2").addClass("animated bounceOutUp");
+                  }, 3900);
+                  
+                setTimeout(function() {
+                      $("#alertaMala_2").removeClass("animated bounceOutUp");
+                      $("#alertaMala_2").css("display","none");
+                  }, 4400);
+
+              }else{//mostrar div de logueado
+              		$("#btnregis").css("display","none");
+              		$("#barraPromo").css("display","block");
+              		$("#btnCuenta").css("display","block");
+              		/*$("#iconoBtnUser").removeClass("fas fa-user fa-lg");
+              		$("#iconoBtnUser").addClass("fas fa-cog fa-spin");
+              		$("#textoBtnUser").text('Mi cuenta');
+              		//cuando de click en el boton le salga un dropdown
+              		$("#btnregis").click(function(){
+						$("#btnregis").text('Texto de sustitución');
+					});*/
               }
+            }
+
+            function devolverTodo(){//para al cerrar sesion, volver todo a la normmalidad.
+            		
+            		$("#regresarTodo").click(function(){
+							$("#btnregis").css("display","block");
+              				$("#barraPromo").css("display","none");
+              				$("#btnCuenta").css("display","none");
+              		});		
             }
     </script>
 </body >
