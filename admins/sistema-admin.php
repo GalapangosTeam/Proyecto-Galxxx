@@ -1,3 +1,29 @@
+<?php
+//cachamos las variables de sesion, los nombres y apellidos del usuario logueado
+//con el fin de mostrarlos en el panel, durante su sesión.
+session_start();
+$nombres=$_SESSION['nombres'];
+$appat=$_SESSION['appat'];
+$apmat=$_SESSION['apmat'];
+if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true){
+	//inicio de sesion éxitoso.
+	//echo $nombres;
+	//echo $appat;
+	//echo $apmat;
+} else {
+   echo "Esta pagina es solo para usuarios registrados.<br>";
+   echo "<br><a href='login-admins.html'>Iniciar sesión</a>";
+exit;
+}
+$now = time();
+if($now > $_SESSION['expire']){
+session_destroy();
+echo "Su sesion a terminado,
+<br><a href='login-admins.html'>Necesita Hacer Login</a>";
+exit;
+}
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -37,7 +63,7 @@
 		<nav class="navbar navbar-light">
 			<div class="container-fluid">
 				<a class="nav-link" href="../indexx.html" style="text-align:center;"> Bienvenido Maestro.</a>
-				<a class="nav-link" href="#" style="text-align: left;"><i class="fas fa-power-off"></i>Cerrar sesión</a>
+				<a class="nav-link" href="cerrar_sesion_admins.php" style="text-align: left;"><i class="fas fa-power-off"></i>Cerrar sesión</a>
 			</div>
 		</nav>
 		
@@ -46,9 +72,11 @@
 			<!--Panel de control izq para el administrador-->
 			<aside id="left">
 				<seccion class="container datosnombre">
-					<img id="fotoPerfil" src="../imagenes/sistemaGalmus/drake.jpg" alt="Foto de Perfil" class="img-fluid">
+					<img id="fotoPerfil" src="" alt="Foto de Perfil" class="img-fluid">
 					<div class="container" style="margin-top: 15px;">
-			      		<strong><i class="fas fa-user"></i> Peter Rivers</strong>
+			      		<strong><i class="fas fa-user"></i>
+			      			<?php echo $nombres." ".$appat.".";  ?>
+			      		</strong>
 			      	</div>
 		    	</seccion><hr class="hr_admin">
 
@@ -112,7 +140,7 @@
                 			</div>
             			</li>
             			<hr class="hr_admin_2">
-            			<li><a class="dropsdwn" href="#"><i class="fas fa-power-off"></i> Cerrar sesión</a></li>
+            			<li><a class="dropsdwn" href="cerrar_sesion_admins.php"><i class="fas fa-power-off"></i>Cerrar sesión</a></li>
 					</ul>
 		    	</div>
 			</aside>
@@ -140,5 +168,28 @@
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 	<script type="text/javascript" src="../scripts/js/otrasfunciones.js"></script>
 	<script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+	<!--Script para escoger imagen de perfil.-->
+	<script type="text/javascript">
+		// Primero cachamos la variable del nombre de inicio de sesion y la pasamos a una de js
+		var nombre = "<?php echo $nombres ?>";
+		escogerImagenPerfil(nombre);
+	 	
+	 	function escogerImagenPerfil(admiNombre) {
+	 		
+	 		if (admiNombre == 'Pedro Erick') {
+	 			
+	 			$("#fotoPerfil").attr("src","../imagenes/sistemaGalmus/drake.jpg");
+
+	 		}else if (admiNombre == 'Víctor V'){
+
+	 			$("#fotoPerfil").attr("src","../imagenes/sistemaGalmus/victorverga.png");
+
+	 		}else{
+
+	 			$("#fotoPerfil").attr("src","../imagenes/sistemaGalmus/ale.webp");
+
+	 		} 	
+	 	 }
+	</script>
 </body>
 </html>

@@ -31,7 +31,6 @@ function escogerSexo(){
         }else{//es por que selecciono desconocido.
 
         }
-
     });
 }
 

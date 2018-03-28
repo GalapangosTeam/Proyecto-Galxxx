@@ -1,3 +1,13 @@
+<?php  
+	//si hubo un error en el logeueo, de mal contraseña o correo
+	//se guardara esta variable y abrire el div de mal contraseña,
+	//despues de hacer unas comparaciones con Jquery para mostrarla.
+		if(isset($_GET['most'])){
+		
+		}else{
+		    '';
+		}
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -25,12 +35,20 @@
 </head>
 <body id="cuerpo">
 	<div class="animated zoomInDown">	
+		
+		<!--Por si el usuario y/o contraseña estan mal, se lanza esta ventana-->
+		<div id="alertaMala" class="container-fluid" style="display: none;">
+  			<div class="container">
+  				EL usuario y/o contraseña son incorrectos. <br>
+  				Intentelo nuevamente.
+  			</div>
+		</div>
 
 		<!-- Encabezado, logo del la organización-->
 		<header class="header">
 			<!--Logo y cintura del logo-->
 			<div class="container">
-				<i class="fas fa-circle-notch fa-spin" style="vertical-align: middle;"></i>GalMus | Logueo de administradores.
+				GalMus | Logueo de administradores.
 			</div>
 		</header>
 
@@ -47,24 +65,23 @@
 			<div class="container">
 				<div class="sombra">
 			      	<header class="container w3-black" style="border-radius: 10px;"> 
-			       		<h2 style="padding: 7px;">Iniciar Sesión.</h2>
+			       		<h2 style="padding: 7px;"><i class="fas fa-circle-notch fa-spin" style="vertical-align: middle;"></i> Iniciar Sesión.</h2>
 			    	</header>
 
 					<!-- SECCION PARA INICIAR SESION --> 
 					<div id="iniciarSesion" class="container align-items-center justify-content-center">
 					<h3 class="text-center" style="padding: 7px;"> Administrador(a).</h3><hr>
-					 	<form id="fusuagral" class="container align-items-center justify-content-center">
+					 	<form id="fusuagral" method="POST" action="../scripts/php/login-admin.php" class="container align-items-center justify-content-center">
 						    <label class="labeltam">Correo electronico</label> 
-						    <input class="ent-modal estilosinputs" type="email" required autocomplete="off"/>
+						    <input class="ent-modal estilosinputs" type="email" required autocomplete="off" name="correo" placeholder=" Aqui va su correo"/>
 						    <br><br>
 						    <label class="labeltam">Contraseña</label>
-						    <input class="ent-modal estilosinputs" type="password" required autocomplete="off"/><br>
+						    <input class="ent-modal estilosinputs" type="password" required autocomplete="off" name="contrasena" placeholder=" Aqui va su contraseña"/><br>
 					    	<div class="container"><hr>
 						 		<a class="text-center anim-subrayado olvidaste animated infinite pulse" href="#">¿Olvidaste tu contraseña?</a>
 							</div>
 							<div class="container" style="padding: 15px;">
-					    		<input id="enviar" class="btn btn-warning btn-block" type="submit" value="Entrar al Sistema">
-								</input>
+					    		<input id="enviar" class="btn btn-warning btn-block" type="submit" value="Entrar al Sistema"/>
 							</div>
 					    </form>
 					</div>
@@ -86,7 +103,31 @@
 	<script src="https://cdn.jsdelivr.net/npm/gijgo@1.8.1/combined/js/gijgo.min.js" type="text/javascript"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-	<script type="text/javascript" src="../scripts/js/otrasfunciones.js"></script>
+	<script type="text/javascript" src="../scripts/js/loginadminss.js"></script>
+	<script type="text/javascript">
+	        var mst = "<?php echo $_GET['most']; ?>";
+	        colaEfectos(mst);
+            function colaEfectos(mst){
+              //si la variable tiene el string, se mostrara la alerta de contraseña incorrecta
+              if (mst == 'mostrar'){
+                  //se muestra la ventana de contraseña incorrecta una vez que la variable get sea igual
+                setTimeout(function() {
+                      $("#alertaMala").css("display","block");
+                      $("#alertaMala").addClass("animated bounceInDown");
+                  }, 950);
+                  
+                setTimeout(function() {
+                      $("#alertaMala").removeClass("animated bounceInDown");
+                      $("#alertaMala").addClass("animated bounceOutUp");
+                  }, 3900);
+                  
+                setTimeout(function() {
+                      $("#alertaMala").removeClass("animated bounceOutUp");
+                      $("#alertaMala").css("display","none");
+                  }, 4400);
+              }
+            }
+    </script>
 	<script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
 </body>
 </html>

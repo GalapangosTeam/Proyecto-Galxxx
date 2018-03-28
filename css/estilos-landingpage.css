@@ -1,4 +1,23 @@
+/* * */
+	*{
+		margin: 0;
+		padding: 0;
+	}
 /* A */
+	#alertaMala{
+		background-color: black;
+		border-left: 150px solid rgb(231, 76, 60);
+		color: rgb(255, 228, 225);
+		font-size: 40px;
+		text-align: center;
+	}
+	#alertaBuena{
+		background-color: black;
+		border-left: 150px solid rgb(46, 204, 113);
+		color:rgb(161, 232, 191);
+		font-size: 40px;
+		text-align: center;
+	}
 	/*para enlaces de pie pagina 1*/
 	.anim-subrayado{
 		position: relative;
@@ -138,6 +157,48 @@
 	}
 
 /* B */
+	#barraPromo{
+		display:inline-block;
+		font-size: 15px;
+		position:relative; 
+		text-align: center;
+	}
+	#bpartePromo_1{
+		background-color: rgb(55, 55, 55);
+		border-left: 20px solid #FFB347;
+		float:left; 
+		padding-left: 10px;	
+		padding-right: 10px; 
+		position:relative;
+		text-align: center;
+		width: 30%;
+	}
+	#bpartePromo_2{
+		background-color: rgb(55, 55, 55);
+		float:left;
+		position:relative;
+		text-align: center;	
+		width: 25%; 
+	}
+	#bparteUserDatos_1{
+		background-color: black;
+		float:right; 
+		position:relative;
+		text-align: center;
+		width: 20%;
+	}
+	#bparteUserDatos_2{
+		background-color: black;
+		border-left: 20px solid rgb(170, 119, 47);
+		float:right;
+		position:relative;
+		text-align: center;
+		width: 25%;
+	}
+	.conteNidos{
+		float: left;
+		height: 80px;
+	}
 	.btn:active{
 	    background:#FFB347;
 	}
@@ -166,12 +227,16 @@
       background-color:#FFB347 !important;
       color: black !important;
 	}
+	.datapicker{
+		height: 10px;
+		width: 50%;
+	}
 
 /* E */
 	/*Ventana Modal*/
 	.ent-modal{
 		height:30px;
-		white-space: pre
+		white-space: pre;
 		width:500px;
 	}
 	.enlacespie{ 
@@ -187,41 +252,34 @@
 		color:rgb(246, 162, 80);
 	}
 		/*Ventana Modal*/
-	.estilosinputs:required:invalid { 
+	.estilosinputs:required:invalid, .datapicker{ 
 		border: 1px solid red;
 		font-family: 'Raleway', sans-serif;
 	}
-	.estilosinputs:required:valid {
+	.estilosinputs:required:valid, .datapicker {
 		border: 1px solid green;
 		font-family: 'Raleway', sans-serif;
 	}
-	.estilosinputs:invalid {
+	.estilosinputs:invalid, .datapicker {
 		border: 1px solid red;
 		font-family: 'Raleway', sans-serif;
 	}
 	/* Estilo por defecto */
-	.estilosinputs:valid { 
+	.estilosinputs:valid{ 
 		border: 1px solid green;
 		font-family: 'Raleway', sans-serif;
+		width: 100%;
+	    border-radius: 4px;
+	    resize: vertical;
+    	padding: 12px;
 	}
+	
+	.estilosinputs input[type="text"],input[type="email"],input[type="password"],input[type="number"] {
+        width: 100%;
+        margin-top: 0;
+    }
 
 /* F */
-	/*Ventana Modal*/
-	#fusuagral {
-	    font-family: 'Raleway', sans-serif;
-	    width: 400px;
-	}
-	#fusuagral label {
-	    display: inline-block;
-	    font-family: 'Raleway', sans-serif;
-	    width: 150px;
-	}
-	#fusuagral input {
-	    display: inline-block;
-	    font-family: 'Raleway', sans-serif;
-	    margin-bottom: 10px;
-	    width: 200px;
-	}
 
 /* G */
 
@@ -230,9 +288,9 @@
 		background-color: #FFB347;
 		color: white;
 		font-size: 7vw;
-		text-align: center;
 		outline-color: black;
 		outline-offset: 5px;
+		text-align: center;
 	}
 	hr{
 		background-color: rgb(230, 230, 230);
@@ -343,14 +401,14 @@
 		color: #FFB347;
 	}
 	.nav-link:before{
-		 -webkit-transform: scaleX(0);
-		 -webkit-transition: all 0.4s;
-		 -o-transform: scaleX(0);
-		 -o-transition: all 0.4s;
-		 -ms-transform: scaleX(0);
-		 -ms-transition: all 0.4s;
 		 -moz-transform: scaleX(0);
 		 -moz-transition: all 0.4s;
+		 -ms-transform: scaleX(0);
+		 -ms-transition: all 0.4s;
+		 -o-transform: scaleX(0);
+		 -o-transition: all 0.4s;
+		 -webkit-transform: scaleX(0);
+		 -webkit-transition: all 0.4s;
 		 animation: width 0.5s;
 		 background-color: rgb(255, 178, 85);
 		 border-radius: 4px;
@@ -365,10 +423,10 @@
 		 width: 100%;
 	}
 	.nav-link:hover:before {
-		-webkit-transform: scaleX(1);
-		-o-transform: scaleX(1);
-		-ms-transform: scaleX(1);
 		-moz-transform: scaleX(1);
+		-ms-transform: scaleX(1);
+		-o-transform: scaleX(1);
+		-webkit-transform: scaleX(1);
 		transform: scaleX(1);
 	}
 	.navp {
@@ -426,16 +484,16 @@
 /* P */
 	.piedepag{
 		-moz-box-shadow: 0px -9px 15px -1px rgba(0,0,0,0.65);
-		-webkit-box-shadow: 0px -9px 15px -1px rgba(0,0,0,0.65);
-		-o-box-shadow: 0px -9px 15px -1px rgba(0,0,0,0.65);
 		-ms-box-shadow: 0px -9px 15px -1px rgba(0,0,0,0.65);
+		-o-box-shadow: 0px -9px 15px -1px rgba(0,0,0,0.65);
+		-webkit-box-shadow: 0px -9px 15px -1px rgba(0,0,0,0.65);
 		background-color:black;
-		opacity: 0.9;
+		border-top-color: rgb(255, 140, 0);
 		box-shadow: 0px -9px 15px -1px rgba(0,0,0,0.65);
 		color: white;
+		opacity: 0.9;
 		padding-bottom: 30px;
 		text-align: center;
-		border-top-color: rgb(255, 140, 0);
 	}
 	#piedepag2{
 		background-color:black;

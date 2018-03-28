@@ -1,5 +1,12 @@
 /* A */
 	/*para enlaces <a/>*/
+	#alertaMala{
+		background-color: black;
+		border-left: 20px solid rgb(229, 106, 113);
+		color: white;
+		font-size: 40px;
+		text-align: center;
+	}
 	.anim-subrayado{
 		position: relative;
 		text-align: center;

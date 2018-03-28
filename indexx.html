@@ -1,3 +1,14 @@
+<?php 
+
+	//si hubo un error en el logeueo, de mal contraseña o correo
+	//se guardara esta variable y abrire el div de mal contraseña,
+	//despues de hacer unas comparaciones con Jquery para mostrarla.
+		if(isset($_GET['most'])){
+		
+		}else{
+		    '';
+		}
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -24,8 +35,24 @@
     <link href="https://cdn.jsdelivr.net/npm/gijgo@1.8.1/combined/css/gijgo.min.css" rel="stylesheet" type="text/css" />
 	<title> Galapangos Team | Oficial </title>
 </head>
-<body id="cuerpo">
+<body id="cuerpo" onload="ocultar()">
 	<div class="animated fadeIn fuente">	
+
+		<!--Por si el usuario y/o contraseña estan mal, se lanza esta ventana-->
+		<div id="alertaMala" class="container-fluid" style="display: none;">
+  			<div class="container"><img src="imagenes/LandingPage/icoerror.svg" alt="usuario ya existente." style="width: 100px; height: 100px;">
+  				Este usuario ya esta registrado anteriormente.<br>
+  				Intentelo nuevamente.
+  			</div>
+		</div>
+
+		<!--Por si el usuario y/o contraseña estan mal, se lanza esta ventana-->
+		<div id="alertaBuena" class="container-fluid" style="display: none;">
+  			<div class="container"><img src="imagenes/LandingPage/icobueno.svg" alt="usuario ya existente." style="width: 100px; height: 100px;">
+  				Su registro ha sido éxitoso y correcto.<br>
+  				Ahora puedes iniciar sesión.
+  			</div>
+		</div>
 
 		<!-- Encabezado, logo del la organización-->
 		<header class="header">
@@ -46,7 +73,7 @@
 						    <li><a class="nav-link dropdown-item dropdounColores" href="#"> Material didáctico </a></li>
 					    </ul>
 				</li>
-				<a class="nav-link" href="acerca.html"> Acerca de </a>
+				<a class="nav-link" href="acercade2.html"> Acerca de </a>
 				<a class="nav-link" href="acerca.html#contact"> Contacto </a>
 				<a class="nav-link" href="mision.html"> Misión </a>
 				<a class="nav-link" href="vision.html"> Visión </a>
@@ -59,14 +86,31 @@
 					<strong>Sesión</strong>
 				</button>
 		</nav>
+		
+		<!--Barra para usuarios logueados.-->
+		<aside id="barraPromo" style="display: none;">
+			<span id="bpartePromo_1">
+				<a class="nav-link" href="#div-promociones" onclick="mostrar()" ><i class="fas fa-certificate" onclick="mostrar()" href="#div-promociones" ></i> Mis promociones </a>
+			</span>
+			<span id="bpartePromo_2">
+				<a class="nav-link" href="acercade2.html#contact"><i class="fas fa-tags" data-fa-transform="rotate-260"></i> Descuentos</a>
+			</span>
+			<span id="bparteUserDatos_1">
+				<a class="nav-link" href="mision.html"><i class="fas fa-power-off"></i> Cerrar sesión </a>
+			</span>
+			<span id="bparteUserDatos_2">
+				<a class="nav-link" href="mision.html"> Pedro R.</a>
+			</span>
+		</aside>
+		<div style="clear:both;"></div>
 		<br>
 		
 		<!--Ventana modal-->
 	  	<div class="container"> 
-	    	<div id="id01" class="w3-modal ">
-		     	<div class="w3-modal-content animated zoomInUp">
+	    	<div id="id01" class="w3-modal">
+		     	<div class="w3-modal-content modal-lg w3-animate-zoom">
 		      		<header class="w3-container w3-black"> 
-		       			<span onclick="document.getElementById('id01').style.display='none'" class="w3-button w3-black w3-hover-aqua w3-large w3-display-topright">X
+		       			<span onclick="document.getElementById('id01').style.display='none'" class="w3-button w3-black w3-hover-aqua w3-large w3-display-topright">&times;
 		       			</span>
 		       			<h2>Bienvenido</h2>
 		    		</header>
@@ -81,134 +125,38 @@
 					<!-- SECCION PARA REGISTRARSE --> 
 				    <div id="registrarse" class="container opcion"><br>
 					 	<h1 class="text-center">Formulario de registro.</h1><hr id="hr_form_regis">
-						<p class="text-center" style="font-size: 25px; font-weight: bold;"> ¿Con que modalidad se desea registrar? </p><br>
-
-					 	<!--Escoger si se registrará un usuario en general ó un admin-->
-					 	<div class="container">
-					 		<div class="container align-items-center justify-content-center">
-						 		<div class="custom-control custom-radio">
-									<input type="radio" id="customRadio1" name="customRadio" class="custom-control-input escogido" value="admins">
-									<label class="custom-control-label" for="customRadio1" style="font-size: 20px;"> Ser Administrador.</label>
-								</div>
-								<div class="custom-control custom-radio">
-									<input type="radio" id="customRadio2" name="customRadio" class="custom-control-input escogido" value="usernormal">
-									<label class="custom-control-label" for="customRadio2" style="font-size: 20px;"> Ser usuario normal.</label>
-								</div>
-							</div>
-					 	</div><br><br>
-
-					 	<!--Formulario para registro de admins-->
-						<div id="formAdmins" style="display:none;" class="container-fluid animated zoomInDown">
-							<hr id="hr_admin">
-							<h2 class="text-center animated infinite pulse"> Administrador </h2><br>
-						 	<form id="fusuagral" method="POST" action="scripts/php/registro-admins.php" class="container-fluid">
-							    <label class="control-label col-xs-2">
-							    	<strong>Correo Electronico:</strong>
-							    	<span class="req">*</span>
-							    </label>
-							 	<input class="ent-modal .estilosinputs form-control" type="email" required minlenght="1" maxlength="30" id="inputEmail" placeholder="Correo Electronico"><br>
-
-							 	<label class="control-label col-xs-2">
-							 		<strong>Contraseña:</strong>
-							 		<span class="req">*</span>
-							 	</label>
-							 	<input type="password" required minlenght="8" maxlength="16" pattern="[A-Z]{1}[a-z]{1}[0-9]{1}" class="ent-modal estilosinputs" id="inputPassword" placeholder="Contraseña"><br>
-
-							    <label class="control-label col-xs-3">
-							    	<strong>Confirmar Contraseña:</strong>
-							    	<span class="req">*</span>
-							    </label>
-	            				<input type="password" required minlenght="8" maxlength="16" pattern="[A-Z]{1}[a-z]{1}[0-9]{1}" class="ent-modal estilosinputs" placeholder="Confirmar Contraseña"><br>
-
-							    <label class="control-label col-xs-3">
-							    	<strong>Nombre(s):</strong>
-							    	<span class="req">*</span>
-							    </label>
-							 	<input type="text" required minlenght="1" class="ent-modal estilosinputs" maxlength="30" placeholder="Nombre"><br>
-
-							    <label class="control-label col-xs-3">
-							    	<strong>Apellido(s):</strong>
-							    	<span class="req">*</span>
-							    </label>
-							    <input type="text" required minlenght="1" maxlength="30" class="ent-modal estilosinputs" placeholder="Apellido"><br>
-
-							    <label class="control-label col-xs-3">
-							    	<strong>Télefono:</strong>
-							    </label>
-							    <input type="number" required minlenght="8" maxlength="10" pattern="\([0-9]{3}\) [0-9]{3}[ -][0-9]{4}" class="ent-modal estilosinputs" placeholder="Telefono"><br>
-
-							    <label class="control-label col-xs-3">
-							    	<strong>F. Nacimiento:</strong>
-							    	<span class="req">*</span>
-							    </label>
-							    <input class="estilosinputs" id="datepicker" width="350"/><br>
-							    <label class="control-label col-xs-3">
-							    	<strong>Genero:</strong>
-							    	<span class="req">*</span>
-							    </label><br>
-							 
-							    <label class="radio-inline">
-							    	<input class="estilosinputs" type="radio" name="genderRadios" value="male">  Masculino  
-								</label><br>
-							    
-							    <label class="radio-inline">
-							    	<input class="estilosinputs" type="radio" name="genderRadios" value="female">  Femenino  
-								</label><br>
-							    
-							    <label class="radio-inline">
-							    	<input class="estilosinputs" type="radio" name="genderRadios" value="male">  Otro  
-								</label><br>
-							    
-							    <label class="radio-inline">
-							        <input class="estilosinputs" type="radio" name="genderRadios" value="female">  Prefiero no decirlo  
-							    </label>
-							    <br><br><br>
-							    
-							    <label class="checkbox-inline">
-							        <input type="checkbox" value="agree">  Acepto 
-							        	<a href="#">Términos y condiciones</a>
-							    </label><br>
-							    <input type="submit" class="btn btn-primary" value="Enviar">
-							    <input type="reset" class="btn btn-default" value="Limpiar">
-						    </form>
-					    </div>
-						
-					 	<!--Formulario para registro de usuarios normales-->
-					    <div id="formNormales" style="display:none;" class="container-fluid animated zoomInUp">
-					    	<hr id="hr_usernormal">
-					    	<h2 class="text-center animated infinite pulse"> Usuario normal </h2><br>
-						 	<form id="fusuagral" method="POST" action="scripts/php/registro_usergeneral.php" class="container-fluid">
+					    <div id="formNormales" class="container-fluid animated zoomInUp">
+						 	<form id="fusua" method="POST" action="scripts/php/registro_usergeneral.php" class="container-fluid">
 						 		<div class="row align-items-center justify-content-center">
-
 								    <label class="control-label col-xs-12">
 								    	<strong>Nombre(s):</strong>
 								    	<span class="req">*</span>
 								    </label>
-								 	<input type="text" required minlenght="1" class="ent-modal estilosinputs" maxlength="30" placeholder="Nombre" name="nombres"><br>
+								 	<input title="Se necesita su Nombre" type="text" required minlenght="1" class="ent-modal estilosinputs form-control" maxlength="30" placeholder=" Nombre" name="nombres"><br>
 
 								    <label class="control-label col-xs-12">
 								    	<strong>Apellido Paterno:</strong>
 								    	<span class="req">*</span>
 								    </label>
-								    <input type="text" required minlenght="5" maxlength="50" class="ent-modal estilosinputs" placeholder=" paterno " name="apellidopat"><br>
+								    <input title="Se necesita su Apellido Parteno" type="text" required minlenght="5" maxlength="50" class="ent-modal estilosinputs form-control" placeholder=" Paterno" name="apellidopat"><br>
 
 								    <label class="control-label col-xs-12">
 								    	<strong>Apellido Materno:</strong>
 								    	<span class="req">*</span>
 								    </label>
-								    <input type="text" required minlenght="5" maxlength="50" class="ent-modal estilosinputs" placeholder=" materno" name="apellidomat"><br>
+								    <input title="Se necesita su Apellido Materno" type="text" required minlenght="5" maxlength="50" class="ent-modal estilosinputs form-control" placeholder=" Materno" name="apellidomat"><br>
 
 								    <label class="control-label col-xs-12">
 								    	<strong>Correo Electronico:</strong>
 								    	<span class="req">*</span>
 								    </label>
-								 	<input class="ent-modal .estilosinputs form-control" type="email" required minlenght="1" maxlength="30" id="inputEmail" placeholder=" Correo Electronico" name="correo"><br>
+								 	<input title="Se necesita su Correo Electronico" required class="ent-modal estilosinputs form-control" type="email" minlenght="1" maxlength="30" id="inputEmail" placeholder=" Correo Electronico" name="correo"><br>
 
 								 	<label class="control-label col-xs-12">
 								 		<strong>Contraseña:</strong>
 								 		<span class="req">*</span>
 								 	</label>
-								 	<input type="password" required minlenght="8" maxlength="16" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{3,}" class="ent-modal estilosinputs" id="inputPassword" placeholder=" Contraseña"><br>
+								 	<input title="Se necesita su Contrasena" required type="password" minlenght="8" maxlength="16" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{3,}" class="ent-modal estilosinputs" id="inputPassword" placeholder=" Contraseña"><br>
 
 								    <label class="control-label col-xs-12">
 								    	<strong>Confirmar Contraseña:</strong>
@@ -220,54 +168,50 @@
 								    	<strong>F. Nacimiento:</strong>
 								    	<span class="req">*</span>
 								    </label>
-								    <input class="estilosinputs" id="datepicker" width="350" name="fecha"/><br>
+								    <input style="border-radius: 4px; width: 100%;" id="datepicker" name="fecha"><br>
 
 								    <label class="control-label col-xs-12">
 								    	<strong>Télefono:</strong>
 								    </label>
-								    <input type="number" required minlenght="8" maxlength="10" pattern="\([0-9]{3}\) [0-9]{3}[ -][0-9]{4}" class="ent-modal estilosinputs" placeholder="Telefono" name="tel"><br>
+								    <input type="number" required minlenght="8" maxlength="10" pattern="\([0-9]{3}\) [0-9]{3}[ -][0-9]{4}" class="ent-modal estilosinputs" placeholder=" Telefono" name="tel"><br>
 									
 								    <label class="control-label col-xs-12">
 								    	<strong>Genero:</strong>
 								    	<span class="req">*</span>
 								    </label><br>
-								 	<div class="container">
-									    <label class="radio-inline">
-									    	<input class="estilosinputs" type="radio" name="sex" value="mas">  Masculino  
-										</label><br>
+								 	<div class="radio-opciones">
+									    <label class="radio-texto">
+									    	<input class="radio-entrada" type="radio" name="sex" onclick="genOcupacion(1)">  Masculino  
+										</label>
 									    
-									    <label class="radio-inline">
-									    	<input class="estilosinputs" type="radio" name="sex" value="fem">  Femenino  
+									    <label class="radio-texto">
+									    	<input class="radio-Entrada" type="radio" name="sex" onclick="genOcupacion(2)">  Femenino  
 										</label><br>
-									    
-									    <label class="radio-inline">
-									    	<input class="estilosinputs" type="radio" name="sex" value="otro">  Otro  
-										</label><br>
-									    
-									    <label class="radio-inline">
-									        <input class="estilosinputs" type="radio" name="sex" value="desco">  Prefiero no decirlo  
-									    </label>
-									    <br><br><br>
 								    </div>
 
 								    <label class="control-label col-xs-12">
 								    	<strong>Ocupación: </strong>
 								    	<span class="req">*</span>
 								    </label>
-								    <input type="text" required minlenght="1" maxlength="30" class="ent-modal estilosinputs" placeholder="   ocupación " name="ocupacion"><br>
+									<select type="text" required class="ent-modal estilosinputs form-control" placeholder=" Ocupación " style="height: 45px;" id="listaOpcion">
+									</select><br>
 
 								   <label class="control-label col-xs-12">
 								    	<strong>Edad:</strong>
 								    </label>
-								    <input type="number" required minlenght="2" maxlength="3" pattern="\([0-9]{3}\) [0-9]{3}[ -][0-9]{4}" class="ent-modal estilosinputs" placeholder="  edad" name="edad"><br>
+								    <input type="number" required minlenght="2" maxlength="3" pattern="\([0-9]{3}\) [0-9]{3}[ -][0-9]{4}" class="ent-modal estilosinputs" placeholder=" Edad" name="edad"><br><br>
 
-								    <label class="checkbox-inline">
+								    <label class="checkbox-inline radio-opciones">
 								        <input type="checkbox" value="agree">  Acepto 
 								        	<a href="#">Términos y condiciones</a>
-								    </label><br>
-
-								    <input id ="enviar" type="submit" class="btn btn-primary" value="Enviar">
-								    <input type="reset" class="btn btn-default" value="Limpiar">
+								    </label><hr><br>
+									<footer class="container">
+										<div class="w3-container w3-light-grey w3-padding">
+											<input id ="enviar" type="submit" class="btn btn-primary" value="Enviar">
+											<input type="reset" class="btn btn-default" value="Limpiar">
+					        				<button class="w3-button w3-right w3-white w3-border" onclick="document.getElementById('id01').style.display='none'">Cerrar</button>
+					    				</div>
+									</footer>
 							    </div>
 						    </form>
 					    </div>
@@ -276,31 +220,33 @@
 					<!-- SECCION PARA INICIAR SESION --> 
 				    <div id="iniciarSesion" class="w3-container opcion">
 				       	<h1 class="text-center">Entrar</h1>
-				       	<form>
+				       	<form id="iniciarSesion" class="container-fluid animated zoomInUp" method="POST" action="scripts/php/login.php">
 					       	<label>Correo Electronico<span class="req estilosinputs">*</span></label> 
 					        <input class="ent-modal estilosinputs" type="email" required autocomplete="off"/><br>
 					        <label>Contraseña<span class="req">*</span></label>
 					        <input class="ent-modal estilosinputs" type="password" required autocomplete="off"/><br>
 					        <p class="olvidada"><a href="#">¿Olvidaste tu contraseña?</a></p>
 				        </form>
-				            <input class="btn btn-primary" type="button" value="Entrar">
+				            
+				        <footer class="w3-container">
+							<div class="w3-container w3-light-grey w3-padding">
+								<input class="btn btn-primary" type="button" value="Entrar">
+								<input type="reset" class="btn btn-default" value="Limpiar">
+						        <button class="w3-button w3-right w3-white w3-border" onclick="document.getElementById('id01').style.display='none'">Cerrar
+						        </button>
+						    </div>
+					</footer>
 				    </div>
-
-				    <div class="w3-container w3-light-grey w3-padding">
-				        <button class="w3-button w3-right w3-white w3-border" onclick="document.getElementById('id01').style.display='none'">Cerrar
-				        </button>
-				    </div>
-
 	    		</div>
 	    	</div>
 	    </div>
 
 		<!--Contenidos de la pagina en secciones,aside, etc..-->
-		
+		<br>
 		<main>
-			<!--a href="scripts/php/prueba.php" class="text-center"> Ver escriptacion </a-->
+		    <!--a href="scripts/php/prueba.php" class="text-center"> Ver bd </a-->
 			<!--Carrusel de imagenes-->
-			<div class="container" style="width: 60%; height: 60%;">
+			<div class="container" style="width: 55%; height: 55%;">
 				<div class="col-md-12">
 					<div id="Diapos" class="carousel slide" data-ride="carousel">
 						<!-- indicadores -->
@@ -354,7 +300,7 @@
 				<hr><br>
 				<p class="animated infinite pulse" id="temaprinci">La música es un idioma y aquí aprenderás a leerlo.</p>
 			</article>
-
+        
 			<div class="container">
 				<br><hr>
 				<section class="row align-items-center justify-content-center">	
@@ -427,9 +373,117 @@
 						</div>
 					</section>
 				</div>
-			</div>	
-		</main>
-		<br>	
+			</div>
+			
+			<!--Promociones-->
+        	<div class="container-fluid " id="div-promociones" >
+				
+				<!--efecto promociones-->
+				<div class="foo">
+ 						 <span class="letter" data-letter="P" onclick="ocultar()">P</span>
+ 						 <span class="letter" data-letter="R" onclick="ocultar()">R</span>
+ 						 <span class="letter" data-letter="O" onclick="ocultar()">O</span>
+ 						 <span class="letter" data-letter="M" onclick="ocultar()">M</span>
+ 						 <span class="letter" data-letter="O" onclick="ocultar()">O</span>
+ 						 <span class="letter" data-letter="C" onclick="ocultar()">C</span>
+ 						 <span class="letter" data-letter="I" onclick="ocultar()">I</span>
+ 						 <span class="letter" data-letter="O" onclick="ocultar()">O</span>
+ 						 <span class="letter" data-letter="N" onclick="ocultar()">N</span>
+						 <span class="letter" data-letter="E" onclick="ocultar()">E</span>
+ 						 <span class="letter" data-letter="S" onclick="ocultar()">S</span>
+ 						<hr>
+				</div>
+				<!--efecto promociones-->
+				<div class="container">
+					<section class="row align-items-center justify-content-center">	
+						<div class="color-xs-12 col-sm-6 col-md-3 promociones">
+							<!--notapp-->
+							<div class="container-fluid">
+								
+							</div>
+							<p class="nombresdeve anim-subrayado_piepa sombraPromo ">NotApp "Notas Musicales"</p>
+							<img src="imagenes/acercaDeOrg/nt.svg" alt="NotApp" height="185px;" width="245px; " class="icoFacebook">
+							
+								<li>La mejor app para el aprendisaje musical</li>
+								<li>Divierte mientras aprendes</li>
+								<li>No te quedes en los metodos de enseñanza antiguos</li>
+								<li>NotApp te regala los cursos de promocion</li>
+								<li>Costo:$3000 </li>
+								<li>Desarrolladores: P.E.R.G Y V.V.M.M</li><br><hr>
+								<button  class="btn btn-outline-warning promo " type="submit">Comprar</button>
+							
+						</div>
+
+						<!--java-->
+						<div class="color-xs-12 col-sm-6 col-md-3 promociones ">
+							<div class="container-fluid">
+								
+							</div>
+							<p class="nombresdeve anim-subrayado_piepa sombraPromo ">Curso Java </p>
+							<img src="imagenes/acercaDeOrg/java.svg" alt="NotApp" height="230px;" width="245px;" class="icoFacebook">
+								<li>Conoce un nuevo mundo tecnologico</li>
+								<li>Crea lo que sea con solo tu imaginacion</li>
+								<li>Innova nuevas tecnologias</li>
+								<li>Desarrolla un sistema de informacion</li>
+								<li>Costo: $500</li>
+								<li>Curso impartido por: P.E.R.G</li><hr>
+								<button  class="btn btn-outline-warning promo" type="submit">Comprar</button>
+						</div>
+
+						<!--mysql y java-->
+						<div class="color-xs-12 col-sm-6 col-md-3 promociones">
+							<div class="container-fluid">
+								
+							</div>
+							<p class="nombresdeve anim-subrayado_piepa sombraPromo ">Curso MySQl y Java </p>
+							<img src="imagenes/acercaDeOrg/prog.jpg" alt="NotApp" height="185px;" width="245px;" class="icoFacebook">
+								<li>Conoce un nuevo mundo tecnologico</li>
+								<li>Crea lo que sea con solo tu imaginacion</li>
+								<li>Innova nuevas tecnologias</li>
+								<li>Desarrolla un sistema de informacion</li>
+								<li>Curso impartido por: P.E.R.G</li>
+								<li>Costo:$750</li><hr>
+								<button  class="btn btn-outline-warning promo" type="submit">Comprar</button>
+						</div>
+
+						<!--html-->
+						<div class="color-xs-12 col-sm-6 col-md-3 promociones">
+							<div class="container-fluid">
+								
+							</div>
+							<p class="nombresdeve anim-subrayado_piepa sombraPromo ">Curso HTML5, CSS3 y JS</p>
+							<img src="imagenes/acercaDeOrg/programacion.jpg" alt="NotApp" height="185px;" width="245px;" class="icoFacebook">
+								<li>Conoce un nuevo mundo tecnologico</li>
+								<li>Crea lo que sea con solo tu imaginacion</li>
+								<li>Innova nuevas tecnologias</li>
+								<li>Desarrolla un sistema de informacion</li>
+								<li>Curso impartido por: P.E.R.G</li>
+								<li>Costo:$750</li><hr>
+								<button  class="btn btn-outline-warning promo" type="submit">Comprar</button>
+						</div>
+
+						<!--oracle-->
+						<div class="color-xs-12 col-sm-6 col-md-3 promociones">
+							<div class="container-fluid">
+								
+							</div>
+							<p class="nombresdeve anim-subrayado_piepa sombraPromo ">Curso Oracle y Java </p>
+							<img src="imagenes/acercaDeOrg/prog.jpg" alt="NotApp" height="185px;" width="245px;" class="icoFacebook">
+								<li>Conoce un nuevo mundo tecnologico</li>
+								<li>Crea lo que sea con solo tu imaginacion</li>
+								<li>Innova nuevas tecnologias</li>
+								<li>Desarrolla un sistema de informacion</li>
+								<li>Curso impartido por: P.E.R.G</li>
+								<li>Costo:$750</li><hr>
+								<button  class="btn btn-outline-warning promo" type="submit">Comprar</button>
+						</div>
+					</section>
+				</div>
+        	</div>	
+
+			<!-- descuentos -->
+			</main>
+			<br>
 
 		<!--Pie de página con sus subpies-->
 		<footer>
@@ -548,9 +602,58 @@
 	<script src="https://cdn.jsdelivr.net/npm/gijgo@1.8.1/combined/js/gijgo.min.js" type="text/javascript"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-	<script type="text/javascript" src="scripts/js/animanotasclick.js"></script>
+	<!--script type="text/javascript" src="scripts/js/animanotasclick.js"></script-->
 	<script type="text/javascript" src="scripts/js/maps.js"></script>
 	<script type="text/javascript" src="scripts/js/otrasfunciones.js"></script>
 	<script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
-</body>
+	<script>
+		function ocultar(){
+    	document.getElementById("div-promociones").style.display="none";
+		}
+ 		function mostrar(){
+    	document.getElementById("div-promociones").style.display="block";
+		}
+	</script>
+	<!--Este script tiene metodos para mostrar ventana de errores en formularios de registro y login.-->
+	<script type="text/javascript">
+	        var mst = "<?php echo $_GET['most']; ?>";
+	        colaEfectos(mst);
+            function colaEfectos(mst){
+              //si la variable tiene el string, se mostrara la alerta de contraseña incorrecta o correcta
+              if (mst == 'bien'){
+                  //se muestra la ventana de contraseña de registro éxitoso una vez que la variable get sea igual a bien
+                setTimeout(function() {
+                      $("#alertaBuena").css("display","block");
+                      $("#alertaBuena").addClass("animated bounceInDown");
+                  }, 950);
+                  
+                setTimeout(function() {
+                      $("#alertaBuena").removeClass("animated bounceInDown");
+                      $("#alertaBuena").addClass("animated bounceOutUp");
+                  }, 3900);
+                  
+                setTimeout(function() {
+                      $("#alertaBuena").removeClass("animated bounceOutUp");
+                      $("#alertaBuena").css("display","none");
+                  }, 4400);
+              }else{//de lo contrario mostrar la ventana de que ya existe un registro con ese correo.
+
+              	setTimeout(function() {
+                      $("#alertaMala").css("display","block");
+                      $("#alertaMala").addClass("animated bounceInDown");
+                  }, 950);
+                  
+                setTimeout(function() {
+                      $("#alertaMala").removeClass("animated bounceInDown");
+                      $("#alertaMala").addClass("animated bounceOutUp");
+                  }, 3900);
+                  
+                setTimeout(function() {
+                      $("#alertaMala").removeClass("animated bounceOutUp");
+                      $("#alertaMala").css("display","none");
+                  }, 4400);
+              }
+            }
+    </script>
+</body >
 </html>
